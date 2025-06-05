@@ -126,10 +126,12 @@ should handle deep groupBy key (dot notation)
   {
     "children": [
       {
+        "extra": "联通",
         "label": "Item 1",
         "value": 1,
       },
       {
+        "extra": "联通",
         "label": "Item 3",
         "value": 3,
       },

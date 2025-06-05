@@ -13,10 +13,28 @@ export interface TreeNode {
 
 export type Tree = TreeNode[];
 
+interface Calc {
+  when?: string;
+  const?: unknown;
+  enum?: unknown[];
+}
+
 export interface Options {
   label?: string;
   value?: string;
   extra?: string;
+  selectable?: Calc;
+  disabled?: Calc;
+}
+
+function calcSelectable(node: DataRecord, matcher: Calc): undefined | boolean {
+  return matcher?.when
+    ? matcher.const
+      ? getBy(node, matcher.when) === matcher.const
+      : matcher.enum
+        ? matcher.enum.includes(getBy(node, matcher.when))
+        : Boolean(getBy(node, matcher.when))
+    : undefined;
 }
 
 export function treeMapper(data: Table2Treed, options: Options = {}): Tree {
@@ -29,7 +47,7 @@ export function treeMapper(data: Table2Treed, options: Options = {}): Tree {
   return data.map((node: GroupNode | DataRecord) => {
     const children =
       node.children && Array.isArray(node.children)
-        ? treeMapper(node.children, { label: labelPath, value: valuePath })
+        ? treeMapper(node.children, options)
         : undefined;
 
     if ('$meta' in node) {
@@ -53,6 +71,12 @@ export function treeMapper(data: Table2Treed, options: Options = {}): Tree {
       value,
       ...(extra && { extra: getBy(node, extra) }),
       ...(children && { children }),
+      ...(options.selectable && {
+        selectable: calcSelectable(node, options.selectable),
+      }),
+      ...(options.disabled && {
+        disabled: calcSelectable(node, options.disabled),
+      }),
     };
   });
 }

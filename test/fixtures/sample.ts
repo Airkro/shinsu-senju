@@ -96,3 +96,27 @@ export const empty: Fixture = {
     paths: [{ groupBy: 'group' }],
   },
 };
+
+export const matcher: Fixture = {
+  description: 'matcher',
+  data: [
+    { id: 1, parent: 'A', name: 'Item 1' },
+    { id: 2, parent: 'A', name: 'Item 2' },
+    { id: 3, parent: 'B', name: 'Item 3' },
+    { id: 4, parent: 'B', name: 'Item 4' },
+    { id: 5, parent: 'C', name: 'Item 5' },
+    { id: 6, parent: 'C', name: 'Item 6' },
+    { id: 7, parent: 'D', name: 'Item 7' },
+  ],
+  options: {
+    paths: { groupBy: 'parent' },
+    selectable: {
+      when: 'parent',
+      enum: ['A', 'B'],
+    },
+    disabled: {
+      when: 'parent',
+      enum: ['C'],
+    },
+  },
+};

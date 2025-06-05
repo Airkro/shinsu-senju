@@ -1,0 +1,50 @@
+{
+  "private": true,
+  "name": "shinsu-senju",
+  "version": "0.0.0",
+  "description": "Tree mapper utils",
+  "license": "MIT",
+  "author": {
+    "name": "Eric"
+  },
+  "keywords": [
+    "tree"
+  ],
+  "main": "lib/index.ts",
+  "files": [
+    "lib"
+  ],
+  "type": "module",
+  "scripts": {
+    "lint:staged": "nice-move lint staged",
+    "lint:type": "tsc -p tsconfig.json",
+    "prepare": "nice-move git hooks",
+    "prepublishOnly": "npm run lint:staged && npm run lint:type && npm test",
+    "test": "vitest run --config test/vitest.config.mjs",
+    "test:coverage": "vitest -u --coverage --config test/vitest.config.mjs",
+    "test:snapshot": "vitest -u --config test/vitest.config.mjs"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@bring-it/npm": "^0.6.0",
+    "@nice-move/all-in-base": "^0.4.29",
+    "@types/lodash-es": "^4.17.12",
+    "eslint": "^9.28.0",
+    "eslint-plugin-ava": "^15.0.1",
+    "garou": "^0.9.8",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.1"
+  },
+  "packageManager": "pnpm@10.11.1",
+  "engines": {
+    "node": "^22.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "prettier": "@nice-move/prettier-config"
+}

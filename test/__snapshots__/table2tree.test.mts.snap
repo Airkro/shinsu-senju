@@ -1,0 +1,227 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should group data by column and return tree structure 1`] = `
+[
+  {
+    "$meta": {
+      "groupBy": "parent",
+      "value": "A",
+    },
+    "children": [
+      {
+        "id": 1,
+        "name": "Item 1",
+        "parent": "A",
+      },
+      {
+        "id": 2,
+        "name": "Item 2",
+        "parent": "A",
+      },
+    ],
+  },
+  {
+    "id": 3,
+    "name": "Item 3",
+    "parent": "B",
+  },
+]
+`;
+
+exports[`should handle deep groupBy key (dot notation) 1`] = `
+[
+  {
+    "$meta": {
+      "groupBy": "info.type.code",
+      "value": "X",
+    },
+    "children": [
+      {
+        "id": 1,
+        "info": {
+          "type": {
+            "code": "X",
+          },
+        },
+        "name": "Item 1",
+      },
+      {
+        "id": 3,
+        "info": {
+          "type": {
+            "code": "X",
+          },
+        },
+        "name": "Item 3",
+      },
+    ],
+  },
+  {
+    "id": 2,
+    "info": {
+      "type": {
+        "code": "Y",
+      },
+    },
+    "name": "Item 2",
+  },
+  {
+    "id": 4,
+    "info": {
+      "type": {
+        "code": "Z",
+      },
+    },
+    "name": "Item 4",
+  },
+]
+`;
+
+exports[`should handle nested grouping 1`] = `
+[
+  {
+    "$meta": {
+      "groupBy": "level1",
+      "value": "A",
+    },
+    "children": [
+      {
+        "$meta": {
+          "groupBy": "level2",
+          "value": "X",
+        },
+        "children": [
+          {
+            "$meta": {
+              "groupBy": "level3",
+              "value": "I",
+            },
+            "children": [
+              {
+                "id": 1,
+                "level1": "A",
+                "level2": "X",
+                "level3": "I",
+                "name": "Item 1",
+              },
+              {
+                "id": 2,
+                "level1": "A",
+                "level2": "X",
+                "level3": "I",
+                "name": "Item 2",
+              },
+            ],
+          },
+          {
+            "id": 3,
+            "level1": "A",
+            "level2": "X",
+            "level3": "II",
+            "name": "Item 3",
+          },
+        ],
+      },
+      {
+        "$meta": {
+          "groupBy": "level2",
+          "value": "Y",
+        },
+        "children": [
+          {
+            "id": 4,
+            "level1": "A",
+            "level2": "Y",
+            "level3": "I",
+            "name": "Item 4",
+          },
+          {
+            "id": 5,
+            "level1": "A",
+            "level2": "Y",
+            "level3": "II",
+            "name": "Item 5",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    "$meta": {
+      "groupBy": "level1",
+      "value": "B",
+    },
+    "children": [
+      {
+        "$meta": {
+          "groupBy": "level2",
+          "value": "X",
+        },
+        "children": [
+          {
+            "id": 6,
+            "level1": "B",
+            "level2": "X",
+            "level3": "I",
+            "name": "Item 6",
+          },
+          {
+            "id": 7,
+            "level1": "B",
+            "level2": "X",
+            "level3": "II",
+            "name": "Item 7",
+          },
+        ],
+      },
+      {
+        "$meta": {
+          "groupBy": "level2",
+          "value": "Y",
+        },
+        "children": [
+          {
+            "id": 8,
+            "level1": "B",
+            "level2": "Y",
+            "level3": "II",
+            "name": "Item 8",
+          },
+          {
+            "$meta": {
+              "groupBy": "level3",
+              "value": "III",
+            },
+            "children": [
+              {
+                "id": 9,
+                "level1": "B",
+                "level2": "Y",
+                "level3": "III",
+                "name": "Item 9",
+              },
+              {
+                "id": 10,
+                "level1": "B",
+                "level2": "Y",
+                "level3": "III",
+                "name": "Item 10",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+]
+`;
+
+exports[`should handle single column grouping with one item 1`] = `
+[
+  {
+    "group": "A",
+    "id": 1,
+    "name": "Single Item",
+  },
+]
+`;

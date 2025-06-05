@@ -1,0 +1,121 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should handle complex data structures 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": undefined,
+            "label": "Alice",
+            "value": 1,
+          },
+          {
+            "children": undefined,
+            "label": "Bob",
+            "value": 2,
+          },
+        ],
+        "label": "Frontend Team",
+        "selectable": false,
+        "value": "Frontend",
+      },
+      {
+        "children": [
+          {
+            "children": undefined,
+            "label": "Charlie",
+            "value": 3,
+          },
+          {
+            "children": undefined,
+            "label": "David",
+            "value": 4,
+          },
+        ],
+        "label": "Backend Team",
+        "selectable": false,
+        "value": "Backend",
+      },
+    ],
+    "label": "Engineering Team",
+    "selectable": false,
+    "value": "Engineering",
+  },
+]
+`;
+
+exports[`should handle empty input 1`] = `[]`;
+
+exports[`should handle missing properties 1`] = `
+[
+  {
+    "children": undefined,
+    "label": undefined,
+    "value": 1,
+  },
+  {
+    "children": [],
+    "label": "B",
+    "selectable": false,
+    "value": "B",
+  },
+]
+`;
+
+exports[`should handle nested groups 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": undefined,
+            "label": "Item 1",
+            "value": 1,
+          },
+        ],
+        "label": "Level 2",
+        "selectable": false,
+        "value": "X",
+      },
+    ],
+    "label": "Level 1",
+    "selectable": false,
+    "value": "A",
+  },
+]
+`;
+
+exports[`should transform data records correctly 1`] = `
+[
+  {
+    "children": undefined,
+    "label": "Test Item",
+    "value": 1,
+  },
+]
+`;
+
+exports[`should transform group nodes correctly 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": undefined,
+        "label": "Item 1",
+        "value": 1,
+      },
+      {
+        "children": undefined,
+        "label": "Item 2",
+        "value": 2,
+      },
+    ],
+    "label": "Category A",
+    "selectable": false,
+    "value": "A",
+  },
+]
+`;

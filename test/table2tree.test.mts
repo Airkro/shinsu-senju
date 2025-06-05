@@ -1,6 +1,6 @@
 import { expect, it } from 'vitest';
 
-import { table2tree } from '../lib/table2tree.ts';
+import { table2tree } from '../lib/index.ts';
 
 it('should group data by column and return tree structure', () => {
   const data = [
@@ -9,7 +9,7 @@ it('should group data by column and return tree structure', () => {
     { id: 3, parent: 'B', name: 'Item 3' },
   ];
 
-  const result = table2tree(data, [{ groupBy: 'parent' }]);
+  const result = table2tree(data, { groupBy: 'parent' });
 
   expect(result).toMatchSnapshot();
 });

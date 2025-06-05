@@ -1,12 +1,5 @@
 import { get } from 'lodash-es';
 
-import type {
-  DataRecord,
-  GroupConfig,
-  GroupNode,
-  TreeNode,
-} from './types.d.ts';
-
 /**
  * 从对象中获取指定路径的值，支持点号分隔的路径
  * @param object - 源对象
@@ -14,18 +7,37 @@ import type {
  * @returns 属性值
  */
 export function getBy(object: DataRecord, path: string): unknown {
-  if (!path) {
-    return undefined;
-  }
-
   return path.includes('.') ? get(object, path) : object[path];
 }
+
+export type DataRecord = {
+  [key: string]: unknown;
+  children?: DataRecord[];
+};
+
+export interface GroupConfig {
+  groupBy: string;
+  label?: string;
+}
+
+export interface GroupNode {
+  $meta: {
+    groupBy: string;
+    value: unknown;
+    label?: string;
+  };
+  children: TreedNode[];
+}
+
+type TreedNode = DataRecord | GroupNode;
+
+export type Table2Treed = TreedNode[];
 
 // 创建分组节点
 function createGroupNode(
   groupBy: string,
   value: unknown,
-  children: TreeNode[],
+  children: TreedNode[],
   rest: Record<string, unknown> = {},
 ): GroupNode {
   return {
@@ -40,7 +52,7 @@ function handleLeafGroup(
   groupBy: string,
   value: unknown,
   rest: Record<string, unknown>,
-): TreeNode {
+): TreedNode {
   if (items.length === 1) {
     return items[0];
   }
@@ -50,9 +62,11 @@ function handleLeafGroup(
 
 // 递归分组主逻辑
 export function table2tree(
-  data: DataRecord[],
-  paths: GroupConfig[],
-): TreeNode[] {
+  data: DataRecord[] = [],
+  path: GroupConfig | GroupConfig[] = [],
+): Table2Treed {
+  const paths = Array.isArray(path) ? path : [path];
+
   if (!data?.length || !paths?.length) {
     return [];
   }
@@ -67,10 +81,6 @@ export function table2tree(
     }
 
     const children = table2tree(items, nextPaths);
-
-    if (children.length === 1) {
-      return children[0];
-    }
 
     return createGroupNode(groupBy, value, children, rest);
   });

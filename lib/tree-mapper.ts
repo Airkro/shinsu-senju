@@ -22,21 +22,22 @@ export function treeMapper(
   { label = 'name', value = 'id' }: Options = {},
 ): Tree {
   return data.map((node: GroupNode | DataRecord) => {
+    if ('$meta' in node) {
+      const io = node as GroupNode;
+
+      return {
+        label:
+          ((io.$meta[label] || io.$meta[value]) as string) || io.$meta.groupBy,
+        value: io.$meta.value as TreeValue,
+        children: treeMapper(io.children, { label, value }),
+        selectable: false,
+      };
+    }
+
     const children =
       node.children && Array.isArray(node.children)
         ? treeMapper(node.children, { label, value })
         : undefined;
-
-    if ('$meta' in node) {
-      const meta = node.$meta as GroupNode['$meta'];
-
-      return {
-        label: meta.label || (meta.value as string) || meta.groupBy,
-        value: meta.value as TreeValue,
-        ...(children ? { children } : undefined),
-        selectable: false,
-      };
-    }
 
     return {
       label: (node[label] || node[value]) as string,

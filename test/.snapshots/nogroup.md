@@ -1,4 +1,4 @@
-# Snapshot simple
+# Snapshot nogroup
 
 should group data by column and return tree structure
 
@@ -6,11 +6,7 @@ should group data by column and return tree structure
 
 ### Options
 ```json5
-{
-  "paths": {
-    "groupBy": "parent",
-  },
-}
+{}
 ```
 
 ### Data
@@ -23,10 +19,16 @@ should group data by column and return tree structure
   },
   {
     "id": 2,
-    "name2": "Item 2",
+    "name": "Item 2",
     "parent": "A",
   },
   {
+    "children": [
+      {
+        "id": 4,
+        "name": "Item 4",
+      },
+    ],
     "id": 3,
     "name": "Item 3",
     "parent": "B",
@@ -40,24 +42,22 @@ should group data by column and return tree structure
 ```json5
 [
   {
-    "$meta": {
-      "groupBy": "parent",
-      "value": "A",
-    },
-    "children": [
-      {
-        "id": 1,
-        "name": "Item 1",
-        "parent": "A",
-      },
-      {
-        "id": 2,
-        "name2": "Item 2",
-        "parent": "A",
-      },
-    ],
+    "id": 1,
+    "name": "Item 1",
+    "parent": "A",
   },
   {
+    "id": 2,
+    "name": "Item 2",
+    "parent": "A",
+  },
+  {
+    "children": [
+      {
+        "id": 4,
+        "name": "Item 4",
+      },
+    ],
     "id": 3,
     "name": "Item 3",
     "parent": "B",
@@ -69,21 +69,20 @@ should group data by column and return tree structure
 ```json5
 [
   {
-    "children": [
-      {
-        "label": "Item 1",
-        "value": 1,
-      },
-      {
-        "label": 2,
-        "value": 2,
-      },
-    ],
-    "label": "parent",
-    "selectable": false,
-    "value": "A",
+    "label": "Item 1",
+    "value": 1,
   },
   {
+    "label": "Item 2",
+    "value": 2,
+  },
+  {
+    "children": [
+      {
+        "label": "Item 4",
+        "value": 4,
+      },
+    ],
     "label": "Item 3",
     "value": 3,
   },

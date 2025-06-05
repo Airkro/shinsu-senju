@@ -25,6 +25,7 @@ export interface GroupNode {
     groupBy: string;
     value: unknown;
     label?: string;
+    [key: string]: unknown;
   };
   children: TreedNode[];
 }
@@ -68,7 +69,7 @@ export function table2tree(
   const paths = Array.isArray(path) ? path : [path];
 
   if (!data?.length || !paths?.length) {
-    return [];
+    return data;
   }
 
   const [current, ...nextPaths] = paths;

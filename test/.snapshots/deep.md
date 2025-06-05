@@ -123,7 +123,7 @@ should handle deep groupBy key (dot notation)
         "value": 3,
       },
     ],
-    "label": "X",
+    "label": "info.type.code",
     "selectable": false,
     "value": "X",
   },

@@ -5,15 +5,35 @@ type Fixture = {
   description: string;
   data: Record<string, unknown>[];
   options: {
-    paths: GroupConfig | GroupConfig[];
+    paths?: GroupConfig | GroupConfig[];
   } & Options;
+};
+
+export const nogroup: Fixture = {
+  description: 'should group data by column and return tree structure',
+  data: [
+    { id: 1, parent: 'A', name: 'Item 1' },
+    { id: 2, parent: 'A', name: 'Item 2' },
+    {
+      id: 3,
+      parent: 'B',
+      name: 'Item 3',
+      children: [
+        {
+          id: 4,
+          name: 'Item 4',
+        },
+      ],
+    },
+  ],
+  options: {},
 };
 
 export const simple: Fixture = {
   description: 'should group data by column and return tree structure',
   data: [
     { id: 1, parent: 'A', name: 'Item 1' },
-    { id: 2, parent: 'A', name: 'Item 2' },
+    { id: 2, parent: 'A', name2: 'Item 2' },
     { id: 3, parent: 'B', name: 'Item 3' },
   ],
   options: { paths: { groupBy: 'parent' } },

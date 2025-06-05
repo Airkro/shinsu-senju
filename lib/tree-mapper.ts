@@ -33,15 +33,15 @@ export function treeMapper(
       return {
         label: meta.label || (meta.value as string) || meta.groupBy,
         value: meta.value as TreeValue,
-        children,
+        ...(children ? { children } : undefined),
         selectable: false,
       };
     }
 
     return {
-      label: node[label] as string,
+      label: (node[label] || node[value]) as string,
       value: node[value] as TreeValue,
-      children,
+      ...(children ? { children } : undefined),
     };
   });
 }

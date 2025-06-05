@@ -7,9 +7,11 @@ should handle deep groupBy key (dot notation)
 ### Options
 ```json5
 {
+  "extra": "info.type.name",
   "paths": [
     {
       "groupBy": "info.type.code",
+      "labelBy": "info.type.name",
     },
   ],
 }
@@ -23,6 +25,7 @@ should handle deep groupBy key (dot notation)
     "info": {
       "type": {
         "code": "X",
+        "name": "联通",
       },
     },
     "name": "Item 1",
@@ -32,6 +35,7 @@ should handle deep groupBy key (dot notation)
     "info": {
       "type": {
         "code": "Y",
+        "name": "电信",
       },
     },
     "name": "Item 2",
@@ -41,6 +45,7 @@ should handle deep groupBy key (dot notation)
     "info": {
       "type": {
         "code": "X",
+        "name": "联通",
       },
     },
     "name": "Item 3",
@@ -50,6 +55,7 @@ should handle deep groupBy key (dot notation)
     "info": {
       "type": {
         "code": "Z",
+        "name": "移动",
       },
     },
     "name": "Item 4",
@@ -65,6 +71,7 @@ should handle deep groupBy key (dot notation)
   {
     "$meta": {
       "groupBy": "info.type.code",
+      "label": "联通",
       "value": "X",
     },
     "children": [
@@ -73,6 +80,7 @@ should handle deep groupBy key (dot notation)
         "info": {
           "type": {
             "code": "X",
+            "name": "联通",
           },
         },
         "name": "Item 1",
@@ -82,6 +90,7 @@ should handle deep groupBy key (dot notation)
         "info": {
           "type": {
             "code": "X",
+            "name": "联通",
           },
         },
         "name": "Item 3",
@@ -93,6 +102,7 @@ should handle deep groupBy key (dot notation)
     "info": {
       "type": {
         "code": "Y",
+        "name": "电信",
       },
     },
     "name": "Item 2",
@@ -102,6 +112,7 @@ should handle deep groupBy key (dot notation)
     "info": {
       "type": {
         "code": "Z",
+        "name": "移动",
       },
     },
     "name": "Item 4",
@@ -123,15 +134,18 @@ should handle deep groupBy key (dot notation)
         "value": 3,
       },
     ],
-    "label": "info.type.code",
+    "extra": undefined,
+    "label": "联通",
     "selectable": false,
     "value": "X",
   },
   {
+    "extra": "电信",
     "label": "Item 2",
     "value": 2,
   },
   {
+    "extra": "移动",
     "label": "Item 4",
     "value": 4,
   },

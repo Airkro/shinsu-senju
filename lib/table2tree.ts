@@ -1,23 +1,9 @@
-import { get } from 'lodash-es';
-
-/**
- * 从对象中获取指定路径的值，支持点号分隔的路径
- * @param object - 源对象
- * @param path - 属性路径
- * @returns 属性值
- */
-export function getBy(object: DataRecord, path: string): unknown {
-  return path.includes('.') ? get(object, path) : object[path];
-}
-
-export type DataRecord = {
-  [key: string]: unknown;
-  children?: DataRecord[];
-};
+import { getBy } from './utils.ts';
+import type { DataRecord } from './utils.ts';
 
 export interface GroupConfig {
   groupBy: string;
-  label?: string;
+  labelBy?: string;
 }
 
 export interface GroupNode {
@@ -34,15 +20,37 @@ type TreedNode = DataRecord | GroupNode;
 
 export type Table2Treed = TreedNode[];
 
+// 提取 label 获取逻辑
+function getGroupLabel(
+  items: DataRecord[],
+  labelBy?: string,
+): string | undefined {
+  if (labelBy && items.length > 0) {
+    const labelValue = getBy(items[0], labelBy);
+
+    if (labelValue !== undefined) {
+      return String(labelValue);
+    }
+  }
+
+  return undefined;
+}
+
 // 创建分组节点
 function createGroupNode(
   groupBy: string,
   value: unknown,
   children: TreedNode[],
   rest: Record<string, unknown> = {},
+  label?: string,
 ): GroupNode {
   return {
-    $meta: { ...rest, groupBy, value },
+    $meta: {
+      ...rest,
+      groupBy,
+      value,
+      ...(label ? { label } : {}),
+    },
     children,
   };
 }
@@ -53,12 +61,13 @@ function handleLeafGroup(
   groupBy: string,
   value: unknown,
   rest: Record<string, unknown>,
+  label?: string,
 ): TreedNode {
   if (items.length === 1) {
     return items[0];
   }
 
-  return createGroupNode(groupBy, value, items, rest);
+  return createGroupNode(groupBy, value, items, rest, label);
 }
 
 // 递归分组主逻辑
@@ -73,16 +82,18 @@ export function table2tree(
   }
 
   const [current, ...nextPaths] = paths;
-  const { groupBy, ...rest } = current;
+  const { groupBy, labelBy, ...rest } = current;
   const groups = Map.groupBy(data, (item) => getBy(item, groupBy));
 
   return Array.from(groups, ([value, items]) => {
+    const label = getGroupLabel(items, labelBy);
+
     if (nextPaths.length === 0) {
-      return handleLeafGroup(items, groupBy, value, rest);
+      return handleLeafGroup(items, groupBy, value, rest, label);
     }
 
     const children = table2tree(items, nextPaths);
 
-    return createGroupNode(groupBy, value, children, rest);
+    return createGroupNode(groupBy, value, children, rest, label);
   });
 }

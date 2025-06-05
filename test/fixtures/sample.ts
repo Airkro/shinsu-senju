@@ -73,13 +73,19 @@ export const single: Fixture = {
 export const deep: Fixture = {
   description: 'should handle deep groupBy key (dot notation)',
   data: [
-    { id: 1, info: { type: { code: 'X' } }, name: 'Item 1' },
-    { id: 2, info: { type: { code: 'Y' } }, name: 'Item 2' },
-    { id: 3, info: { type: { code: 'X' } }, name: 'Item 3' },
-    { id: 4, info: { type: { code: 'Z' } }, name: 'Item 4' },
+    { id: 1, info: { type: { code: 'X', name: '联通' } }, name: 'Item 1' },
+    { id: 2, info: { type: { code: 'Y', name: '电信' } }, name: 'Item 2' },
+    { id: 3, info: { type: { code: 'X', name: '联通' } }, name: 'Item 3' },
+    { id: 4, info: { type: { code: 'Z', name: '移动' } }, name: 'Item 4' },
   ],
   options: {
-    paths: [{ groupBy: 'info.type.code' }],
+    paths: [
+      {
+        groupBy: 'info.type.code',
+        labelBy: 'info.type.name',
+      },
+    ],
+    extra: 'info.type.name',
   },
 };
 

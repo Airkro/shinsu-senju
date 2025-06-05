@@ -79,7 +79,7 @@ should group data by column and return tree structure
         "value": 2,
       },
     ],
-    "label": "parent",
+    "label": "A",
     "selectable": false,
     "value": "A",
   },

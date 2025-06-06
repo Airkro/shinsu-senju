@@ -4,7 +4,7 @@ import { getBy } from './utils.ts';
 import type { DataRecord } from './utils.ts';
 
 export interface TreeNode {
-  label: string;
+  label: unknown;
   value: unknown;
   extra?: unknown;
   selectable?: boolean;

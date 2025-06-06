@@ -1,13 +1,4 @@
-import type { GroupConfig } from '../../lib/table2tree.ts';
-import type { Options } from '../../lib/tree-mapper.ts';
-
-type Fixture = {
-  description: string;
-  data: Record<string, unknown>[];
-  options: {
-    paths?: GroupConfig | GroupConfig[];
-  } & Options;
-};
+import type { Fixture } from './type.d.ts';
 
 export const nogroup: Fixture = {
   description: 'should group data by column and return tree structure',

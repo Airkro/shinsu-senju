@@ -1,14 +1,16 @@
-export const emptyArray = {
+import type { Fixture } from './type.d.ts';
+
+export const emptyArray: Fixture = {
   description: 'should handle empty array',
   data: [],
 };
 
-export const onlyRootNodes = {
+export const onlyRootNodes: Fixture = {
   description: 'should handle array with only root nodes',
   data: [{ id: 1 }, { id: 2 }, { id: 3 }],
 };
 
-export const simpleTreeStructure = {
+export const simpleTreeStructure: Fixture = {
   description: 'should organize flat array into tree structure',
   data: [
     { id: 4, parentId: 2 },
@@ -20,7 +22,7 @@ export const simpleTreeStructure = {
   ],
 };
 
-export const invalidParentReferences = {
+export const invalidParentReferences: Fixture = {
   description: 'should handle invalid parent references',
   data: [
     { id: 1 },
@@ -28,7 +30,7 @@ export const invalidParentReferences = {
   ],
 };
 
-export const infiniteLevelsNesting = {
+export const infiniteLevelsNesting: Fixture = {
   description: 'should support infinite levels of nesting',
   data: [
     { id: 7, parentId: 6 },
@@ -44,7 +46,7 @@ export const infiniteLevelsNesting = {
   ],
 };
 
-export const complexMultiLevel = {
+export const complexMultiLevel: Fixture = {
   description: 'should handle complex multi-level structure',
   data: [
     { id: 1 },
@@ -55,7 +57,7 @@ export const complexMultiLevel = {
   ],
 };
 
-export const mixedRootAndChildren = {
+export const mixedRootAndChildren: Fixture = {
   description: 'should handle mixed root nodes and children',
   data: [
     { id: 1 },

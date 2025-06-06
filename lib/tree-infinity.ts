@@ -3,15 +3,31 @@
  */
 interface TreeNode {
   /** 节点唯一标识符 */
-  id: unknown;
+  id?: unknown;
   /** 父节点的标识符 */
   parentId?: unknown;
   /** 子节点数组 */
-  children?: Tree;
+  children?: TreeNode[];
 }
 
-/** 树节点数组类型 */
-type Tree = TreeNode[];
+/**
+ * 判断节点是否为根节点
+ * @param node 要判断的节点
+ * @param nodeMap 节点映射表
+ */
+function isRoot(node: TreeNode, nodeMap: Map<unknown, TreeNode>): boolean {
+  return node.parentId == null || !nodeMap.has(node.parentId);
+}
+
+/**
+ * 将节点添加到其父节点的children中
+ * @param node 要添加的节点
+ * @param parent 父节点
+ */
+function addToParent(node: TreeNode, parent: TreeNode): void {
+  parent.children ??= [];
+  parent.children.push(node);
+}
 
 /**
  * 将扁平的节点数组转换为树形结构
@@ -19,32 +35,21 @@ type Tree = TreeNode[];
  * @param data 扁平节点数组，可以是任意顺序
  * @returns 树形结构
  */
-export function treeInfinity(data: Tree): Tree {
-  const nodeMap = new Map<unknown, TreeNode>();
-  const roots: Tree = [];
+export function treeInfinity(data: TreeNode[]): TreeNode[] {
+  // 创建节点映射，同时复制节点以避免修改原始数据
+  const nodeMap = new Map(data.map((node) => [node.id, { ...node }]));
 
-  // 第一阶段：复制节点，避免修改原始数据
-  // 同时建立id到节点的映射，这使得我们可以处理乱序数据
-  for (const node of data) {
-    nodeMap.set(node.id, { ...node });
-  }
-
-  // 第二阶段：构建树结构
-  // 由于所有节点都已在nodeMap中，所以可以正确处理父节点在子节点之后出现的情况
-  for (const [, node] of nodeMap) {
-    if (node.parentId == null || !nodeMap.has(node.parentId)) {
-      // 如果节点没有父节点或父节点不存在，则作为根节点
-      roots.push(node);
-    } else {
+  // 构建树结构
+  for (const node of nodeMap.values()) {
+    if (!isRoot(node, nodeMap)) {
       const parent = nodeMap.get(node.parentId);
 
       if (parent) {
-        // 确保parent.children存在
-        parent.children ??= [];
-        parent.children.push(node);
+        addToParent(node, parent);
       }
     }
   }
 
-  return roots;
+  // 返回根节点（没有父节点或父节点不存在的节点）
+  return [...nodeMap.values()].filter((node) => isRoot(node, nodeMap));
 }

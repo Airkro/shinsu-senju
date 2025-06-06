@@ -6,7 +6,7 @@ import * as fixtures from './fixtures/sample.ts';
 
 for (const [name, { description, data, options }] of Object.entries(fixtures)) {
   it(`${name}. ${description}`, async () => {
-    const { paths, ...rest } = options;
+    const { paths, ...rest } = options || {};
 
     const result1 = table2tree(data, paths);
     const result2 = treeMapper(result1, rest);

@@ -69,6 +69,10 @@ should group data by column and return tree structure
 ```json5
 [
   {
+    "$meta": {
+      "groupBy": "parent",
+      "value": "A",
+    },
     "children": [
       {
         "label": "Item 1",

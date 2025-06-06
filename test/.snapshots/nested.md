@@ -243,10 +243,22 @@ should handle nested grouping
 ```json5
 [
   {
+    "$meta": {
+      "groupBy": "level1",
+      "value": "A",
+    },
     "children": [
       {
+        "$meta": {
+          "groupBy": "level2",
+          "value": "X",
+        },
         "children": [
           {
+            "$meta": {
+              "groupBy": "level3",
+              "value": "I",
+            },
             "children": [
               {
                 "label": "Item 1",
@@ -271,6 +283,10 @@ should handle nested grouping
         "value": "X",
       },
       {
+        "$meta": {
+          "groupBy": "level2",
+          "value": "Y",
+        },
         "children": [
           {
             "label": "Item 4",
@@ -291,8 +307,16 @@ should handle nested grouping
     "value": "A",
   },
   {
+    "$meta": {
+      "groupBy": "level1",
+      "value": "B",
+    },
     "children": [
       {
+        "$meta": {
+          "groupBy": "level2",
+          "value": "X",
+        },
         "children": [
           {
             "label": "Item 6",
@@ -308,12 +332,20 @@ should handle nested grouping
         "value": "X",
       },
       {
+        "$meta": {
+          "groupBy": "level2",
+          "value": "Y",
+        },
         "children": [
           {
             "label": "Item 8",
             "value": 8,
           },
           {
+            "$meta": {
+              "groupBy": "level3",
+              "value": "III",
+            },
             "children": [
               {
                 "label": "Item 9",

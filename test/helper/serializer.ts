@@ -14,7 +14,10 @@ const printSection = (
   printer: (val: unknown) => string,
   title: string,
   content: unknown,
-): string[] => ['', `### ${title}`, '```json5', printer(content), '```'];
+): string[] =>
+  content === undefined
+    ? []
+    : ['', `### ${title}`, '```json5', printer(content), '```'];
 
 export default {
   test(value: unknown): boolean {
@@ -28,12 +31,12 @@ export default {
 
   serialize(value: unknown, config, indent, depth, refs, printer): string {
     const {
+      $root,
       name = '',
       description = '',
       options,
       data,
-      table2tree,
-      treeMapper,
+      ...rest
     } = value as SnapshotValue;
 
     const print = (io) => printer(io, config, indent, depth, refs);
@@ -48,8 +51,9 @@ export default {
       ...printSection(print, 'Data', data),
       '',
       '## Output',
-      ...printSection(print, 'table2tree', table2tree),
-      ...printSection(print, 'treeMapper', treeMapper),
+      ...Object.entries(rest).flatMap(([key, io]) =>
+        printSection(print, key, io),
+      ),
     ];
 
     return sections.join('\n');

@@ -1,6 +1,6 @@
 {
   "name": "shinsu-senju",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "description": "Tree mapper utils",
   "license": "MIT",
   "author": {
@@ -18,7 +18,7 @@
     "lint:staged": "nice-move lint staged",
     "lint:type": "tsc -p tsconfig.json",
     "prepare": "nice-move git hooks",
-    "prepublishOnly": "npm run lint:staged && npm run lint:type && npm test",
+    "prepublishOnly": "pnpm run lint:staged && pnpm run lint:type && pnpm test",
     "test": "vitest run --config test/vitest.config.mjs",
     "test:coverage": "vitest -u --coverage --config test/vitest.config.mjs",
     "test:snapshot": "vitest -u --config test/vitest.config.mjs"
@@ -30,12 +30,13 @@
     "@bring-it/npm": "^0.6.0",
     "@nice-move/all-in-base": "^0.4.29",
     "@types/lodash-es": "^4.17.12",
-    "@vitest/coverage-v8": "3.2.1",
+    "@vitest/coverage-v8": "3.2.2",
+    "@vitest/ui": "3.2.2",
     "eslint": "^9.28.0",
     "garou": "^0.9.8",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
-    "vitest": "^3.2.1"
+    "vitest": "^3.2.2"
   },
   "packageManager": "pnpm@10.11.1",
   "engines": {

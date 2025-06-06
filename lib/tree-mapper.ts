@@ -9,6 +9,7 @@ export interface TreeNode {
   extra?: unknown;
   selectable?: boolean;
   children?: Tree;
+  $meta?: GroupNode['$meta'];
 }
 
 export type Tree = TreeNode[];
@@ -54,6 +55,7 @@ export function treeMapper(data: Table2Treed, options: Options = {}): Tree {
       const meta = io.$meta;
 
       return {
+        $meta: meta,
         label: ((meta.label || meta.value) as string) || meta.groupBy,
         value: meta.value,
         ...(extra && { extra: getBy(meta, extra) }),

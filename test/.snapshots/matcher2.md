@@ -128,6 +128,10 @@ matcher
 ```json5
 [
   {
+    "$meta": {
+      "groupBy": "parent",
+      "value": "A",
+    },
     "children": [
       {
         "disabled": true,
@@ -145,6 +149,10 @@ matcher
     "value": "A",
   },
   {
+    "$meta": {
+      "groupBy": "parent",
+      "value": "B",
+    },
     "children": [
       {
         "disabled": true,
@@ -162,6 +170,10 @@ matcher
     "value": "B",
   },
   {
+    "$meta": {
+      "groupBy": "parent",
+      "value": "C",
+    },
     "children": [
       {
         "disabled": true,

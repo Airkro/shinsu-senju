@@ -1,0 +1,19 @@
+import { expect, it } from 'vitest';
+
+import { treeInfinity } from '../lib/index.ts';
+
+import * as fixtures from './fixtures/tree-infinity.ts';
+
+for (const [name, { data, description }] of Object.entries(fixtures)) {
+  it(description, async () => {
+    const result = treeInfinity(data);
+
+    await expect({
+      $root: true,
+      name,
+      description,
+      data,
+      treeInfinity: result,
+    }).toMatchFileSnapshot(`.snapshots/tree-infinity/${name}.md`);
+  });
+}

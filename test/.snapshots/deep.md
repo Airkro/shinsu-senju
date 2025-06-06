@@ -124,6 +124,11 @@ should handle deep groupBy key (dot notation)
 ```json5
 [
   {
+    "$meta": {
+      "groupBy": "info.type.code",
+      "label": "联通",
+      "value": "X",
+    },
     "children": [
       {
         "extra": "联通",

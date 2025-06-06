@@ -10,6 +10,7 @@ export interface TreeNode {
   selectable?: boolean;
   children?: Tree;
   $meta?: GroupNode['$meta'];
+  $original?: object;
 }
 
 export type Tree = TreeNode[];
@@ -66,6 +67,8 @@ export function treeMapper(data: Table2Treed, options: Options = {}): Tree {
 
     const value = getBy(node, valuePath);
 
+    const { children: _, ...$original } = node;
+
     return {
       label: (getBy(node, labelPath) || value) as string,
       value,
@@ -77,6 +80,7 @@ export function treeMapper(data: Table2Treed, options: Options = {}): Tree {
       ...(options.disabled?.when && {
         disabled: calcSelectable(node, options.disabled),
       }),
+      $original,
     };
   });
 }

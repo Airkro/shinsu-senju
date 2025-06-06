@@ -43,6 +43,11 @@ should handle single column grouping with one item
 ```json5
 [
   {
+    "$original": {
+      "group": "A",
+      "id": 1,
+      "name": "Single Item",
+    },
     "label": "Single Item",
     "value": 1,
   },

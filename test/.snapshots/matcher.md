@@ -142,12 +142,22 @@ matcher
     },
     "children": [
       {
+        "$original": {
+          "id": 1,
+          "name": "Item 1",
+          "parent": "A",
+        },
         "disabled": false,
         "label": "Item 1",
         "selectable": true,
         "value": 1,
       },
       {
+        "$original": {
+          "id": 2,
+          "name": "Item 2",
+          "parent": "A",
+        },
         "disabled": false,
         "label": "Item 2",
         "selectable": true,
@@ -165,12 +175,22 @@ matcher
     },
     "children": [
       {
+        "$original": {
+          "id": 3,
+          "name": "Item 3",
+          "parent": "B",
+        },
         "disabled": false,
         "label": "Item 3",
         "selectable": true,
         "value": 3,
       },
       {
+        "$original": {
+          "id": 4,
+          "name": "Item 4",
+          "parent": "B",
+        },
         "disabled": false,
         "label": "Item 4",
         "selectable": true,
@@ -188,12 +208,22 @@ matcher
     },
     "children": [
       {
+        "$original": {
+          "id": 5,
+          "name": "Item 5",
+          "parent": "C",
+        },
         "disabled": true,
         "label": "Item 5",
         "selectable": false,
         "value": 5,
       },
       {
+        "$original": {
+          "id": 6,
+          "name": "Item 6",
+          "parent": "C",
+        },
         "disabled": true,
         "label": "Item 6",
         "selectable": false,
@@ -205,6 +235,11 @@ matcher
     "value": "C",
   },
   {
+    "$original": {
+      "id": 7,
+      "name": "Item 7",
+      "parent": "D",
+    },
     "disabled": false,
     "label": "Item 7",
     "selectable": false,

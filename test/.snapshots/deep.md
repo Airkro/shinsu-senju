@@ -131,11 +131,31 @@ should handle deep groupBy key (dot notation)
     },
     "children": [
       {
+        "$original": {
+          "id": 1,
+          "info": {
+            "type": {
+              "code": "X",
+              "name": "联通",
+            },
+          },
+          "name": "Item 1",
+        },
         "extra": "联通",
         "label": "Item 1",
         "value": 1,
       },
       {
+        "$original": {
+          "id": 3,
+          "info": {
+            "type": {
+              "code": "X",
+              "name": "联通",
+            },
+          },
+          "name": "Item 3",
+        },
         "extra": "联通",
         "label": "Item 3",
         "value": 3,
@@ -147,11 +167,31 @@ should handle deep groupBy key (dot notation)
     "value": "X",
   },
   {
+    "$original": {
+      "id": 2,
+      "info": {
+        "type": {
+          "code": "Y",
+          "name": "电信",
+        },
+      },
+      "name": "Item 2",
+    },
     "extra": "电信",
     "label": "Item 2",
     "value": 2,
   },
   {
+    "$original": {
+      "id": 4,
+      "info": {
+        "type": {
+          "code": "Z",
+          "name": "移动",
+        },
+      },
+      "name": "Item 4",
+    },
     "extra": "移动",
     "label": "Item 4",
     "value": 4,

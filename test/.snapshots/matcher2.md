@@ -1,4 +1,4 @@
-# Snapshot matcher
+# Snapshot matcher2
 
 matcher
 
@@ -8,18 +8,10 @@ matcher
 ```json5
 {
   "disabled": {
-    "const": "C",
     "when": "parent",
   },
   "paths": {
     "groupBy": "parent",
-  },
-  "selectable": {
-    "enum": [
-      "A",
-      "B",
-    ],
-    "when": "parent",
   },
 }
 ```
@@ -138,15 +130,13 @@ matcher
   {
     "children": [
       {
-        "disabled": false,
+        "disabled": true,
         "label": "Item 1",
-        "selectable": true,
         "value": 1,
       },
       {
-        "disabled": false,
+        "disabled": true,
         "label": "Item 2",
-        "selectable": true,
         "value": 2,
       },
     ],
@@ -157,15 +147,13 @@ matcher
   {
     "children": [
       {
-        "disabled": false,
+        "disabled": true,
         "label": "Item 3",
-        "selectable": true,
         "value": 3,
       },
       {
-        "disabled": false,
+        "disabled": true,
         "label": "Item 4",
-        "selectable": true,
         "value": 4,
       },
     ],
@@ -178,13 +166,11 @@ matcher
       {
         "disabled": true,
         "label": "Item 5",
-        "selectable": false,
         "value": 5,
       },
       {
         "disabled": true,
         "label": "Item 6",
-        "selectable": false,
         "value": 6,
       },
     ],
@@ -193,9 +179,8 @@ matcher
     "value": "C",
   },
   {
-    "disabled": false,
+    "disabled": true,
     "label": "Item 7",
-    "selectable": false,
     "value": 7,
   },
 ]

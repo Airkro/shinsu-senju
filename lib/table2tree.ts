@@ -1,76 +1,113 @@
 import { getBy } from './utils.ts';
 import type { DataRecord } from './utils.ts';
 
-export interface GroupConfig {
+// Types
+// -----
+
+/** 元数据类型 */
+export type MetaData = {
+  /** 分组依据的字段名 */
   groupBy: string;
-  labelBy?: string;
-}
+  /** 分组的值 */
+  value: unknown;
+  /** 分组的显示标签 */
+  label?: unknown;
+  /** 其他元数据 */
+  [key: string]: unknown;
+};
 
-export interface GroupNode {
-  $meta: {
-    groupBy: string;
-    value: unknown;
-    label?: string;
-    [key: string]: unknown;
-  };
+/** 分组节点类型 */
+export type GroupNode = {
+  /** 元数据 */
+  $meta: MetaData;
+  /** 子节点列表 */
   children: TreedNode[];
-}
+};
 
-type TreedNode = DataRecord | GroupNode;
+/** 树形节点类型 */
+export type TreedNode = DataRecord | GroupNode;
 
+/** 树形化后的数据类型 */
 export type Table2Treed = TreedNode[];
 
-// 提取 label 获取逻辑
-function getGroupLabel(
-  items: DataRecord[],
-  labelBy?: string,
-): string | undefined {
-  if (labelBy && items.length > 0) {
-    const labelValue = getBy(items[0], labelBy);
+/** 分组配置类型 */
+export type GroupConfig = {
+  /** 分组依据的字段名 */
+  groupBy: string;
+  /** 分组标签的字段名 */
+  labelBy?: string;
+  /** 其他配置 */
+  [key: string]: unknown;
+};
 
-    if (labelValue !== undefined) {
-      return String(labelValue);
-    }
+/** 分组节点参数类型 */
+type GroupNodeParams = {
+  /** 分组依据的字段名 */
+  groupBy: string;
+  /** 分组的值 */
+  value: unknown;
+  /** 子节点列表 */
+  children: TreedNode[];
+  /** 额外的元数据 */
+  rest?: Record<string, unknown>;
+  /** 分组的显示标签 */
+  label?: unknown;
+};
+
+// Utilities
+// ---------
+
+/**
+ * 提取分组标签
+ */
+function getGroupLabel(items: DataRecord[], labelBy?: string): unknown {
+  if (!labelBy || items.length === 0) {
+    return undefined;
   }
 
-  return undefined;
+  return getBy(items[0], labelBy);
 }
 
-// 创建分组节点
-function createGroupNode(
-  groupBy: string,
-  value: unknown,
-  children: TreedNode[],
-  rest: Record<string, unknown> = {},
-  label?: string,
-): GroupNode {
+/**
+ * 创建分组节点
+ */
+function createGroupNode({
+  groupBy,
+  value,
+  children,
+  rest = {},
+  label,
+}: GroupNodeParams): GroupNode {
   return {
     $meta: {
       ...rest,
       groupBy,
       value,
-      ...(label ? { label } : {}),
+      ...(label ? { label } : undefined),
     },
     children,
   };
 }
 
-// 处理叶子分组
+/**
+ * 处理叶子分组
+ */
 function handleLeafGroup(
   items: DataRecord[],
-  groupBy: string,
-  value: unknown,
-  rest: Record<string, unknown>,
-  label?: string,
+  params: GroupNodeParams,
 ): TreedNode {
-  if (items.length === 1) {
-    return items[0];
-  }
-
-  return createGroupNode(groupBy, value, items, rest, label);
+  return items.length === 1 ? items[0] : createGroupNode(params);
 }
 
-// 递归分组主逻辑
+// Core Logic
+// ---------
+
+/**
+ * 将表格数据转换为树形结构
+ * @param data - 源数据记录数组
+ * @param path - 分组配置，可以是单个配置或配置数组
+ * @returns 树形结构数据
+ */
 export function table2tree(
   data: DataRecord[] = [],
   path: GroupConfig | GroupConfig[] = [],
@@ -87,13 +124,16 @@ export function table2tree(
 
   return Array.from(groups, ([value, items]) => {
     const label = getGroupLabel(items, labelBy);
+    const groupParams: GroupNodeParams = {
+      groupBy,
+      value,
+      children: nextPaths.length > 0 ? table2tree(items, nextPaths) : items,
+      rest,
+      label,
+    };
 
-    if (nextPaths.length === 0) {
-      return handleLeafGroup(items, groupBy, value, rest, label);
-    }
-
-    const children = table2tree(items, nextPaths);
-
-    return createGroupNode(groupBy, value, children, rest, label);
+    return nextPaths.length > 0
+      ? createGroupNode(groupParams)
+      : handleLeafGroup(items, groupParams);
   });
 }

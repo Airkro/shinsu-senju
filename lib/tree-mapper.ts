@@ -14,7 +14,7 @@ export interface TreeNode {
 export type Tree = TreeNode[];
 
 interface Calc {
-  when?: string;
+  when: string;
   const?: unknown;
   enum?: unknown[];
 }
@@ -28,13 +28,11 @@ export interface Options {
 }
 
 function calcSelectable(node: DataRecord, matcher: Calc): undefined | boolean {
-  return matcher?.when
-    ? matcher.const
-      ? getBy(node, matcher.when) === matcher.const
-      : matcher.enum
-        ? matcher.enum.includes(getBy(node, matcher.when))
-        : Boolean(getBy(node, matcher.when))
-    : undefined;
+  return matcher.const
+    ? getBy(node, matcher.when) === matcher.const
+    : matcher.enum
+      ? matcher.enum.includes(getBy(node, matcher.when))
+      : Boolean(getBy(node, matcher.when));
 }
 
 export function treeMapper(data: Table2Treed, options: Options = {}): Tree {
@@ -71,10 +69,10 @@ export function treeMapper(data: Table2Treed, options: Options = {}): Tree {
       value,
       ...(extra && { extra: getBy(node, extra) }),
       ...(children && { children }),
-      ...(options.selectable && {
+      ...(options.selectable?.when && {
         selectable: calcSelectable(node, options.selectable),
       }),
-      ...(options.disabled && {
+      ...(options.disabled?.when && {
         disabled: calcSelectable(node, options.disabled),
       }),
     };

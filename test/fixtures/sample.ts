@@ -116,7 +116,18 @@ export const matcher: Fixture = {
     },
     disabled: {
       when: 'parent',
-      enum: ['C'],
+      const: 'C',
+    },
+  },
+};
+
+export const matcher2: Fixture = {
+  description: 'matcher',
+  data: matcher.data,
+  options: {
+    paths: { groupBy: 'parent' },
+    disabled: {
+      when: 'parent',
     },
   },
 };

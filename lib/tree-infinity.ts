@@ -3,7 +3,7 @@ import { DataRecord } from './utils.ts';
 /**
  * 表示树节点的基本结构
  */
-interface TreeNode extends DataRecord {
+export interface TreeNode extends DataRecord {
   /** 节点唯一标识符 */
   id?: unknown;
   /** 父节点的标识符 */

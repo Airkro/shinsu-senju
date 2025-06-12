@@ -1,5 +1,5 @@
-import { Table2Treed } from './table2tree.ts';
-import type { GroupNode } from './table2tree.ts';
+import { Table2Treed } from './table-grouping.ts';
+import type { GroupNode } from './table-grouping.ts';
 import { getBy } from './utils.ts';
 import type { DataRecord } from './utils.ts';
 

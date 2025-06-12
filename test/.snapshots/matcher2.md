@@ -65,6 +65,7 @@ matcher
   {
     "$meta": {
       "groupBy": "parent",
+      "label": "A",
       "value": "A",
     },
     "children": [
@@ -83,6 +84,7 @@ matcher
   {
     "$meta": {
       "groupBy": "parent",
+      "label": "B",
       "value": "B",
     },
     "children": [
@@ -101,6 +103,7 @@ matcher
   {
     "$meta": {
       "groupBy": "parent",
+      "label": "C",
       "value": "C",
     },
     "children": [
@@ -130,6 +133,7 @@ matcher
   {
     "$meta": {
       "groupBy": "parent",
+      "label": "A",
       "value": "A",
     },
     "children": [
@@ -161,6 +165,7 @@ matcher
   {
     "$meta": {
       "groupBy": "parent",
+      "label": "B",
       "value": "B",
     },
     "children": [
@@ -192,6 +197,7 @@ matcher
   {
     "$meta": {
       "groupBy": "parent",
+      "label": "C",
       "value": "C",
     },
     "children": [

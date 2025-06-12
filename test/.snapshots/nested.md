@@ -105,18 +105,21 @@ should handle nested grouping
   {
     "$meta": {
       "groupBy": "level1",
+      "label": "A",
       "value": "A",
     },
     "children": [
       {
         "$meta": {
           "groupBy": "level2",
+          "label": "X",
           "value": "X",
         },
         "children": [
           {
             "$meta": {
               "groupBy": "level3",
+              "label": "I",
               "value": "I",
             },
             "children": [
@@ -148,6 +151,7 @@ should handle nested grouping
       {
         "$meta": {
           "groupBy": "level2",
+          "label": "Y",
           "value": "Y",
         },
         "children": [
@@ -172,12 +176,14 @@ should handle nested grouping
   {
     "$meta": {
       "groupBy": "level1",
+      "label": "B",
       "value": "B",
     },
     "children": [
       {
         "$meta": {
           "groupBy": "level2",
+          "label": "X",
           "value": "X",
         },
         "children": [
@@ -200,6 +206,7 @@ should handle nested grouping
       {
         "$meta": {
           "groupBy": "level2",
+          "label": "Y",
           "value": "Y",
         },
         "children": [
@@ -213,6 +220,7 @@ should handle nested grouping
           {
             "$meta": {
               "groupBy": "level3",
+              "label": "III",
               "value": "III",
             },
             "children": [
@@ -245,18 +253,21 @@ should handle nested grouping
   {
     "$meta": {
       "groupBy": "level1",
+      "label": "A",
       "value": "A",
     },
     "children": [
       {
         "$meta": {
           "groupBy": "level2",
+          "label": "X",
           "value": "X",
         },
         "children": [
           {
             "$meta": {
               "groupBy": "level3",
+              "label": "I",
               "value": "I",
             },
             "children": [
@@ -306,6 +317,7 @@ should handle nested grouping
       {
         "$meta": {
           "groupBy": "level2",
+          "label": "Y",
           "value": "Y",
         },
         "children": [
@@ -344,12 +356,14 @@ should handle nested grouping
   {
     "$meta": {
       "groupBy": "level1",
+      "label": "B",
       "value": "B",
     },
     "children": [
       {
         "$meta": {
           "groupBy": "level2",
+          "label": "X",
           "value": "X",
         },
         "children": [
@@ -383,6 +397,7 @@ should handle nested grouping
       {
         "$meta": {
           "groupBy": "level2",
+          "label": "Y",
           "value": "Y",
         },
         "children": [
@@ -400,6 +415,7 @@ should handle nested grouping
           {
             "$meta": {
               "groupBy": "level3",
+              "label": "III",
               "value": "III",
             },
             "children": [

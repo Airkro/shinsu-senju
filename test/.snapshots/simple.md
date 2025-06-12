@@ -42,6 +42,7 @@ should group data by column and return tree structure
   {
     "$meta": {
       "groupBy": "parent",
+      "label": "A",
       "value": "A",
     },
     "children": [
@@ -71,6 +72,7 @@ should group data by column and return tree structure
   {
     "$meta": {
       "groupBy": "parent",
+      "label": "A",
       "value": "A",
     },
     "children": [

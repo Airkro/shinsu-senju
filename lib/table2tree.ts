@@ -61,11 +61,11 @@ type GroupNodeParams = {
  * 提取分组标签
  */
 function getGroupLabel(items: DataRecord[], labelBy?: string): unknown {
-  if (!labelBy || items.length === 0) {
+  if (!items[0]) {
     return undefined;
   }
 
-  return getBy(items[0], labelBy);
+  return labelBy ? getBy(items[0], labelBy) : undefined;
 }
 
 /**
@@ -96,33 +96,35 @@ function handleLeafGroup(
   items: DataRecord[],
   params: GroupNodeParams,
 ): TreedNode {
-  return items.length === 1 ? items[0] : createGroupNode(params);
+  return items.length === 1 && items[0] ? items[0] : createGroupNode(params);
 }
 
 // Core Logic
 // ---------
 
+export type Groups = GroupConfig | GroupConfig[];
+
 /**
  * 将表格数据转换为树形结构
  * @param data - 源数据记录数组
- * @param path - 分组配置，可以是单个配置或配置数组
+ * @param groups - 分组配置，可以是单个配置或配置数组
  * @returns 树形结构数据
  */
 export function table2tree(
   data: DataRecord[] = [],
-  path: GroupConfig | GroupConfig[] = [],
+  groups: Groups = [],
 ): Table2Treed {
-  const paths = Array.isArray(path) ? path : [path];
+  const paths = Array.isArray(groups) ? groups : [groups];
 
   if (!data?.length || !paths?.length) {
     return data;
   }
 
   const [current, ...nextPaths] = paths;
-  const { groupBy, labelBy, ...rest } = current;
-  const groups = Map.groupBy(data, (item) => getBy(item, groupBy));
+  const { groupBy, labelBy = groupBy, ...rest } = current as GroupConfig;
+  const configs = Map.groupBy(data, (item) => getBy(item, groupBy));
 
-  return Array.from(groups, ([value, items]) => {
+  return Array.from(configs, ([value, items]) => {
     const label = getGroupLabel(items, labelBy);
     const groupParams: GroupNodeParams = {
       groupBy,

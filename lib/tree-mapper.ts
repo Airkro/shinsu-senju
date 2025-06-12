@@ -21,7 +21,7 @@ interface Calc {
   enum?: unknown[];
 }
 
-export interface Options {
+export interface Mappers {
   label?: string;
   value?: string;
   extra?: string;
@@ -37,7 +37,7 @@ function calcSelectable(node: DataRecord, matcher: Calc): undefined | boolean {
       : Boolean(getBy(node, matcher.when));
 }
 
-export function treeMapper(data: Table2Treed, options: Options = {}): Tree {
+export function treeMapper(data: Table2Treed, options: Mappers = {}): Tree {
   const {
     label: labelPath = 'name',
     value: valuePath = 'id',

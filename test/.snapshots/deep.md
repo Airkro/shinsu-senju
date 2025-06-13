@@ -7,13 +7,15 @@ should handle deep groupBy key (dot notation)
 ### Options
 ```json5
 {
-  "extra": "info.type.name",
-  "paths": [
+  "groups": [
     {
       "groupBy": "info.type.code",
       "labelBy": "info.type.name",
     },
   ],
+  "mappers": {
+    "extra": "info.type.name",
+  },
 }
 ```
 
@@ -65,7 +67,7 @@ should handle deep groupBy key (dot notation)
 
 ## Output
 
-### table2tree
+### tableGrouping
 ```json5
 [
   {

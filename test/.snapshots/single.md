@@ -7,7 +7,7 @@ should handle single column grouping with one item
 ### Options
 ```json5
 {
-  "paths": [
+  "groups": [
     {
       "groupBy": "group",
     },
@@ -28,7 +28,7 @@ should handle single column grouping with one item
 
 ## Output
 
-### table2tree
+### tableGrouping
 ```json5
 [
   {

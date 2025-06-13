@@ -7,19 +7,21 @@ matcher
 ### Options
 ```json5
 {
-  "disabled": {
-    "const": "C",
-    "when": "parent",
-  },
-  "paths": {
+  "groups": {
     "groupBy": "parent",
   },
-  "selectable": {
-    "enum": [
-      "A",
-      "B",
-    ],
-    "when": "parent",
+  "mappers": {
+    "disabled": {
+      "const": "C",
+      "when": "parent",
+    },
+    "selectable": {
+      "enum": [
+        "A",
+        "B",
+      ],
+      "when": "parent",
+    },
   },
 }
 ```
@@ -67,7 +69,7 @@ matcher
 
 ## Output
 
-### table2tree
+### tableGrouping
 ```json5
 [
   {

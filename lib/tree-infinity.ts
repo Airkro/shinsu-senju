@@ -1,4 +1,5 @@
-import { DataRecord } from './utils.ts';
+import { getBy } from './utils.ts';
+import type { DataRecord } from './utils.ts';
 
 /**
  * 表示树节点的基本结构
@@ -6,8 +7,6 @@ import { DataRecord } from './utils.ts';
 export interface TreeNode extends DataRecord {
   /** 节点唯一标识符 */
   id?: unknown;
-  /** 父节点的标识符 */
-  parentId?: unknown;
   /** 子节点数组 */
   children?: TreeNode[];
 }
@@ -17,8 +16,12 @@ export interface TreeNode extends DataRecord {
  * @param node 要判断的节点
  * @param nodeMap 节点映射表
  */
-function isRoot(node: TreeNode, nodeMap: Map<unknown, TreeNode>): boolean {
-  return node.parentId == null || !nodeMap.has(node.parentId);
+function isRoot(
+  node: TreeNode,
+  nodeMap: Map<unknown, TreeNode>,
+  parentKey: string,
+): boolean {
+  return getBy(node, parentKey) == null || !nodeMap.has(getBy(node, parentKey));
 }
 
 /**
@@ -37,14 +40,17 @@ function addToParent(node: TreeNode, parent: TreeNode): void {
  * @param data 扁平节点数组，可以是任意顺序
  * @returns 树形结构
  */
-export function treeInfinity(data: TreeNode[]): TreeNode[] {
+export function treeInfinity(
+  data: TreeNode[],
+  parentKey: string = 'parentId',
+): TreeNode[] {
   // 创建节点映射，同时复制节点以避免修改原始数据
   const nodeMap = new Map(data.map((node) => [node.id, { ...node }]));
 
   // 构建树结构
   for (const node of nodeMap.values()) {
-    if (!isRoot(node, nodeMap)) {
-      const parent = nodeMap.get(node.parentId);
+    if (!isRoot(node, nodeMap, parentKey)) {
+      const parent = nodeMap.get(getBy(node, parentKey));
 
       if (parent) {
         addToParent(node, parent);
@@ -53,5 +59,7 @@ export function treeInfinity(data: TreeNode[]): TreeNode[] {
   }
 
   // 返回根节点（没有父节点或父节点不存在的节点）
-  return [...nodeMap.values()].filter((node) => isRoot(node, nodeMap));
+  return [...nodeMap.values()].filter((node) =>
+    isRoot(node, nodeMap, parentKey),
+  );
 }

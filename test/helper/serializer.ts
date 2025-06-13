@@ -6,7 +6,7 @@ interface SnapshotValue {
   description: string;
   options: unknown;
   data: unknown;
-  table2tree: unknown;
+  tableGrouping: unknown;
   treeMapper: unknown;
 }
 

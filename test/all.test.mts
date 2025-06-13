@@ -6,10 +6,10 @@ import * as fixtures from './fixtures/sample.ts';
 
 for (const [name, { description, data, options }] of Object.entries(fixtures)) {
   it(`${name}. ${description}`, async () => {
-    const { paths, ...rest } = options || {};
+    const { groups, mappers } = options || {};
 
-    const result1 = tableGrouping(data, paths);
-    const result2 = treeMapper(result1, rest);
+    const result1 = tableGrouping(data, groups);
+    const result2 = treeMapper(result1, mappers);
 
     await expect({
       $root: true,
@@ -17,7 +17,7 @@ for (const [name, { description, data, options }] of Object.entries(fixtures)) {
       description,
       options,
       data,
-      table2tree: result1,
+      tableGrouping: result1,
       treeMapper: result2,
     }).toMatchFileSnapshot(`.snapshots/${name}.md`);
   });

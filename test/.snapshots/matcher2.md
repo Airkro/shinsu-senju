@@ -7,11 +7,13 @@ matcher
 ### Options
 ```json5
 {
-  "disabled": {
-    "when": "parent",
-  },
-  "paths": {
+  "groups": {
     "groupBy": "parent",
+  },
+  "mappers": {
+    "disabled": {
+      "when": "parent",
+    },
   },
 }
 ```
@@ -59,7 +61,7 @@ matcher
 
 ## Output
 
-### table2tree
+### tableGrouping
 ```json5
 [
   {

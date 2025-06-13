@@ -59,14 +59,8 @@ type GroupNodeParams = {
  * @param labelBy - 标签字段名
  * @returns 分组标签值
  */
-function getGroupLabel(items: DataRecord[], labelBy?: string): unknown {
-  const firstItem = items[0];
-
-  if (!firstItem) {
-    return undefined;
-  }
-
-  return labelBy ? getBy(firstItem, labelBy) : undefined;
+function getGroupLabel(firstItem: DataRecord, labelBy: string): unknown {
+  return getBy(firstItem, labelBy);
 }
 
 /**
@@ -173,7 +167,7 @@ export function tableGrouping(
 
   // 确保 current 存在且为 GroupConfig 类型
   if (!current || typeof current !== 'object' || !('groupBy' in current)) {
-    return data;
+    return tableGrouping(data, nextPaths);
   }
 
   const { groupBy, labelBy = groupBy, ...rest } = current;
@@ -185,7 +179,8 @@ export function tableGrouping(
   // 处理每个分组
   for (const [value, items] of groups) {
     if (items.length > 0) {
-      const label = getGroupLabel(items, labelBy);
+      const label =
+        items[0] && labelBy ? getGroupLabel(items[0], labelBy) : undefined;
       const children =
         nextPaths.length > 0 ? tableGrouping(items, nextPaths) : items;
 
@@ -207,16 +202,14 @@ export function tableGrouping(
     }
   }
 
-  // 处理未分组的数据项，保留原样
+  // 处理未分组的数据项
   if (ungrouped.length > 0) {
     // 如果有下一级分组，递归处理未分组项
-    if (nextPaths.length > 0) {
-      const ungroupedTreed = tableGrouping(ungrouped, nextPaths);
-      result.push(...ungroupedTreed);
-    } else {
-      // 否则直接添加到结果中
-      result.push(...ungrouped);
-    }
+    const ungroupedItems =
+      nextPaths.length > 0 ? tableGrouping(ungrouped, nextPaths) : ungrouped;
+
+    // 直接将未分组数据项添加到结果列表中
+    result.push(...ungroupedItems);
   }
 
   return result;

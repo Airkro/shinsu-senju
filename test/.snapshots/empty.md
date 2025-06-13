@@ -7,7 +7,7 @@ should handle empty data array
 ### Options
 ```json5
 {
-  "paths": [
+  "groups": [
     {
       "groupBy": "group",
     },
@@ -22,7 +22,7 @@ should handle empty data array
 
 ## Output
 
-### table2tree
+### tableGrouping
 ```json5
 []
 ```

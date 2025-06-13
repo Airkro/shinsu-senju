@@ -1,15 +1,18 @@
-# Snapshot simple
+# Snapshot miss
 
-should group data by column and return tree structure
+
 
 ## Input
 
 ### Options
 ```json5
 {
-  "groups": {
-    "groupBy": "parent",
-  },
+  "groups": [
+    {},
+    {
+      "groupBy": "group",
+    },
+  ],
 }
 ```
 
@@ -17,19 +20,19 @@ should group data by column and return tree structure
 ```json5
 [
   {
+    "group": "A",
     "id": 1,
-    "name": "Item 1",
-    "parent": "A",
+    "name": "Item",
   },
   {
+    "group": "A",
     "id": 2,
-    "name2": "Item 2",
-    "parent": "A",
+    "name": "Item",
   },
   {
+    "group": "B",
     "id": 3,
-    "name": "Item 3",
-    "parent": "B",
+    "name": "Item",
   },
 ]
 ```
@@ -41,27 +44,27 @@ should group data by column and return tree structure
 [
   {
     "$meta": {
-      "groupBy": "parent",
+      "groupBy": "group",
       "label": "A",
       "value": "A",
     },
     "children": [
       {
+        "group": "A",
         "id": 1,
-        "name": "Item 1",
-        "parent": "A",
+        "name": "Item",
       },
       {
+        "group": "A",
         "id": 2,
-        "name2": "Item 2",
-        "parent": "A",
+        "name": "Item",
       },
     ],
   },
   {
+    "group": "B",
     "id": 3,
-    "name": "Item 3",
-    "parent": "B",
+    "name": "Item",
   },
 ]
 ```
@@ -71,27 +74,27 @@ should group data by column and return tree structure
 [
   {
     "$meta": {
-      "groupBy": "parent",
+      "groupBy": "group",
       "label": "A",
       "value": "A",
     },
     "children": [
       {
         "$original": {
+          "group": "A",
           "id": 1,
-          "name": "Item 1",
-          "parent": "A",
+          "name": "Item",
         },
-        "label": "Item 1",
+        "label": "Item",
         "value": 1,
       },
       {
         "$original": {
+          "group": "A",
           "id": 2,
-          "name2": "Item 2",
-          "parent": "A",
+          "name": "Item",
         },
-        "label": 2,
+        "label": "Item",
         "value": 2,
       },
     ],
@@ -101,11 +104,11 @@ should group data by column and return tree structure
   },
   {
     "$original": {
+      "group": "B",
       "id": 3,
-      "name": "Item 3",
-      "parent": "B",
+      "name": "Item",
     },
-    "label": "Item 3",
+    "label": "Item",
     "value": 3,
   },
 ]

@@ -7,7 +7,7 @@ should handle nested grouping
 ### Options
 ```json5
 {
-  "paths": [
+  "groups": [
     {
       "groupBy": "level1",
     },
@@ -94,12 +94,29 @@ should handle nested grouping
     "level3": "III",
     "name": "Item 10",
   },
+  {
+    "id": 11,
+    "level2": "Y",
+    "level3": "III",
+    "name": "Item 11",
+  },
+  {
+    "id": 12,
+    "level2": "Y",
+    "level3": "III",
+    "name": "Item 12",
+  },
+  {
+    "id": 13,
+    "level2": "Y",
+    "name": "Item 13",
+  },
 ]
 ```
 
 ## Output
 
-### table2tree
+### tableGrouping
 ```json5
 [
   {
@@ -241,6 +258,41 @@ should handle nested grouping
             ],
           },
         ],
+      },
+    ],
+  },
+  {
+    "$meta": {
+      "groupBy": "level2",
+      "label": "Y",
+      "value": "Y",
+    },
+    "children": [
+      {
+        "$meta": {
+          "groupBy": "level3",
+          "label": "III",
+          "value": "III",
+        },
+        "children": [
+          {
+            "id": 11,
+            "level2": "Y",
+            "level3": "III",
+            "name": "Item 11",
+          },
+          {
+            "id": 12,
+            "level2": "Y",
+            "level3": "III",
+            "name": "Item 12",
+          },
+        ],
+      },
+      {
+        "id": 13,
+        "level2": "Y",
+        "name": "Item 13",
       },
     ],
   },
@@ -455,6 +507,59 @@ should handle nested grouping
     "label": "B",
     "selectable": false,
     "value": "B",
+  },
+  {
+    "$meta": {
+      "groupBy": "level2",
+      "label": "Y",
+      "value": "Y",
+    },
+    "children": [
+      {
+        "$meta": {
+          "groupBy": "level3",
+          "label": "III",
+          "value": "III",
+        },
+        "children": [
+          {
+            "$original": {
+              "id": 11,
+              "level2": "Y",
+              "level3": "III",
+              "name": "Item 11",
+            },
+            "label": "Item 11",
+            "value": 11,
+          },
+          {
+            "$original": {
+              "id": 12,
+              "level2": "Y",
+              "level3": "III",
+              "name": "Item 12",
+            },
+            "label": "Item 12",
+            "value": 12,
+          },
+        ],
+        "label": "III",
+        "selectable": false,
+        "value": "III",
+      },
+      {
+        "$original": {
+          "id": 13,
+          "level2": "Y",
+          "name": "Item 13",
+        },
+        "label": "Item 13",
+        "value": 13,
+      },
+    ],
+    "label": "Y",
+    "selectable": false,
+    "value": "Y",
   },
 ]
 ```

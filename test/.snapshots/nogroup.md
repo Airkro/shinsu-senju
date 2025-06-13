@@ -38,7 +38,7 @@ should group data by column and return tree structure
 
 ## Output
 
-### table2tree
+### tableGrouping
 ```json5
 [
   {

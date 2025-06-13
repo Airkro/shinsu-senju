@@ -12,19 +12,27 @@ should handle complex multi-level structure
   },
   {
     "id": 2,
-    "parentId": 1,
+    "parent": {
+      "id": 1,
+    },
   },
   {
     "id": 3,
-    "parentId": 1,
+    "parent": {
+      "id": 1,
+    },
   },
   {
     "id": 4,
-    "parentId": 2,
+    "parent": {
+      "id": 2,
+    },
   },
   {
     "id": 5,
-    "parentId": 3,
+    "parent": {
+      "id": 3,
+    },
   },
 ]
 ```
@@ -40,21 +48,29 @@ should handle complex multi-level structure
         "children": [
           {
             "id": 4,
-            "parentId": 2,
+            "parent": {
+              "id": 2,
+            },
           },
         ],
         "id": 2,
-        "parentId": 1,
+        "parent": {
+          "id": 1,
+        },
       },
       {
         "children": [
           {
             "id": 5,
-            "parentId": 3,
+            "parent": {
+              "id": 3,
+            },
           },
         ],
         "id": 3,
-        "parentId": 1,
+        "parent": {
+          "id": 1,
+        },
       },
     ],
     "id": 1,

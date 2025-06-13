@@ -5,6 +5,8 @@ export type Fixture = {
   description: string
   data: Record<string, unknown>[]
   options?: {
-    paths?: GroupConfig | GroupConfig[]
-  } & Mappers
+    groups?: GroupConfig | (object | GroupConfig)[]
+    parentKey?: string
+    mappers?: Mappers
+  }
 }

@@ -10,10 +10,17 @@ export { tableGrouping, treeInfinity, treeMapper };
 export type Options = {
   groups?: Groups;
   mapper?: Mappers;
+  parentKey?: string;
 };
 
-export function grouping(data: DataRecord[], { groups, mapper }: Options = {}) {
-  return treeMapper(tableGrouping(treeInfinity(data), groups), mapper);
+export function grouping(
+  data: DataRecord[],
+  { groups, mapper, parentKey }: Options = {},
+) {
+  return treeMapper(
+    tableGrouping(treeInfinity(data, parentKey), groups),
+    mapper,
+  );
 }
 
 export type { DataRecord, Tree };

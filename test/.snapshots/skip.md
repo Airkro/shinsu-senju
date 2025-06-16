@@ -11,7 +11,7 @@
     {},
     {
       "groupBy": "group",
-      "skipSingleChild": true,
+      "skipSingle": true,
     },
   ],
 }
@@ -47,7 +47,6 @@
     "$meta": {
       "groupBy": "group",
       "label": "A",
-      "skipSingleChild": true,
       "value": "A",
     },
     "children": [
@@ -64,19 +63,9 @@
     ],
   },
   {
-    "$meta": {
-      "groupBy": "group",
-      "label": "B",
-      "skipSingleChild": true,
-      "value": "B",
-    },
-    "children": [
-      {
-        "group": "B",
-        "id": 3,
-        "name": "Item",
-      },
-    ],
+    "group": "B",
+    "id": 3,
+    "name": "Item",
   },
 ]
 ```
@@ -88,7 +77,6 @@
     "$meta": {
       "groupBy": "group",
       "label": "A",
-      "skipSingleChild": true,
       "value": "A",
     },
     "children": [
@@ -116,26 +104,13 @@
     "value": "A",
   },
   {
-    "$meta": {
-      "groupBy": "group",
-      "label": "B",
-      "skipSingleChild": true,
-      "value": "B",
+    "$original": {
+      "group": "B",
+      "id": 3,
+      "name": "Item",
     },
-    "children": [
-      {
-        "$original": {
-          "group": "B",
-          "id": 3,
-          "name": "Item",
-        },
-        "label": "Item",
-        "value": 3,
-      },
-    ],
-    "label": "B",
-    "selectable": false,
-    "value": "B",
+    "label": "Item",
+    "value": 3,
   },
 ]
 ```

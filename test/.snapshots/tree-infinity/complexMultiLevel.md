@@ -4,6 +4,13 @@ should handle complex multi-level structure
 
 ## Input
 
+### Options
+```json5
+{
+  "parentKey": "parent.id",
+}
+```
+
 ### Data
 ```json5
 [

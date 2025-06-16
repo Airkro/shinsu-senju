@@ -84,7 +84,7 @@ export const skip: Fixture = {
     { id: 3, group: 'B', name: 'Item' },
   ],
   options: {
-    groups: [{}, { groupBy: 'group', skipSingleChild: true }],
+    groups: [{}, { groupBy: 'group', skipSingle: true }],
   },
 };
 

@@ -44,6 +44,10 @@ export function treeInfinity(
   data: TreeNode[],
   parentKey: string = 'parentId',
 ): TreeNode[] {
+  if (data.length === 0) {
+    return data;
+  }
+
   // 创建节点映射，同时复制节点以避免修改原始数据
   const nodeMap = new Map(data.map((node) => [node.id, { ...node }]));
 

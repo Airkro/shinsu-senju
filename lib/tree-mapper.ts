@@ -38,6 +38,10 @@ function calcSelectable(node: DataRecord, matcher: Calc): undefined | boolean {
 }
 
 export function treeMapper(data: Table2Treed, options: Mappers = {}): Tree {
+  if (data.length === 0) {
+    return data as Tree;
+  }
+
   const {
     label: labelPath = 'name',
     value: valuePath = 'id',

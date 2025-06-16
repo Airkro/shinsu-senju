@@ -41,6 +41,10 @@ export interface TreeFilterOptions {
 }
 
 export function treeFilter(list: List, options: TreeFilterOptions = {}): List {
+  if (list.length === 0) {
+    return list;
+  }
+
   const { parentKey, filterBy } = options;
 
   if (filterBy === undefined) {

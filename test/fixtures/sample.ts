@@ -76,6 +76,18 @@ export const miss: Fixture = {
   },
 };
 
+export const skip: Fixture = {
+  description: '',
+  data: [
+    { id: 1, group: 'A', name: 'Item' },
+    { id: 2, group: 'A', name: 'Item' },
+    { id: 3, group: 'B', name: 'Item' },
+  ],
+  options: {
+    groups: [{}, { groupBy: 'group', skipSingleChild: true }],
+  },
+};
+
 export const deep: Fixture = {
   description: 'should handle deep groupBy key (dot notation)',
   data: [

@@ -1,4 +1,4 @@
-# Snapshot miss
+# Snapshot skip
 
 
 
@@ -11,6 +11,7 @@
     {},
     {
       "groupBy": "group",
+      "skipSingleChild": true,
     },
   ],
 }
@@ -46,6 +47,7 @@
     "$meta": {
       "groupBy": "group",
       "label": "A",
+      "skipSingleChild": true,
       "value": "A",
     },
     "children": [
@@ -65,6 +67,7 @@
     "$meta": {
       "groupBy": "group",
       "label": "B",
+      "skipSingleChild": true,
       "value": "B",
     },
     "children": [
@@ -85,6 +88,7 @@
     "$meta": {
       "groupBy": "group",
       "label": "A",
+      "skipSingleChild": true,
       "value": "A",
     },
     "children": [
@@ -115,6 +119,7 @@
     "$meta": {
       "groupBy": "group",
       "label": "B",
+      "skipSingleChild": true,
       "value": "B",
     },
     "children": [

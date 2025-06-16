@@ -32,9 +32,18 @@ should handle single column grouping with one item
 ```json5
 [
   {
-    "group": "A",
-    "id": 1,
-    "name": "Single Item",
+    "$meta": {
+      "groupBy": "group",
+      "label": "A",
+      "value": "A",
+    },
+    "children": [
+      {
+        "group": "A",
+        "id": 1,
+        "name": "Single Item",
+      },
+    ],
   },
 ]
 ```
@@ -43,13 +52,25 @@ should handle single column grouping with one item
 ```json5
 [
   {
-    "$original": {
-      "group": "A",
-      "id": 1,
-      "name": "Single Item",
+    "$meta": {
+      "groupBy": "group",
+      "label": "A",
+      "value": "A",
     },
-    "label": "Single Item",
-    "value": 1,
+    "children": [
+      {
+        "$original": {
+          "group": "A",
+          "id": 1,
+          "name": "Single Item",
+        },
+        "label": "Single Item",
+        "value": 1,
+      },
+    ],
+    "label": "A",
+    "selectable": false,
+    "value": "A",
   },
 ]
 ```

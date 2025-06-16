@@ -122,9 +122,18 @@ matcher
     ],
   },
   {
-    "id": 7,
-    "name": "Item 7",
-    "parent": "D",
+    "$meta": {
+      "groupBy": "parent",
+      "label": "D",
+      "value": "D",
+    },
+    "children": [
+      {
+        "id": 7,
+        "name": "Item 7",
+        "parent": "D",
+      },
+    ],
   },
 ]
 ```
@@ -229,14 +238,26 @@ matcher
     "value": "C",
   },
   {
-    "$original": {
-      "id": 7,
-      "name": "Item 7",
-      "parent": "D",
+    "$meta": {
+      "groupBy": "parent",
+      "label": "D",
+      "value": "D",
     },
-    "disabled": true,
-    "label": "Item 7",
-    "value": 7,
+    "children": [
+      {
+        "$original": {
+          "id": 7,
+          "name": "Item 7",
+          "parent": "D",
+        },
+        "disabled": true,
+        "label": "Item 7",
+        "value": 7,
+      },
+    ],
+    "label": "D",
+    "selectable": false,
+    "value": "D",
   },
 ]
 ```

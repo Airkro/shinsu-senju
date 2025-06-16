@@ -51,7 +51,7 @@ export interface GroupConfig extends Record<string, unknown> {
   /** 分组标签的字段名，默认使用 groupBy 的值 */
   readonly labelBy?: string;
   /** 是否跳过单个子项的分组 */
-  readonly skipSingleChild?: boolean;
+  readonly skipSingle?: boolean;
 }
 
 /**
@@ -68,7 +68,7 @@ interface GroupProcessConfig {
   /** 分组标签的字段名 */
   readonly labelBy: string;
   /** 是否跳过单个子项的分组 */
-  readonly skipSingleChild: boolean;
+  readonly skipSingle: boolean;
   /** 额外的元数据 */
   readonly additionalMetadata: Record<string, unknown>;
 }
@@ -189,12 +189,12 @@ function groupRecursive(
     return groupRecursive(data, rest);
   }
 
-  const { groupBy, labelBy, skipSingleChild, additionalMetadata } = current;
+  const { groupBy, labelBy, skipSingle, additionalMetadata } = current;
   const { groups, ungrouped } = groupByField(data, groupBy);
   const nodes: TreeNode[] = [];
 
   for (const [value, items] of groups) {
-    if (items.length === 1 && skipSingleChild && items[0] !== undefined) {
+    if (items.length === 1 && skipSingle && items[0] !== undefined) {
       nodes.push(items[0]);
     } else {
       nodes.push(
@@ -233,14 +233,14 @@ export function tableGrouping(
     Array.isArray(groupConfigs) ? groupConfigs : [groupConfigs]
   ).map(
     ({
-      skipSingleChild = true,
+      skipSingle = false,
       groupBy,
       labelBy = groupBy,
       ...additionalMetadata
     }) => ({
       groupBy,
       labelBy,
-      skipSingleChild,
+      skipSingle,
       additionalMetadata,
     }),
   );

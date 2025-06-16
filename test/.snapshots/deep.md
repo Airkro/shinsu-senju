@@ -100,24 +100,42 @@ should handle deep groupBy key (dot notation)
     ],
   },
   {
-    "id": 2,
-    "info": {
-      "type": {
-        "code": "Y",
-        "name": "电信",
-      },
+    "$meta": {
+      "groupBy": "info.type.code",
+      "label": "电信",
+      "value": "Y",
     },
-    "name": "Item 2",
+    "children": [
+      {
+        "id": 2,
+        "info": {
+          "type": {
+            "code": "Y",
+            "name": "电信",
+          },
+        },
+        "name": "Item 2",
+      },
+    ],
   },
   {
-    "id": 4,
-    "info": {
-      "type": {
-        "code": "Z",
-        "name": "移动",
-      },
+    "$meta": {
+      "groupBy": "info.type.code",
+      "label": "移动",
+      "value": "Z",
     },
-    "name": "Item 4",
+    "children": [
+      {
+        "id": 4,
+        "info": {
+          "type": {
+            "code": "Z",
+            "name": "移动",
+          },
+        },
+        "name": "Item 4",
+      },
+    ],
   },
 ]
 ```
@@ -169,34 +187,60 @@ should handle deep groupBy key (dot notation)
     "value": "X",
   },
   {
-    "$original": {
-      "id": 2,
-      "info": {
-        "type": {
-          "code": "Y",
-          "name": "电信",
-        },
-      },
-      "name": "Item 2",
+    "$meta": {
+      "groupBy": "info.type.code",
+      "label": "电信",
+      "value": "Y",
     },
-    "extra": "电信",
-    "label": "Item 2",
-    "value": 2,
+    "children": [
+      {
+        "$original": {
+          "id": 2,
+          "info": {
+            "type": {
+              "code": "Y",
+              "name": "电信",
+            },
+          },
+          "name": "Item 2",
+        },
+        "extra": "电信",
+        "label": "Item 2",
+        "value": 2,
+      },
+    ],
+    "extra": undefined,
+    "label": "电信",
+    "selectable": false,
+    "value": "Y",
   },
   {
-    "$original": {
-      "id": 4,
-      "info": {
-        "type": {
-          "code": "Z",
-          "name": "移动",
-        },
-      },
-      "name": "Item 4",
+    "$meta": {
+      "groupBy": "info.type.code",
+      "label": "移动",
+      "value": "Z",
     },
-    "extra": "移动",
-    "label": "Item 4",
-    "value": 4,
+    "children": [
+      {
+        "$original": {
+          "id": 4,
+          "info": {
+            "type": {
+              "code": "Z",
+              "name": "移动",
+            },
+          },
+          "name": "Item 4",
+        },
+        "extra": "移动",
+        "label": "Item 4",
+        "value": 4,
+      },
+    ],
+    "extra": undefined,
+    "label": "移动",
+    "selectable": false,
+    "value": "Z",
   },
 ]
 ```

@@ -59,9 +59,18 @@ should group data by column and return tree structure
     ],
   },
   {
-    "id": 3,
-    "name": "Item 3",
-    "parent": "B",
+    "$meta": {
+      "groupBy": "parent",
+      "label": "B",
+      "value": "B",
+    },
+    "children": [
+      {
+        "id": 3,
+        "name": "Item 3",
+        "parent": "B",
+      },
+    ],
   },
 ]
 ```
@@ -100,13 +109,25 @@ should group data by column and return tree structure
     "value": "A",
   },
   {
-    "$original": {
-      "id": 3,
-      "name": "Item 3",
-      "parent": "B",
+    "$meta": {
+      "groupBy": "parent",
+      "label": "B",
+      "value": "B",
     },
-    "label": "Item 3",
-    "value": 3,
+    "children": [
+      {
+        "$original": {
+          "id": 3,
+          "name": "Item 3",
+          "parent": "B",
+        },
+        "label": "Item 3",
+        "value": 3,
+      },
+    ],
+    "label": "B",
+    "selectable": false,
+    "value": "B",
   },
 ]
 ```

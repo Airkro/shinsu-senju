@@ -157,11 +157,20 @@ should handle nested grouping
             ],
           },
           {
-            "id": 3,
-            "level1": "A",
-            "level2": "X",
-            "level3": "II",
-            "name": "Item 3",
+            "$meta": {
+              "groupBy": "level3",
+              "label": "II",
+              "value": "II",
+            },
+            "children": [
+              {
+                "id": 3,
+                "level1": "A",
+                "level2": "X",
+                "level3": "II",
+                "name": "Item 3",
+              },
+            ],
           },
         ],
       },
@@ -173,18 +182,36 @@ should handle nested grouping
         },
         "children": [
           {
-            "id": 4,
-            "level1": "A",
-            "level2": "Y",
-            "level3": "I",
-            "name": "Item 4",
+            "$meta": {
+              "groupBy": "level3",
+              "label": "I",
+              "value": "I",
+            },
+            "children": [
+              {
+                "id": 4,
+                "level1": "A",
+                "level2": "Y",
+                "level3": "I",
+                "name": "Item 4",
+              },
+            ],
           },
           {
-            "id": 5,
-            "level1": "A",
-            "level2": "Y",
-            "level3": "II",
-            "name": "Item 5",
+            "$meta": {
+              "groupBy": "level3",
+              "label": "II",
+              "value": "II",
+            },
+            "children": [
+              {
+                "id": 5,
+                "level1": "A",
+                "level2": "Y",
+                "level3": "II",
+                "name": "Item 5",
+              },
+            ],
           },
         ],
       },
@@ -205,18 +232,36 @@ should handle nested grouping
         },
         "children": [
           {
-            "id": 6,
-            "level1": "B",
-            "level2": "X",
-            "level3": "I",
-            "name": "Item 6",
+            "$meta": {
+              "groupBy": "level3",
+              "label": "I",
+              "value": "I",
+            },
+            "children": [
+              {
+                "id": 6,
+                "level1": "B",
+                "level2": "X",
+                "level3": "I",
+                "name": "Item 6",
+              },
+            ],
           },
           {
-            "id": 7,
-            "level1": "B",
-            "level2": "X",
-            "level3": "II",
-            "name": "Item 7",
+            "$meta": {
+              "groupBy": "level3",
+              "label": "II",
+              "value": "II",
+            },
+            "children": [
+              {
+                "id": 7,
+                "level1": "B",
+                "level2": "X",
+                "level3": "II",
+                "name": "Item 7",
+              },
+            ],
           },
         ],
       },
@@ -228,11 +273,20 @@ should handle nested grouping
         },
         "children": [
           {
-            "id": 8,
-            "level1": "B",
-            "level2": "Y",
-            "level3": "II",
-            "name": "Item 8",
+            "$meta": {
+              "groupBy": "level3",
+              "label": "II",
+              "value": "II",
+            },
+            "children": [
+              {
+                "id": 8,
+                "level1": "B",
+                "level2": "Y",
+                "level3": "II",
+                "name": "Item 8",
+              },
+            ],
           },
           {
             "$meta": {
@@ -351,15 +405,27 @@ should handle nested grouping
             "value": "I",
           },
           {
-            "$original": {
-              "id": 3,
-              "level1": "A",
-              "level2": "X",
-              "level3": "II",
-              "name": "Item 3",
+            "$meta": {
+              "groupBy": "level3",
+              "label": "II",
+              "value": "II",
             },
-            "label": "Item 3",
-            "value": 3,
+            "children": [
+              {
+                "$original": {
+                  "id": 3,
+                  "level1": "A",
+                  "level2": "X",
+                  "level3": "II",
+                  "name": "Item 3",
+                },
+                "label": "Item 3",
+                "value": 3,
+              },
+            ],
+            "label": "II",
+            "selectable": false,
+            "value": "II",
           },
         ],
         "label": "X",
@@ -374,26 +440,50 @@ should handle nested grouping
         },
         "children": [
           {
-            "$original": {
-              "id": 4,
-              "level1": "A",
-              "level2": "Y",
-              "level3": "I",
-              "name": "Item 4",
+            "$meta": {
+              "groupBy": "level3",
+              "label": "I",
+              "value": "I",
             },
-            "label": "Item 4",
-            "value": 4,
+            "children": [
+              {
+                "$original": {
+                  "id": 4,
+                  "level1": "A",
+                  "level2": "Y",
+                  "level3": "I",
+                  "name": "Item 4",
+                },
+                "label": "Item 4",
+                "value": 4,
+              },
+            ],
+            "label": "I",
+            "selectable": false,
+            "value": "I",
           },
           {
-            "$original": {
-              "id": 5,
-              "level1": "A",
-              "level2": "Y",
-              "level3": "II",
-              "name": "Item 5",
+            "$meta": {
+              "groupBy": "level3",
+              "label": "II",
+              "value": "II",
             },
-            "label": "Item 5",
-            "value": 5,
+            "children": [
+              {
+                "$original": {
+                  "id": 5,
+                  "level1": "A",
+                  "level2": "Y",
+                  "level3": "II",
+                  "name": "Item 5",
+                },
+                "label": "Item 5",
+                "value": 5,
+              },
+            ],
+            "label": "II",
+            "selectable": false,
+            "value": "II",
           },
         ],
         "label": "Y",
@@ -420,26 +510,50 @@ should handle nested grouping
         },
         "children": [
           {
-            "$original": {
-              "id": 6,
-              "level1": "B",
-              "level2": "X",
-              "level3": "I",
-              "name": "Item 6",
+            "$meta": {
+              "groupBy": "level3",
+              "label": "I",
+              "value": "I",
             },
-            "label": "Item 6",
-            "value": 6,
+            "children": [
+              {
+                "$original": {
+                  "id": 6,
+                  "level1": "B",
+                  "level2": "X",
+                  "level3": "I",
+                  "name": "Item 6",
+                },
+                "label": "Item 6",
+                "value": 6,
+              },
+            ],
+            "label": "I",
+            "selectable": false,
+            "value": "I",
           },
           {
-            "$original": {
-              "id": 7,
-              "level1": "B",
-              "level2": "X",
-              "level3": "II",
-              "name": "Item 7",
+            "$meta": {
+              "groupBy": "level3",
+              "label": "II",
+              "value": "II",
             },
-            "label": "Item 7",
-            "value": 7,
+            "children": [
+              {
+                "$original": {
+                  "id": 7,
+                  "level1": "B",
+                  "level2": "X",
+                  "level3": "II",
+                  "name": "Item 7",
+                },
+                "label": "Item 7",
+                "value": 7,
+              },
+            ],
+            "label": "II",
+            "selectable": false,
+            "value": "II",
           },
         ],
         "label": "X",
@@ -454,15 +568,27 @@ should handle nested grouping
         },
         "children": [
           {
-            "$original": {
-              "id": 8,
-              "level1": "B",
-              "level2": "Y",
-              "level3": "II",
-              "name": "Item 8",
+            "$meta": {
+              "groupBy": "level3",
+              "label": "II",
+              "value": "II",
             },
-            "label": "Item 8",
-            "value": 8,
+            "children": [
+              {
+                "$original": {
+                  "id": 8,
+                  "level1": "B",
+                  "level2": "Y",
+                  "level3": "II",
+                  "name": "Item 8",
+                },
+                "label": "Item 8",
+                "value": 8,
+              },
+            ],
+            "label": "II",
+            "selectable": false,
+            "value": "II",
           },
           {
             "$meta": {

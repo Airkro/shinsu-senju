@@ -1,6 +1,6 @@
 {
   "extends": "@nice-move/tsconfig/base.json",
-  "include": ["**/lib/**/*.ts"],
+  "include": ["**/lib/"],
   "compilerOptions": {
     "types": [],
     "skipLibCheck": true,

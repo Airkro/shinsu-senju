@@ -4,64 +4,93 @@ import type { DataRecord } from './utils.ts';
 // Types
 // -----
 
-/** 元数据类型 */
-export type MetaData = Record<string, unknown> & {
-  /** 分组依据的字段名 */
-  groupBy: string;
-  /** 分组的值 */
-  value: unknown;
-  /** 分组的显示标签 */
-  label?: unknown;
-};
-
-/** 分组节点类型 */
-export type GroupNode = {
-  /** 元数据 */
-  $meta: MetaData;
-  /** 子节点列表 */
-  children: TreedNode[];
-};
-
-/** 树形节点类型 */
-export type TreedNode = DataRecord | GroupNode;
-
-/** 树形化后的数据类型 */
-export type Table2Treed = TreedNode[];
-
-/** 分组配置类型 */
-export type GroupConfig = Record<string, unknown> & {
-  /** 分组依据的字段名 */
-  groupBy: string;
-  /** 分组标签的字段名 */
-  labelBy?: string;
-};
-
-/** 分组节点参数类型 */
-type GroupNodeParams = {
-  /** 分组依据的字段名 */
-  groupBy: string;
-  /** 分组的值 */
-  value: unknown;
-  /** 子节点列表 */
-  children: TreedNode[];
-  /** 额外的元数据 */
-  rest?: Record<string, unknown>;
-  /** 分组的显示标签 */
-  label?: unknown;
-};
-
-// Utilities
-// ---------
+/**
+ * 字段值类型，表示从数据记录中提取的值
+ * 可以是任何类型，但通常是字符串、数字或布尔值
+ */
+export type FieldValue = unknown;
 
 /**
- * 提取分组标签
- * @param items - 数据记录数组
- * @param labelBy - 标签字段名
- * @returns 分组标签值
+ * 元数据接口，描述分组节点的元信息
  */
-function getGroupLabel(firstItem: DataRecord, labelBy: string): unknown {
-  return getBy(firstItem, labelBy);
+export interface MetaData extends Record<string, unknown> {
+  /** 分组依据的字段名 */
+  readonly groupBy: string;
+  /** 分组的值 */
+  readonly value: FieldValue;
+  /** 分组的显示标签（可选） */
+  readonly label?: FieldValue;
 }
+
+/**
+ * 分组节点接口，表示树中的一个分组
+ */
+export interface GroupNode {
+  /** 节点元数据 */
+  readonly $meta: MetaData;
+  /** 子节点列表 */
+  readonly children: readonly TreeNode[];
+}
+
+/**
+ * 树形节点类型，可以是数据记录或分组节点
+ */
+export type TreeNode = DataRecord | GroupNode;
+
+/**
+ * 树形结构数据类型
+ */
+export type Table2Treed = readonly TreeNode[];
+
+/**
+ * 分组配置接口，定义如何对数据进行分组
+ */
+export interface GroupConfig extends Record<string, unknown> {
+  /** 分组依据的字段名 */
+  readonly groupBy: string;
+  /** 分组标签的字段名，默认使用 groupBy 的值 */
+  readonly labelBy?: string;
+  /** 是否跳过单个子项的分组 */
+  readonly skipSingleChild?: boolean;
+}
+
+/**
+ * 分组配置类型，可以是单个配置或配置数组
+ */
+export type Groups = GroupConfig | readonly GroupConfig[];
+
+/**
+ * 分组处理配置接口
+ */
+interface GroupProcessConfig {
+  /** 分组依据的字段名 */
+  readonly groupBy: string;
+  /** 分组标签的字段名 */
+  readonly labelBy: string;
+  /** 是否跳过单个子项的分组 */
+  readonly skipSingleChild: boolean;
+  /** 额外的元数据 */
+  readonly additionalMetadata: Record<string, unknown>;
+}
+
+/**
+ * 分组节点创建参数
+ */
+interface GroupNodeParams {
+  /** 分组依据的字段名 */
+  readonly groupBy: string;
+  /** 分组的值 */
+  readonly value: FieldValue;
+  /** 子节点列表 */
+  readonly children: readonly TreeNode[];
+  /** 额外的元数据 */
+  readonly rest?: Record<string, unknown>;
+  /** 分组的显示标签 */
+  readonly label?: FieldValue;
+}
+
+// Core Logic
+// ---------
 
 /**
  * 创建分组节点
@@ -79,45 +108,45 @@ function createGroupNode({
     ...rest,
     groupBy,
     value,
+    ...(label !== undefined && { label }),
   };
 
-  if (label !== undefined) {
-    meta.label = label;
-  }
-
-  return {
-    $meta: meta,
-    children,
-  };
+  return { $meta: meta, children };
 }
 
 /**
- * 处理叶子分组
- * @param items - 数据记录数组
- * @param params - 分组节点参数
- * @returns 树形节点
+ * 将数据项添加到分组映射中
+ * @param groups - 分组映射
+ * @param key - 分组键
+ * @param item - 数据项
  */
-function handleLeafGroup(
-  items: DataRecord[],
-  params: GroupNodeParams,
-): TreedNode {
-  // 如果只有一个子项，直接返回该项，否则创建分组节点
-  return items.length === 1
-    ? (items[0] as DataRecord)
-    : createGroupNode(params);
+function addToGroup(
+  groups: Map<FieldValue, DataRecord[]>,
+  key: FieldValue,
+  item: DataRecord,
+): void {
+  if (!groups.has(key)) {
+    groups.set(key, []);
+  }
+
+  const arr = groups.get(key);
+
+  if (arr) {
+    arr.push(item);
+  }
 }
 
 /**
  * 按指定字段对数据进行分组
  * @param data - 数据记录数组
  * @param groupBy - 分组字段名
- * @returns 分组后的Map对象和未分组的数据项
+ * @returns 分组后的 Map 对象和未分组的数据项
  */
 function groupByField(
   data: DataRecord[],
   groupBy: string,
-): { groups: Map<unknown, DataRecord[]>; ungrouped: DataRecord[] } {
-  const groups = new Map<unknown, DataRecord[]>();
+): { groups: Map<FieldValue, DataRecord[]>; ungrouped: DataRecord[] } {
+  const groups = new Map<FieldValue, DataRecord[]>();
   const ungrouped: DataRecord[] = [];
 
   for (const item of data) {
@@ -126,91 +155,95 @@ function groupByField(
     if (key === undefined) {
       ungrouped.push(item);
     } else {
-      const group = groups.get(key) ?? [];
-      group.push(item);
-      groups.set(key, group);
+      addToGroup(groups, key, item);
     }
   }
 
   return { groups, ungrouped };
 }
 
-// Core Logic
-// ---------
+/**
+ * 获取分组标签
+ * @param firstItem - 分组中的第一个数据项
+ * @param labelBy - 标签字段名
+ * @returns 分组标签
+ */
+function getGroupLabel(
+  firstItem: DataRecord | undefined,
+  labelBy: string,
+): FieldValue | undefined {
+  return firstItem && labelBy ? getBy(firstItem, labelBy) : undefined;
+}
 
-export type Groups = GroupConfig | GroupConfig[];
+function groupRecursive(
+  data: DataRecord[],
+  configs: readonly GroupProcessConfig[],
+): Table2Treed {
+  if (configs.length === 0) {
+    return data;
+  }
+
+  const [current, ...rest] = configs;
+
+  if (!current?.groupBy) {
+    return groupRecursive(data, rest);
+  }
+
+  const { groupBy, labelBy, skipSingleChild, additionalMetadata } = current;
+  const { groups, ungrouped } = groupByField(data, groupBy);
+  const nodes: TreeNode[] = [];
+
+  for (const [value, items] of groups) {
+    if (items.length === 1 && skipSingleChild && items[0] !== undefined) {
+      nodes.push(items[0]);
+    } else {
+      nodes.push(
+        createGroupNode({
+          groupBy,
+          value,
+          children: rest.length > 0 ? groupRecursive(items, rest) : items,
+          rest: additionalMetadata,
+          label: getGroupLabel(items[0], labelBy),
+        }),
+      );
+    }
+  }
+
+  const processedUngrouped =
+    rest.length > 0 ? groupRecursive(ungrouped, rest) : ungrouped;
+
+  return [...nodes, ...processedUngrouped];
+}
 
 /**
  * 将表格数据转换为树形结构
  * @param data - 源数据记录数组
- * @param groups - 分组配置，可以是单个配置或配置数组
+ * @param groupConfigs - 分组配置，可以是单个配置或配置数组
  * @returns 树形结构数据
  */
 export function tableGrouping(
   data: DataRecord[] = [],
   groupConfigs: Groups = [],
 ): Table2Treed {
-  // 处理空数据或空分组配置的情况
-  if (!data?.length || !groupConfigs) {
+  if (data.length === 0) {
     return data;
   }
 
-  // 标准化分组配置为数组
-  const paths = Array.isArray(groupConfigs) ? groupConfigs : [groupConfigs];
+  const configs = (
+    Array.isArray(groupConfigs) ? groupConfigs : [groupConfigs]
+  ).map(
+    ({
+      skipSingleChild = true,
+      groupBy,
+      labelBy = groupBy,
+      ...additionalMetadata
+    }) => ({
+      groupBy,
+      labelBy,
+      skipSingleChild,
+      additionalMetadata,
+    }),
+  );
 
-  if (paths.length === 0) {
-    return data;
-  }
-
-  // 获取当前层级的分组配置
-  const [current, ...nextPaths] = paths;
-
-  // 确保 current 存在且为 GroupConfig 类型
-  if (!current || typeof current !== 'object' || !('groupBy' in current)) {
-    return tableGrouping(data, nextPaths);
-  }
-
-  const { groupBy, labelBy = groupBy, ...rest } = current;
-
-  // 按分组字段对数据进行分组
-  const { groups, ungrouped } = groupByField(data, groupBy);
-  const result: TreedNode[] = [];
-
-  // 处理每个分组
-  for (const [value, items] of groups) {
-    if (items.length > 0) {
-      const label =
-        items[0] && labelBy ? getGroupLabel(items[0], labelBy) : undefined;
-      const children =
-        nextPaths.length > 0 ? tableGrouping(items, nextPaths) : items;
-
-      const groupParams: GroupNodeParams = {
-        groupBy,
-        value,
-        children,
-        rest,
-        label,
-      };
-
-      // 如果还有下一级分组，创建分组节点；否则处理叶子分组
-      const node =
-        nextPaths.length > 0
-          ? createGroupNode(groupParams)
-          : handleLeafGroup(items, groupParams);
-
-      result.push(node);
-    }
-  }
-
-  // 处理未分组的数据项
-  if (ungrouped.length > 0) {
-    // 如果有下一级分组，递归处理未分组项
-    const ungroupedItems =
-      nextPaths.length > 0 ? tableGrouping(ungrouped, nextPaths) : ungrouped;
-
-    // 直接将未分组数据项添加到结果列表中
-    result.push(...ungroupedItems);
-  }
-
-  return result;
+  return groupRecursive(data, configs);
 }

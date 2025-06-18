@@ -1,6 +1,6 @@
 {
   "name": "shinsu-senju",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "Tree mapper utils",
   "license": "MIT",
   "author": {
@@ -9,6 +9,14 @@
   "keywords": [
     "tree"
   ],
+  "homepage": "https://github.com/airkro/shinsu-senju",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airkro/shinsu-senju.git"
+  },
+  "bugs": {
+    "url": "https://github.com/airkro/shinsu-senju/issues"
+  },
   "main": "lib/index.ts",
   "files": [
     "lib"

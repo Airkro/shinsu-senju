@@ -1,6 +1,8 @@
 import { get } from 'lodash-es';
 
-export interface DataRecord extends Record<string, unknown> {
+type Data = Record<string, unknown>;
+
+export interface DataRecord extends Data {
   children?: DataRecord[];
 }
 
@@ -10,21 +12,24 @@ export interface DataRecord extends Record<string, unknown> {
  * @param path - 属性路径
  * @returns 属性值
  */
-export function getBy(object: Record<string, unknown>, path: string): unknown {
+export function getBy(object: Data, path: string): unknown {
   return path.includes('.') ? get(object, path) : object[path];
 }
 
-export type Condition = {
-  when: string;
-  const?: unknown;
-  enum?: unknown[];
-  reverse?: boolean;
-};
+export type Condition =
+  | {
+      when: string;
+      const?: unknown;
+      enum?: unknown[];
+      reverse?: boolean;
+    }
+  | ((item: Data) => boolean);
 
-export function doCondition(
-  data: Record<string, unknown>,
-  matcher: Condition,
-): undefined | boolean {
+export function doCondition(data: Data, matcher: Condition): boolean {
+  if (typeof matcher === 'function') {
+    return matcher(data);
+  }
+
   const io = matcher.const
     ? getBy(data, matcher.when) === matcher.const
     : matcher.enum

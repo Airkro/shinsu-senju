@@ -1,5 +1,5 @@
-import { getBy } from './utils.ts';
-import type { DataRecord } from './utils.ts';
+import { doCondition, getBy } from './utils.ts';
+import type { Condition, DataRecord } from './utils.ts';
 
 type List = DataRecord[];
 
@@ -29,15 +29,9 @@ function findParents(
   findParents(parent, idToItem, result, parentKey);
 }
 
-export type FilterBy = (
-  item: DataRecord,
-  index?: number,
-  array?: List,
-) => boolean;
-
 export interface TreeFilterOptions {
   parentKey?: string;
-  filterBy?: FilterBy;
+  filterBy?: Condition;
 }
 
 export function treeFilter(list: List, options: TreeFilterOptions = {}): List {
@@ -52,9 +46,7 @@ export function treeFilter(list: List, options: TreeFilterOptions = {}): List {
   }
 
   const idToItem = createIdToItemMap(list);
-  const matchItems = list.filter((element, index, array) =>
-    filterBy(element, index, array),
-  );
+  const matchItems = list.filter((element) => doCondition(element, filterBy));
   const allItems = new Set(matchItems);
 
   if (parentKey) {

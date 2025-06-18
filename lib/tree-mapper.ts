@@ -64,12 +64,16 @@ export function treeMapper(data: Table2Treed, options: Mappers = {}): Tree {
       value,
       ...(extra && { extra: getBy(node, extra) }),
       ...(children && { children }),
-      ...(options.selectable?.when && {
-        selectable: doCondition(node, options.selectable),
-      }),
-      ...(options.disabled?.when && {
-        disabled: doCondition(node, options.disabled),
-      }),
+      ...(options.selectable
+        ? {
+            selectable: doCondition(node, options.selectable),
+          }
+        : undefined),
+      ...(options.disabled
+        ? {
+            disabled: doCondition(node, options.disabled),
+          }
+        : undefined),
       $original,
     };
   });

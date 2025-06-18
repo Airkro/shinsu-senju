@@ -1,6 +1,6 @@
 {
   "name": "shinsu-senju",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Tree mapper utils",
   "license": "MIT",
   "author": {
@@ -24,19 +24,20 @@
     "test:snapshot": "vitest -u --config test/vitest.config.mjs"
   },
   "dependencies": {
+    "array-tree-filter": "^3.0.3",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "@bring-it/npm": "^0.6.1",
     "@nice-move/all-in-base": "^0.4.30",
     "@types/lodash-es": "^4.17.12",
-    "@vitest/coverage-v8": "^3.2.3",
-    "@vitest/ui": "^3.2.3",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
     "eslint": "^9.29.0",
-    "garou": "^0.9.8",
+    "garou": "^0.9.9",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
-    "vitest": "^3.2.3"
+    "vitest": "^3.2.4"
   },
   "packageManager": "pnpm@10.12.1",
   "engines": {

@@ -50,3 +50,43 @@
   "target",
 ]
 ```
+
+### optionFinder
+```json5
+[
+  {
+    "children": [
+      {
+        "id": 2,
+        "value": "a",
+      },
+      {
+        "id": 3,
+        "value": null,
+      },
+      {
+        "children": [
+          {
+            "id": 5,
+            "value": null,
+          },
+        ],
+        "id": 4,
+        "value": "target",
+      },
+    ],
+    "id": 1,
+    "value": null,
+  },
+  {
+    "children": [
+      {
+        "id": 5,
+        "value": null,
+      },
+    ],
+    "id": 4,
+    "value": "target",
+  },
+]
+```

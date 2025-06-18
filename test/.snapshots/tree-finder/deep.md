@@ -50,3 +50,61 @@
   "target",
 ]
 ```
+
+### optionFinder
+```json5
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "id": 4,
+                "value": "target",
+              },
+            ],
+            "id": 3,
+            "value": "level2",
+          },
+        ],
+        "id": 2,
+        "value": "level1",
+      },
+    ],
+    "id": 1,
+    "value": "root",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "id": 4,
+            "value": "target",
+          },
+        ],
+        "id": 3,
+        "value": "level2",
+      },
+    ],
+    "id": 2,
+    "value": "level1",
+  },
+  {
+    "children": [
+      {
+        "id": 4,
+        "value": "target",
+      },
+    ],
+    "id": 3,
+    "value": "level2",
+  },
+  {
+    "id": 4,
+    "value": "target",
+  },
+]
+```

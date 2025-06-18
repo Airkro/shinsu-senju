@@ -47,3 +47,47 @@
   "c",
 ]
 ```
+
+### optionFinder
+```json5
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "id": 3,
+            "value": "c",
+          },
+          {
+            "id": 4,
+            "value": "d",
+          },
+        ],
+        "id": 2,
+        "value": "b",
+      },
+    ],
+    "id": 1,
+    "value": "a",
+  },
+  {
+    "children": [
+      {
+        "id": 3,
+        "value": "c",
+      },
+      {
+        "id": 4,
+        "value": "d",
+      },
+    ],
+    "id": 2,
+    "value": "b",
+  },
+  {
+    "id": 3,
+    "value": "c",
+  },
+]
+```

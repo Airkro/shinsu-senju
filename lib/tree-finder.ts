@@ -1,3 +1,5 @@
+import arrayTreeFilter from 'array-tree-filter';
+
 import type { DataRecord } from './utils.ts';
 
 type Path = unknown[];
@@ -38,4 +40,12 @@ export function treeFinder(tree: DataRecord[], target: unknown): Path {
   }
 
   return [];
+}
+
+export function optionFinder(tree: DataRecord[], target: unknown) {
+  const values = treeFinder(tree, target);
+
+  return values?.length && tree?.length
+    ? arrayTreeFilter(tree, (item, level) => item.value === values[level])
+    : undefined;
 }

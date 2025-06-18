@@ -1,7 +1,7 @@
 import { Table2Treed } from './table-grouping.ts';
 import type { GroupNode } from './table-grouping.ts';
-import { getBy } from './utils.ts';
-import type { DataRecord } from './utils.ts';
+import { doCondition, getBy } from './utils.ts';
+import type { Condition, DataRecord } from './utils.ts';
 
 export interface TreeNode {
   label: unknown;
@@ -15,26 +15,12 @@ export interface TreeNode {
 
 export type Tree = TreeNode[];
 
-interface Calc {
-  when: string;
-  const?: unknown;
-  enum?: unknown[];
-}
-
 export interface Mappers {
   label?: string;
   value?: string;
   extra?: string;
-  selectable?: Calc;
-  disabled?: Calc;
-}
-
-function calcSelectable(node: DataRecord, matcher: Calc): undefined | boolean {
-  return matcher.const
-    ? getBy(node, matcher.when) === matcher.const
-    : matcher.enum
-      ? matcher.enum.includes(getBy(node, matcher.when))
-      : Boolean(getBy(node, matcher.when));
+  selectable?: Condition;
+  disabled?: Condition;
 }
 
 export function treeMapper(data: Table2Treed, options: Mappers = {}): Tree {
@@ -79,10 +65,10 @@ export function treeMapper(data: Table2Treed, options: Mappers = {}): Tree {
       ...(extra && { extra: getBy(node, extra) }),
       ...(children && { children }),
       ...(options.selectable?.when && {
-        selectable: calcSelectable(node, options.selectable),
+        selectable: doCondition(node, options.selectable),
       }),
       ...(options.disabled?.when && {
-        disabled: calcSelectable(node, options.disabled),
+        disabled: doCondition(node, options.disabled),
       }),
       $original,
     };

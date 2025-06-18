@@ -10,5 +10,6 @@ export type Fixture = {
     parentKey?: string
     mappers?: Mappers
     filterBy?: FilterBy
+    target?: unknown
   }
 }

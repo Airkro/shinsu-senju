@@ -1,5 +1,4 @@
-import { Table2Treed } from './table-grouping.ts';
-import type { GroupNode } from './table-grouping.ts';
+import type { GroupNode, Table2Treed } from './table-grouping.ts';
 import { doCondition, getBy } from './utils.ts';
 import type { Condition, DataRecord } from './utils.ts';
 

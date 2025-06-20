@@ -37,12 +37,12 @@
   },
   "devDependencies": {
     "@bring-it/npm": "^0.6.1",
-    "@nice-move/all-in-base": "^0.4.30",
+    "@nice-move/all-in-base": "^0.5.1",
     "@types/lodash-es": "^4.17.12",
     "@vitest/coverage-v8": "^3.2.4",
     "@vitest/ui": "^3.2.4",
     "eslint": "^9.29.0",
-    "garou": "^0.9.9",
+    "garou": "^0.9.11",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4"
@@ -55,5 +55,5 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "prettier": "@nice-move/prettier-config"
+  "prettier": "@nice-move/all-in-base/prettier"
 }

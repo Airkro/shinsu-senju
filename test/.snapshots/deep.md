@@ -146,6 +146,34 @@ should handle deep groupBy key (dot notation)
   {
     "$meta": {
       "groupBy": "info.type.code",
+      "label": "电信",
+      "value": "Y",
+    },
+    "children": [
+      {
+        "$original": {
+          "id": 2,
+          "info": {
+            "type": {
+              "code": "Y",
+              "name": "电信",
+            },
+          },
+          "name": "Item 2",
+        },
+        "extra": "电信",
+        "label": "Item 2",
+        "value": 2,
+      },
+    ],
+    "extra": undefined,
+    "label": "电信",
+    "selectable": false,
+    "value": "Y",
+  },
+  {
+    "$meta": {
+      "groupBy": "info.type.code",
       "label": "联通",
       "value": "X",
     },
@@ -185,34 +213,6 @@ should handle deep groupBy key (dot notation)
     "label": "联通",
     "selectable": false,
     "value": "X",
-  },
-  {
-    "$meta": {
-      "groupBy": "info.type.code",
-      "label": "电信",
-      "value": "Y",
-    },
-    "children": [
-      {
-        "$original": {
-          "id": 2,
-          "info": {
-            "type": {
-              "code": "Y",
-              "name": "电信",
-            },
-          },
-          "name": "Item 2",
-        },
-        "extra": "电信",
-        "label": "Item 2",
-        "value": 2,
-      },
-    ],
-    "extra": undefined,
-    "label": "电信",
-    "selectable": false,
-    "value": "Y",
   },
   {
     "$meta": {

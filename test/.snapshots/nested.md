@@ -642,6 +642,15 @@ should handle nested grouping
     },
     "children": [
       {
+        "$original": {
+          "id": 13,
+          "level2": "Y",
+          "name": "Item 13",
+        },
+        "label": "Item 13",
+        "value": 13,
+      },
+      {
         "$meta": {
           "groupBy": "level3",
           "label": "III",
@@ -672,15 +681,6 @@ should handle nested grouping
         "label": "III",
         "selectable": false,
         "value": "III",
-      },
-      {
-        "$original": {
-          "id": 13,
-          "level2": "Y",
-          "name": "Item 13",
-        },
-        "label": "Item 13",
-        "value": 13,
       },
     ],
     "label": "Y",

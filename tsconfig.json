@@ -1,6 +1,5 @@
 {
   "extends": "@nice-move/all-in-base/tsconfig",
-  "include": ["**/lib/"],
   "compilerOptions": {
     "types": [],
     "skipLibCheck": true,

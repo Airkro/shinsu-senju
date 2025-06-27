@@ -1,6 +1,6 @@
 import { expect, it } from 'vitest';
 
-import { tableGrouping, treeMapper } from '../lib/index.ts';
+import { grouping, tableGrouping, treeMapper } from '../lib/index.ts';
 
 import * as fixtures from './fixtures/sample.ts';
 
@@ -10,6 +10,9 @@ for (const [name, { description, data, options }] of Object.entries(fixtures)) {
 
     const result1 = tableGrouping(data, groups);
     const result2 = treeMapper(result1, mappers);
+    const result3 = grouping(data, { groups, mapper: mappers });
+
+    expect(result2).toEqual(result3);
 
     await expect({
       $root: true,

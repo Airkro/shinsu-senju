@@ -47,7 +47,7 @@ export type Table2Treed = readonly TreeNode[];
  */
 export interface GroupConfig extends Record<string, unknown> {
   /** 分组依据的字段名 */
-  readonly groupBy: string;
+  readonly groupBy?: string;
   /** 分组标签的字段名，默认使用 groupBy 的值 */
   readonly labelBy?: string;
   /** 是否跳过单个子项的分组 */

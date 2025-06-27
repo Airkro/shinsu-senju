@@ -1,5 +1,6 @@
+import { customSort } from './sort.ts';
 import type { GroupNode, Table2Treed } from './table-grouping.ts';
-import { customSort, doCondition, getBy } from './utils.ts';
+import { doCondition, getBy } from './utils.ts';
 import type { Condition, DataRecord } from './utils.ts';
 
 export interface TreeNode {

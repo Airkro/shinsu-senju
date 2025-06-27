@@ -39,7 +39,7 @@ export default {
       ...rest
     } = value as SnapshotValue;
 
-    const print = (io) => printer(io, config, indent, depth, refs);
+    const print = (io: unknown) => printer(io, config, indent, depth, refs);
 
     const sections: string[] = [
       `# Snapshot ${name}`,

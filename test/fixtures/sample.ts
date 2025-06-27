@@ -143,6 +143,29 @@ export const matcher: Fixture = {
   },
 };
 
+export const reverse: Fixture = {
+  description: 'reverse',
+  data: [
+    { id: 5, parent: 'C', name: 'Item 5' },
+    { id: 6, parent: 'C', name: 'Item 6' },
+    { id: 1, parent: 'A', name: 'Item 1' },
+    { id: 2, parent: 'A', name: 'Item 2' },
+    { id: 3, parent: 'B', name: 'Item 3' },
+    { id: 4, parent: 'B', name: 'Item 4' },
+    { id: 7, parent: 'D', name: 'Item' },
+  ],
+  options: {
+    groups: { groupBy: 'parent' },
+    mappers: {
+      disabled: {
+        when: 'parent',
+        const: 'C',
+        reverse: true,
+      },
+    },
+  },
+};
+
 export const matcher2: Fixture = {
   description: 'matcher',
   data: matcher.data,
@@ -154,4 +177,76 @@ export const matcher2: Fixture = {
       },
     },
   },
+};
+
+export const dup: Fixture = {
+  description: '',
+  data: [
+    {
+      group: {
+        id: 2,
+        name: 'group2',
+      },
+      user: {
+        id: 555,
+        name: '李',
+      },
+    },
+    {
+      group: {
+        id: 2,
+        name: 'group2',
+      },
+      user: {
+        id: 555,
+        name: '李',
+      },
+    },
+    {
+      group: {
+        id: 1,
+        name: 'group1',
+      },
+      user: {
+        id: 555,
+        name: '李',
+      },
+    },
+  ],
+  options: {
+    groups: [
+      {
+        groupBy: 'group.id',
+        labelBy: 'group.name',
+      },
+    ],
+    mappers: {
+      label: 'user.name',
+      value: 'user.id',
+    },
+  },
+};
+
+export const sort: Fixture = {
+  description: '',
+  data: [
+    '1号',
+    '01号',
+    '2号',
+    '02号',
+    '9号',
+    '11号',
+    '100号',
+    '房间1',
+    '房间01',
+    '房间9',
+    '房间11',
+    '房间100',
+    '1',
+    '01',
+    '9',
+    '11',
+    '100',
+    '房间',
+  ].map((name) => ({ name })),
 };

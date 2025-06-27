@@ -131,6 +131,13 @@
 [
   {
     "$original": {
+      "name": "01",
+    },
+    "label": "01",
+    "value": undefined,
+  },
+  {
+    "$original": {
       "name": "1",
     },
     "label": "1",
@@ -155,6 +162,20 @@
       "name": "100",
     },
     "label": "100",
+    "value": undefined,
+  },
+  {
+    "$original": {
+      "name": "01号",
+    },
+    "label": "01号",
+    "value": undefined,
+  },
+  {
+    "$original": {
+      "name": "02号",
+    },
+    "label": "02号",
     "value": undefined,
   },
   {
@@ -194,6 +215,13 @@
   },
   {
     "$original": {
+      "name": "房间01",
+    },
+    "label": "房间01",
+    "value": undefined,
+  },
+  {
+    "$original": {
       "name": "房间1",
     },
     "label": "房间1",
@@ -222,37 +250,9 @@
   },
   {
     "$original": {
-      "name": "01",
-    },
-    "label": "01",
-    "value": undefined,
-  },
-  {
-    "$original": {
-      "name": "01号",
-    },
-    "label": "01号",
-    "value": undefined,
-  },
-  {
-    "$original": {
-      "name": "02号",
-    },
-    "label": "02号",
-    "value": undefined,
-  },
-  {
-    "$original": {
       "name": "房间",
     },
     "label": "房间",
-    "value": undefined,
-  },
-  {
-    "$original": {
-      "name": "房间01",
-    },
-    "label": "房间01",
     "value": undefined,
   },
 ]

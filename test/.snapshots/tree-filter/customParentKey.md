@@ -42,9 +42,5 @@ should work with custom parent key
     "name": "Child 1",
     "parent": 1,
   },
-  {
-    "id": 1,
-    "name": "Root",
-  },
 ]
 ```

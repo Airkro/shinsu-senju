@@ -41,12 +41,16 @@ export function treeFilter(list: List, options: TreeFilterOptions = {}): List {
 
   const { parentKey, filterBy } = options;
 
-  if (filterBy === undefined) {
-    return list;
+  const matchItems = filterBy
+    ? list.filter((element) => doCondition(element, filterBy))
+    : list;
+
+  if (!parentKey) {
+    return matchItems;
   }
 
-  const idToItem = createIdToItemMap(list);
-  const matchItems = list.filter((element) => doCondition(element, filterBy));
+  const idToItem = createIdToItemMap(matchItems);
+
   const allItems = new Set(matchItems);
 
   if (parentKey) {

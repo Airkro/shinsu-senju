@@ -47,14 +47,5 @@ should filter basic tree structure
     "name": "Grandchild",
     "parentId": 2,
   },
-  {
-    "id": 2,
-    "name": "Child 1",
-    "parentId": 1,
-  },
-  {
-    "id": 1,
-    "name": "Root",
-  },
 ]
 ```

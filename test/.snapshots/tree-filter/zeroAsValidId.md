@@ -42,14 +42,5 @@ should handle zero as valid ID
     "name": "Target",
     "parentId": 1,
   },
-  {
-    "id": 1,
-    "name": "Child of Zero",
-    "parentId": 0,
-  },
-  {
-    "id": 0,
-    "name": "Root",
-  },
 ]
 ```

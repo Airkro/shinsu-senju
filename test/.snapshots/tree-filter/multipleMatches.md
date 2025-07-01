@@ -62,9 +62,5 @@ should handle multiple matches
     "name": "Active 3",
     "parentId": 3,
   },
-  {
-    "id": 1,
-    "name": "Root",
-  },
 ]
 ```

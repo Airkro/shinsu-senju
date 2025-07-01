@@ -27,16 +27,10 @@ export function grouping(
       ? uniqBy(data, (io) => getBy(io, mapper.value as string))
       : data;
 
+  const input2 = filterBy ? treeFilter(input, { filterBy, parentKey }) : input;
+
   return treeMapper(
-    tableGrouping(
-      parentKey
-        ? treeInfinity(
-            filterBy ? treeFilter(input, { filterBy, parentKey }) : input,
-            parentKey,
-          )
-        : input,
-      groups,
-    ),
+    tableGrouping(parentKey ? treeInfinity(input2, parentKey) : input2, groups),
     mapper,
   );
 }

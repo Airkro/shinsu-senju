@@ -16,10 +16,6 @@ jobs:
     steps:
       - name: Run
         uses: airkro/bring-it@actions
-        with:
-          custom-command: |
-            mkdir -p dist
-            touch $_/cli.cjs
 
   publish:
     needs: [test]
@@ -29,6 +25,3 @@ jobs:
         uses: airkro/bring-it@actions
         with:
           npm-token: ${{ secrets.NPM_TOKEN }}
-          custom-command: |
-            mkdir -p dist
-            touch $_/cli.cjs

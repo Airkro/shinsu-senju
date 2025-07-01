@@ -1,5 +1,5 @@
 {
-  "extends": "@nice-move/all-in-base/tsconfig",
+  "extends": "@nice-move/tsconfig/base.json",
   "compilerOptions": {
     "types": [],
     "skipLibCheck": true,

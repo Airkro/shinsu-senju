@@ -33,12 +33,11 @@
   },
   "dependencies": {
     "array-tree-filter": "^3.0.3",
-    "lodash-es": "^4.17.21"
+    "es-toolkit": "^1.39.8"
   },
   "devDependencies": {
     "@bring-it/npm": "^0.8.3",
     "@nice-move/all-in-base": "^0.6.1",
-    "@types/lodash-es": "^4.17.12",
     "@vitest/coverage-v8": "^3.2.4",
     "@vitest/ui": "^3.2.4",
     "eslint": "^9.32.0",

@@ -329,16 +329,3 @@
   },
 ]
 ```
-
-### grouping
-```json5
-[
-  {
-    "$original": {
-      "name": "房间",
-    },
-    "label": "房间",
-    "value": undefined,
-  },
-]
-```

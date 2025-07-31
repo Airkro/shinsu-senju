@@ -15,46 +15,59 @@ export interface TreeNode extends UnknownObject {
  * 判断节点是否为根节点
  * @param node 要判断的节点
  * @param nodeMap 节点映射表
+ * @param parentKey 父节点字段名
  */
 function isRoot(
   node: TreeNode,
   nodeMap: Map<unknown, TreeNode>,
   parentKey: string,
 ): boolean {
-  return getBy(node, parentKey) == null || !nodeMap.has(getBy(node, parentKey));
+  const parentId = getBy(node, parentKey);
+
+  return parentId == null || !nodeMap.has(parentId);
 }
 
 /**
- * 将节点添加到其父节点的children中
+ * 将节点添加到其父节点的 children 数组中
  * @param node 要添加的节点
  * @param parent 父节点
  */
 function addToParent(node: TreeNode, parent: TreeNode): void {
-  parent.children ??= [];
-  parent.children.push(node);
+  const { children = [] } = parent;
+  const newChildren = [...children, node];
+  Object.assign(parent, { children: newChildren });
 }
 
 /**
  * 将扁平的节点数组转换为树形结构
- * 该函数能够处理乱序数据，即父节点可能出现在子节点之后的情况
- * @param data 扁平节点数组，可以是任意顺序
- * @returns 树形结构
+ * 支持乱序数据，自动处理父节点在子节点后出现的情况
+ * @param data 扁平节点数组
+ * @param parentKey 父节点字段名，默认为 'parentId'
+ * @returns 树形结构数组
  */
 export function treeInfinity(
   data: TreeNode[],
   parentKey: string = 'parentId',
 ): TreeNode[] {
-  if (data.length === 0) {
-    return data;
+  if (!Array.isArray(data) || data.length === 0) {
+    return [];
   }
 
-  // 创建节点映射，同时复制节点以避免修改原始数据
-  const nodeMap = new Map(data.map((node) => [node.id, { ...node }]));
+  // 创建节点映射，复制节点避免污染原始数据
+  const nodeMap = new Map<unknown, TreeNode>();
+
+  for (const node of data) {
+    if (node && node.id != null) {
+      nodeMap.set(node.id, { ...node });
+    }
+  }
 
   // 构建树结构
   for (const node of nodeMap.values()) {
-    if (!isRoot(node, nodeMap, parentKey)) {
-      const parent = nodeMap.get(getBy(node, parentKey));
+    const parentId = getBy(node, parentKey);
+
+    if (parentId != null && nodeMap.has(parentId)) {
+      const parent = nodeMap.get(parentId);
 
       if (parent) {
         addToParent(node, parent);
@@ -62,8 +75,9 @@ export function treeInfinity(
     }
   }
 
-  // 返回根节点（没有父节点或父节点不存在的节点）
-  return [...nodeMap.values()].filter((node) =>
-    isRoot(node, nodeMap, parentKey),
-  );
+  // 返回所有根节点
+  return nodeMap
+    .values()
+    .filter((node) => isRoot(node, nodeMap, parentKey))
+    .toArray();
 }

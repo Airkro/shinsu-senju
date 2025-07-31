@@ -1,15 +1,15 @@
-import { get } from 'lodash-es';
+import { get } from 'es-toolkit/compat';
 
 export type UnknownObject = Record<string, unknown>;
 
-/**
- * 从对象中获取指定路径的值，支持点号分隔的路径
- * @param object - 源对象
- * @param path - 属性路径
- * @returns 属性值
- */
-export function getBy(object: UnknownObject, path: string): unknown {
-  return path.includes('.') ? get(object, path) : object[path];
+export type Getter = string | string[] | ((data: UnknownObject) => unknown);
+
+export function getBy(data: UnknownObject, getter: Getter): unknown {
+  if (typeof getter === 'function') {
+    return getter(data);
+  }
+
+  return get(data, getter);
 }
 
 export type Condition =

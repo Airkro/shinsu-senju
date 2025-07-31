@@ -1,6 +1,11 @@
 import { expect, it } from 'vitest';
 
-import { grouping, tableGrouping, treeMapper } from '../lib/index.ts';
+import {
+  grouping,
+  tableGrouping,
+  treeInfinity,
+  treeMapper,
+} from '../lib/index.ts';
 
 import * as fixtures from './fixtures/sample.ts';
 
@@ -10,14 +15,15 @@ function deepEqual(a: unknown, b: unknown): boolean {
 
 for (const [name, { description, data, options }] of Object.entries(fixtures)) {
   it(`${name}. ${description}`, async () => {
-    const { groups, mappers } = options || {};
+    const { groups, mappers, parentKey } = options || {};
 
-    const result1 = treeMapper(data, mappers);
+    const result0 = parentKey ? treeInfinity(data, parentKey) : data;
+    const result1 = treeMapper(result0, mappers);
     const result2 = tableGrouping(result1, groups);
     const result3 = grouping(data, {
       groups,
       mapper: mappers,
-      parentKey: 'parentId',
+      parentKey,
     });
 
     await expect({

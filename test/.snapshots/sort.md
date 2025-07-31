@@ -131,37 +131,9 @@
 [
   {
     "$original": {
-      "name": "01",
+      "name": "1号",
     },
-    "label": "01",
-    "value": undefined,
-  },
-  {
-    "$original": {
-      "name": "1",
-    },
-    "label": "1",
-    "value": undefined,
-  },
-  {
-    "$original": {
-      "name": "9",
-    },
-    "label": "9",
-    "value": undefined,
-  },
-  {
-    "$original": {
-      "name": "11",
-    },
-    "label": "11",
-    "value": undefined,
-  },
-  {
-    "$original": {
-      "name": "100",
-    },
-    "label": "100",
+    "label": "1号",
     "value": undefined,
   },
   {
@@ -173,23 +145,16 @@
   },
   {
     "$original": {
-      "name": "02号",
-    },
-    "label": "02号",
-    "value": undefined,
-  },
-  {
-    "$original": {
-      "name": "1号",
-    },
-    "label": "1号",
-    "value": undefined,
-  },
-  {
-    "$original": {
       "name": "2号",
     },
     "label": "2号",
+    "value": undefined,
+  },
+  {
+    "$original": {
+      "name": "02号",
+    },
+    "label": "02号",
     "value": undefined,
   },
   {
@@ -215,16 +180,16 @@
   },
   {
     "$original": {
-      "name": "房间01",
+      "name": "房间1",
     },
-    "label": "房间01",
+    "label": "房间1",
     "value": undefined,
   },
   {
     "$original": {
-      "name": "房间1",
+      "name": "房间01",
     },
-    "label": "房间1",
+    "label": "房间01",
     "value": undefined,
   },
   {
@@ -246,6 +211,41 @@
       "name": "房间100",
     },
     "label": "房间100",
+    "value": undefined,
+  },
+  {
+    "$original": {
+      "name": "1",
+    },
+    "label": "1",
+    "value": undefined,
+  },
+  {
+    "$original": {
+      "name": "01",
+    },
+    "label": "01",
+    "value": undefined,
+  },
+  {
+    "$original": {
+      "name": "9",
+    },
+    "label": "9",
+    "value": undefined,
+  },
+  {
+    "$original": {
+      "name": "11",
+    },
+    "label": "11",
+    "value": undefined,
+  },
+  {
+    "$original": {
+      "name": "100",
+    },
+    "label": "100",
     "value": undefined,
   },
   {

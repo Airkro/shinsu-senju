@@ -1,5 +1,5 @@
 #!/bin/sh
 
-npm run lint:staged || exit 1
-npm run lint:type || exit 1
-npm test
+pnpm run lint:staged || exit 1
+pnpm run lint:type || exit 1
+pnpm test

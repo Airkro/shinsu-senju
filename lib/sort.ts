@@ -154,7 +154,7 @@ function compareWithLocale(a: string, b: string): number {
   return a.localeCompare(b, 'zh-CN');
 }
 
-export function customSort(a: string, b: string): number {
+export function customSort(a: unknown, b: unknown): number {
   const strA = String(a);
   const strB = String(b);
 

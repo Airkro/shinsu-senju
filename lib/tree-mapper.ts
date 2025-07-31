@@ -21,6 +21,7 @@ export interface Mappers {
   extra?: string;
   selectable?: Condition;
   disabled?: Condition;
+  sortBy?: string;
 }
 
 export function treeMapper(data: Table2Treed, options: Mappers = {}): Tree {
@@ -32,6 +33,9 @@ export function treeMapper(data: Table2Treed, options: Mappers = {}): Tree {
     label: labelPath = 'name',
     value: valuePath = 'id',
     extra = '',
+    sortBy = labelPath,
+    selectable,
+    disabled,
   } = options;
 
   return data
@@ -65,18 +69,18 @@ export function treeMapper(data: Table2Treed, options: Mappers = {}): Tree {
         value,
         ...(extra && { extra: getBy(node, extra) }),
         ...(children && { children }),
-        ...(options.selectable
+        ...(selectable
           ? {
-              selectable: doCondition(node, options.selectable),
+              selectable: doCondition(node, selectable),
             }
           : undefined),
-        ...(options.disabled
+        ...(disabled
           ? {
-              disabled: doCondition(node, options.disabled),
+              disabled: doCondition(node, disabled),
             }
           : undefined),
         $original,
       };
     })
-    .sort((a, b) => customSort(a.label, b.label));
+    .sort((a, b) => customSort(getBy(a, sortBy), getBy(b, sortBy)));
 }

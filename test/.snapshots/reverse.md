@@ -146,6 +146,38 @@ reverse
   {
     "$meta": {
       "groupBy": "parent",
+      "label": "C",
+      "value": "C",
+    },
+    "children": [
+      {
+        "$original": {
+          "id": 5,
+          "name": "Item 5",
+          "parent": "C",
+        },
+        "disabled": false,
+        "label": "Item 5",
+        "value": 5,
+      },
+      {
+        "$original": {
+          "id": 6,
+          "name": "Item 6",
+          "parent": "C",
+        },
+        "disabled": false,
+        "label": "Item 6",
+        "value": 6,
+      },
+    ],
+    "label": "C",
+    "selectable": false,
+    "value": "C",
+  },
+  {
+    "$meta": {
+      "groupBy": "parent",
       "label": "A",
       "value": "A",
     },
@@ -206,38 +238,6 @@ reverse
     "label": "B",
     "selectable": false,
     "value": "B",
-  },
-  {
-    "$meta": {
-      "groupBy": "parent",
-      "label": "C",
-      "value": "C",
-    },
-    "children": [
-      {
-        "$original": {
-          "id": 5,
-          "name": "Item 5",
-          "parent": "C",
-        },
-        "disabled": false,
-        "label": "Item 5",
-        "value": 5,
-      },
-      {
-        "$original": {
-          "id": 6,
-          "name": "Item 6",
-          "parent": "C",
-        },
-        "disabled": false,
-        "label": "Item 6",
-        "value": 6,
-      },
-    ],
-    "label": "C",
-    "selectable": false,
-    "value": "C",
   },
   {
     "$meta": {

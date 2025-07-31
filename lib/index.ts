@@ -23,12 +23,15 @@ export function grouping(
     return data;
   }
 
-  const input2 = filterBy ? treeFilter(data, { filterBy, parentKey }) : data;
+  const filtered = filterBy ? treeFilter(data, { filterBy, parentKey }) : data;
 
-  return tableGrouping(
-    treeMapper(parentKey ? treeInfinity(input2, parentKey) : input2, mapper),
-    groups,
-  );
+  const infinity = parentKey ? treeInfinity(filtered, parentKey) : filtered;
+
+  const mapped = treeMapper(infinity, mapper);
+
+  return groups === undefined || (Array.isArray(groups) && groups.length === 0)
+    ? mapped
+    : tableGrouping(mapped, groups);
 }
 
 export type { Groupeds, Tree };

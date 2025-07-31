@@ -12,22 +12,6 @@ export interface TreeNode extends UnknownObject {
 }
 
 /**
- * 判断节点是否为根节点
- * @param node 要判断的节点
- * @param nodeMap 节点映射表
- * @param parentKey 父节点字段名
- */
-function isRoot(
-  node: TreeNode,
-  nodeMap: Map<unknown, TreeNode>,
-  parentKey: string,
-): boolean {
-  const parentId = getBy(node, parentKey);
-
-  return parentId == null || !nodeMap.has(parentId);
-}
-
-/**
  * 将节点添加到其父节点的 children 数组中
  * @param node 要添加的节点
  * @param parent 父节点
@@ -53,31 +37,28 @@ export function treeInfinity(
     return [];
   }
 
-  // 创建节点映射，复制节点避免污染原始数据
   const nodeMap = new Map<unknown, TreeNode>();
 
-  for (const node of data) {
-    if (node && node.id != null) {
-      nodeMap.set(node.id, { ...node });
+  for (const item of data) {
+    if (item && item.id != null) {
+      const node = { ...item };
+      nodeMap.set(node.id, node);
     }
   }
 
-  // 构建树结构
+  const roots: TreeNode[] = [];
+
   for (const node of nodeMap.values()) {
     const parentId = getBy(node, parentKey);
+    const parent: TreeNode | undefined =
+      parentId == null ? undefined : nodeMap.get(parentId);
 
-    if (parentId != null && nodeMap.has(parentId)) {
-      const parent = nodeMap.get(parentId);
-
-      if (parent) {
-        addToParent(node, parent);
-      }
+    if (parent) {
+      addToParent(node, parent);
+    } else {
+      roots.push(node);
     }
   }
 
-  // 返回所有根节点
-  return nodeMap
-    .values()
-    .filter((node) => isRoot(node, nodeMap, parentKey))
-    .toArray();
+  return roots;
 }

@@ -1,5 +1,5 @@
 import { doCondition, getBy } from './utils.ts';
-import type { Condition, UnknownObject } from './utils.ts';
+import type { Condition, Getter, UnknownObject } from './utils.ts';
 
 type List = UnknownObject[];
 
@@ -11,7 +11,7 @@ function findParents(
   item: UnknownObject,
   idToItem: Map<unknown, UnknownObject>,
   result: Set<UnknownObject>,
-  parentKey: string,
+  parentKey: Getter,
 ): void {
   const parentId = getBy(item, parentKey);
 
@@ -30,7 +30,7 @@ function findParents(
 }
 
 export interface TreeFilterOptions {
-  parentKey?: string;
+  parentKey?: Getter;
   filterBy?: Condition;
 }
 

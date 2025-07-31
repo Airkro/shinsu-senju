@@ -4,14 +4,14 @@ import { treeFilter } from './tree-filter.ts';
 import { treeInfinity } from './tree-infinity.ts';
 import { treeMapper } from './tree-mapper.ts';
 import type { Mappers, Tree } from './tree-mapper.ts';
-import type { Condition, UnknownObject } from './utils.ts';
+import type { Condition, Getter, UnknownObject } from './utils.ts';
 
 export { tableGrouping, treeFilter, treeInfinity, treeMapper };
 
 export type Options = {
   groups?: Groups;
   mapper?: Mappers;
-  parentKey?: string;
+  parentKey?: Getter;
   filterBy?: Condition;
 };
 

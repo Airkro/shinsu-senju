@@ -1,7 +1,7 @@
 import { customSort } from './sort.ts';
 import type { Tree, TreeNode } from './tree-mapper.ts';
 import { getBy } from './utils.ts';
-import type { UnknownObject } from './utils.ts';
+import type { Getter, UnknownObject } from './utils.ts';
 
 // Types
 // -----
@@ -39,11 +39,11 @@ export type Groupeds = Grouped[];
  */
 export interface GroupConfig extends Record<string, unknown> {
   /** 分组依据的字段名 */
-  readonly groupBy?: string;
+  readonly groupBy?: Getter;
   /** 分组标签的字段名，默认使用 groupBy 的值 */
-  readonly labelBy?: string;
+  readonly labelBy?: Getter;
   /** 用于排序的字段名 */
-  readonly sortBy?: string;
+  readonly sortBy?: Getter;
   /** 是否跳过单个子项的分组 */
   readonly skipSingle?: boolean;
 }
@@ -58,11 +58,11 @@ export type Groups = GroupConfig | readonly GroupConfig[];
  */
 interface GroupProcessConfig {
   /** 分组依据的字段名 */
-  readonly groupBy: string;
+  readonly groupBy: Getter;
   /** 分组标签的字段名 */
-  readonly labelBy: string;
+  readonly labelBy: Getter;
   /** 用于排序的字段名 */
-  readonly sortBy: string;
+  readonly sortBy: Getter;
   /** 是否跳过单个子项的分组 */
   readonly skipSingle: boolean;
 }
@@ -100,7 +100,7 @@ function addToGroup(
  */
 function groupByField(
   data: Tree,
-  groupBy: string,
+  groupBy: Getter,
 ): { groups: Map<FieldValue, Tree>; ungrouped: Tree } {
   const groups = new Map<FieldValue, Tree>();
   const ungrouped: Tree = [];

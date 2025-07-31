@@ -1,5 +1,5 @@
 import { getBy } from './utils.ts';
-import type { UnknownObject } from './utils.ts';
+import type { Getter, UnknownObject } from './utils.ts';
 
 /**
  * 表示树节点的基本结构
@@ -31,7 +31,7 @@ function addToParent(node: TreeNode, parent: TreeNode): void {
  */
 export function treeInfinity(
   data: TreeNode[],
-  parentKey: string = 'parentId',
+  parentKey: Getter = 'parentId',
 ): TreeNode[] {
   if (!Array.isArray(data) || data.length === 0) {
     return [];

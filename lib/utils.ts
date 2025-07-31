@@ -14,7 +14,7 @@ export function getBy(data: UnknownObject, getter: Getter): unknown {
 
 export type Condition =
   | {
-      when: string;
+      when: Getter;
       const?: unknown;
       enum?: unknown[];
       reverse?: boolean;

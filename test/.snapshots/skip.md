@@ -74,6 +74,15 @@
 ```json5
 [
   {
+    "$original": {
+      "group": "B",
+      "id": 3,
+      "name": "Item",
+    },
+    "label": "Item",
+    "value": 3,
+  },
+  {
     "$meta": {
       "groupBy": "group",
       "label": "A",
@@ -102,15 +111,6 @@
     "label": "A",
     "selectable": false,
     "value": "A",
-  },
-  {
-    "$original": {
-      "group": "B",
-      "id": 3,
-      "name": "Item",
-    },
-    "label": "Item",
-    "value": 3,
   },
 ]
 ```

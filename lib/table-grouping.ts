@@ -1,5 +1,5 @@
 import { getBy } from './utils.ts';
-import type { DataRecord } from './utils.ts';
+import type { DataRecord, UnknownObject } from './utils.ts';
 
 // Types
 // -----
@@ -13,7 +13,7 @@ export type FieldValue = unknown;
 /**
  * 元数据接口，描述分组节点的元信息
  */
-export interface MetaData extends Record<string, unknown> {
+export interface MetaData extends UnknownObject {
   /** 分组依据的字段名 */
   readonly groupBy: string;
   /** 分组的值 */
@@ -25,7 +25,7 @@ export interface MetaData extends Record<string, unknown> {
 /**
  * 分组节点接口，表示树中的一个分组
  */
-export interface GroupNode {
+export interface GroupNode extends UnknownObject {
   /** 节点元数据 */
   readonly $meta: MetaData;
   /** 子节点列表 */

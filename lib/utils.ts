@@ -1,8 +1,8 @@
 import { get } from 'lodash-es';
 
-type Data = Record<string, unknown>;
+export type UnknownObject = Record<string, unknown>;
 
-export interface DataRecord extends Data {
+export interface DataRecord extends UnknownObject {
   children?: DataRecord[];
 }
 
@@ -12,7 +12,7 @@ export interface DataRecord extends Data {
  * @param path - 属性路径
  * @returns 属性值
  */
-export function getBy(object: Data, path: string): unknown {
+export function getBy(object: UnknownObject, path: string): unknown {
   return path.includes('.') ? get(object, path) : object[path];
 }
 
@@ -23,9 +23,9 @@ export type Condition =
       enum?: unknown[];
       reverse?: boolean;
     }
-  | ((item: Data) => boolean);
+  | ((item: UnknownObject) => boolean);
 
-export function doCondition(data: Data, matcher: Condition): boolean {
+export function doCondition(data: UnknownObject, matcher: Condition): boolean {
   if (typeof matcher === 'function') {
     return matcher(data);
   }

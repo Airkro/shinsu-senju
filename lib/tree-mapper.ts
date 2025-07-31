@@ -1,7 +1,7 @@
 import { customSort } from './sort.ts';
 import type { GroupNode, Table2Treed } from './table-grouping.ts';
 import { doCondition, getBy } from './utils.ts';
-import type { Condition, DataRecord } from './utils.ts';
+import type { Condition, DataRecord, UnknownObject } from './utils.ts';
 
 export interface TreeNode {
   label: unknown;
@@ -26,7 +26,7 @@ export interface Mappers {
 
 export function treeMapper(data: Table2Treed, options: Mappers = {}): Tree {
   if (data.length === 0) {
-    return data as Tree;
+    return data as [];
   }
 
   const {
@@ -39,6 +39,12 @@ export function treeMapper(data: Table2Treed, options: Mappers = {}): Tree {
   } = options;
 
   return data
+    .toSorted((a: GroupNode | DataRecord, b: GroupNode | DataRecord) =>
+      customSort(
+        getBy((a.$original ?? a.$meta ?? a) as UnknownObject, sortBy),
+        getBy((b.$original ?? b.$meta ?? b) as UnknownObject, sortBy),
+      ),
+    )
     .map((node: GroupNode | DataRecord) => {
       const children =
         node.children && Array.isArray(node.children)
@@ -81,6 +87,5 @@ export function treeMapper(data: Table2Treed, options: Mappers = {}): Tree {
           : undefined),
         $original,
       };
-    })
-    .sort((a, b) => customSort(getBy(a, sortBy), getBy(b, sortBy)));
+    });
 }

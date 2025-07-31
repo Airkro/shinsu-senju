@@ -36,53 +36,48 @@ should group data by column and return tree structure
 
 ## Output
 
+### treeMapper
+```json5
+[
+  {
+    "$original": {
+      "id": 1,
+      "name": "Item 1",
+      "parent": "A",
+    },
+    "label": "Item 1",
+    "value": 1,
+  },
+  {
+    "$original": {
+      "id": 3,
+      "name": "Item 3",
+      "parent": "B",
+    },
+    "label": "Item 3",
+    "value": 3,
+  },
+  {
+    "$original": {
+      "id": 2,
+      "name2": "Item 2",
+      "parent": "A",
+    },
+    "label": 2,
+    "value": 2,
+  },
+]
+```
+
 ### tableGrouping
 ```json5
 [
   {
     "$meta": {
       "groupBy": "parent",
-      "label": "A",
-      "value": "A",
-    },
-    "children": [
-      {
-        "id": 1,
-        "name": "Item 1",
-        "parent": "A",
-      },
-      {
-        "id": 2,
-        "name2": "Item 2",
-        "parent": "A",
-      },
-    ],
-  },
-  {
-    "$meta": {
-      "groupBy": "parent",
-      "label": "B",
-      "value": "B",
-    },
-    "children": [
-      {
-        "id": 3,
-        "name": "Item 3",
-        "parent": "B",
-      },
-    ],
-  },
-]
-```
-
-### treeMapper
-```json5
-[
-  {
-    "$meta": {
-      "groupBy": "parent",
-      "label": "A",
-      "value": "A",
+      "labelBy": "parent",
+      "skipSingle": false,
+      "sortBy": "parent",
     },
     "children": [
       {
@@ -111,8 +106,9 @@ should group data by column and return tree structure
   {
     "$meta": {
       "groupBy": "parent",
-      "label": "B",
-      "value": "B",
+      "labelBy": "parent",
+      "skipSingle": false,
+      "sortBy": "parent",
     },
     "children": [
       {

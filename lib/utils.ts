@@ -2,10 +2,6 @@ import { get } from 'lodash-es';
 
 export type UnknownObject = Record<string, unknown>;
 
-export interface DataRecord extends UnknownObject {
-  children?: DataRecord[];
-}
-
 /**
  * 从对象中获取指定路径的值，支持点号分隔的路径
  * @param object - 源对象

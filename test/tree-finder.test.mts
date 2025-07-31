@@ -1,14 +1,14 @@
 import { expect, it } from 'vitest';
 
+import type { Groupeds } from '../lib/table-grouping.ts';
 import { optionFinder, treeFinder } from '../lib/tree-finder.ts';
-import type { TreeNode } from '../lib/tree-infinity.ts';
 
 import * as fixtures from './fixtures/tree-finder.ts';
 
 for (const [name, { data, description, options }] of Object.entries(fixtures)) {
   it(description, async () => {
-    const result1 = treeFinder(data as TreeNode[], options?.target);
-    const result2 = optionFinder(data as TreeNode[], options?.target);
+    const result1 = treeFinder(data as Groupeds, options?.target);
+    const result2 = optionFinder(data as Groupeds, options?.target);
 
     await expect({
       $root: true,

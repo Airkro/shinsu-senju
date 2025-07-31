@@ -69,91 +69,98 @@ matcher
 
 ## Output
 
+### treeMapper
+```json5
+[
+  {
+    "$original": {
+      "id": 1,
+      "name": "Item 1",
+      "parent": "A",
+    },
+    "disabled": false,
+    "label": "Item 1",
+    "selectable": true,
+    "value": 1,
+  },
+  {
+    "$original": {
+      "id": 2,
+      "name": "Item 2",
+      "parent": "A",
+    },
+    "disabled": false,
+    "label": "Item 2",
+    "selectable": true,
+    "value": 2,
+  },
+  {
+    "$original": {
+      "id": 3,
+      "name": "Item 3",
+      "parent": "B",
+    },
+    "disabled": false,
+    "label": "Item 3",
+    "selectable": true,
+    "value": 3,
+  },
+  {
+    "$original": {
+      "id": 4,
+      "name": "Item 4",
+      "parent": "B",
+    },
+    "disabled": false,
+    "label": "Item 4",
+    "selectable": true,
+    "value": 4,
+  },
+  {
+    "$original": {
+      "id": 5,
+      "name": "Item 5",
+      "parent": "C",
+    },
+    "disabled": true,
+    "label": "Item 5",
+    "selectable": false,
+    "value": 5,
+  },
+  {
+    "$original": {
+      "id": 6,
+      "name": "Item 6",
+      "parent": "C",
+    },
+    "disabled": true,
+    "label": "Item 6",
+    "selectable": false,
+    "value": 6,
+  },
+  {
+    "$original": {
+      "id": 7,
+      "name": "Item 7",
+      "parent": "D",
+    },
+    "disabled": false,
+    "label": "Item 7",
+    "selectable": false,
+    "value": 7,
+  },
+]
+```
+
 ### tableGrouping
 ```json5
 [
   {
     "$meta": {
       "groupBy": "parent",
-      "label": "A",
-      "value": "A",
-    },
-    "children": [
-      {
-        "id": 1,
-        "name": "Item 1",
-        "parent": "A",
-      },
-      {
-        "id": 2,
-        "name": "Item 2",
-        "parent": "A",
-      },
-    ],
-  },
-  {
-    "$meta": {
-      "groupBy": "parent",
-      "label": "B",
-      "value": "B",
-    },
-    "children": [
-      {
-        "id": 3,
-        "name": "Item 3",
-        "parent": "B",
-      },
-      {
-        "id": 4,
-        "name": "Item 4",
-        "parent": "B",
-      },
-    ],
-  },
-  {
-    "$meta": {
-      "groupBy": "parent",
-      "label": "C",
-      "value": "C",
-    },
-    "children": [
-      {
-        "id": 5,
-        "name": "Item 5",
-        "parent": "C",
-      },
-      {
-        "id": 6,
-        "name": "Item 6",
-        "parent": "C",
-      },
-    ],
-  },
-  {
-    "$meta": {
-      "groupBy": "parent",
-      "label": "D",
-      "value": "D",
-    },
-    "children": [
-      {
-        "id": 7,
-        "name": "Item 7",
-        "parent": "D",
-      },
-    ],
-  },
-]
-```
-
-### treeMapper
-```json5
-[
-  {
-    "$meta": {
-      "groupBy": "parent",
-      "label": "A",
-      "value": "A",
+      "labelBy": "parent",
+      "skipSingle": false,
+      "sortBy": "parent",
     },
     "children": [
       {
@@ -186,8 +193,9 @@ matcher
   {
     "$meta": {
       "groupBy": "parent",
-      "label": "B",
-      "value": "B",
+      "labelBy": "parent",
+      "skipSingle": false,
+      "sortBy": "parent",
     },
     "children": [
       {
@@ -220,8 +228,9 @@ matcher
   {
     "$meta": {
       "groupBy": "parent",
-      "label": "C",
-      "value": "C",
+      "labelBy": "parent",
+      "skipSingle": false,
+      "sortBy": "parent",
     },
     "children": [
       {
@@ -254,8 +263,9 @@ matcher
   {
     "$meta": {
       "groupBy": "parent",
-      "label": "D",
-      "value": "D",
+      "labelBy": "parent",
+      "skipSingle": false,
+      "sortBy": "parent",
     },
     "children": [
       {

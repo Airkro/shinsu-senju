@@ -39,53 +39,48 @@
 
 ## Output
 
+### treeMapper
+```json5
+[
+  {
+    "$original": {
+      "group": "A",
+      "id": 1,
+      "name": "Item",
+    },
+    "label": "Item",
+    "value": 1,
+  },
+  {
+    "$original": {
+      "group": "A",
+      "id": 2,
+      "name": "Item",
+    },
+    "label": "Item",
+    "value": 2,
+  },
+  {
+    "$original": {
+      "group": "B",
+      "id": 3,
+      "name": "Item",
+    },
+    "label": "Item",
+    "value": 3,
+  },
+]
+```
+
 ### tableGrouping
 ```json5
 [
   {
     "$meta": {
       "groupBy": "group",
-      "label": "A",
-      "value": "A",
-    },
-    "children": [
-      {
-        "group": "A",
-        "id": 1,
-        "name": "Item",
-      },
-      {
-        "group": "A",
-        "id": 2,
-        "name": "Item",
-      },
-    ],
-  },
-  {
-    "$meta": {
-      "groupBy": "group",
-      "label": "B",
-      "value": "B",
-    },
-    "children": [
-      {
-        "group": "B",
-        "id": 3,
-        "name": "Item",
-      },
-    ],
-  },
-]
-```
-
-### treeMapper
-```json5
-[
-  {
-    "$meta": {
-      "groupBy": "group",
-      "label": "A",
-      "value": "A",
+      "labelBy": "group",
+      "skipSingle": false,
+      "sortBy": "group",
     },
     "children": [
       {
@@ -114,8 +109,9 @@
   {
     "$meta": {
       "groupBy": "group",
-      "label": "B",
-      "value": "B",
+      "labelBy": "group",
+      "skipSingle": false,
+      "sortBy": "group",
     },
     "children": [
       {

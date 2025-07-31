@@ -22,12 +22,12 @@ should handle empty data array
 
 ## Output
 
-### tableGrouping
+### treeMapper
 ```json5
 []
 ```
 
-### treeMapper
+### tableGrouping
 ```json5
 []
 ```

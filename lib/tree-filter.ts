@@ -1,16 +1,16 @@
 import { doCondition, getBy } from './utils.ts';
-import type { Condition, DataRecord } from './utils.ts';
+import type { Condition, UnknownObject } from './utils.ts';
 
-type List = DataRecord[];
+type List = UnknownObject[];
 
-function createIdToItemMap(items: List): Map<unknown, DataRecord> {
+function createIdToItemMap(items: List): Map<unknown, UnknownObject> {
   return new Map(items.map((item) => [item.id, item]));
 }
 
 function findParents(
-  item: DataRecord,
-  idToItem: Map<unknown, DataRecord>,
-  result: Set<DataRecord>,
+  item: UnknownObject,
+  idToItem: Map<unknown, UnknownObject>,
+  result: Set<UnknownObject>,
   parentKey: string,
 ): void {
   const parentId = getBy(item, parentKey);

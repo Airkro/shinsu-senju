@@ -1,11 +1,11 @@
 import arrayTreeFilter from 'array-tree-filter';
 
-import type { DataRecord } from './utils.ts';
+import type { Grouped, Groupeds } from './table-grouping.ts';
 
 type Path = unknown[];
 
 function findInNode(
-  node: DataRecord,
+  node: Grouped,
   target: unknown,
   path: Path = [],
 ): Path | null {
@@ -30,7 +30,7 @@ function findInNode(
   return null;
 }
 
-export function treeFinder(tree: DataRecord[], target: unknown): Path {
+export function treeFinder(tree: Groupeds, target: unknown): Path {
   for (const node of tree) {
     const path = findInNode(node, target);
 
@@ -42,7 +42,7 @@ export function treeFinder(tree: DataRecord[], target: unknown): Path {
   return [];
 }
 
-export function optionFinder(tree: DataRecord[], target: unknown) {
+export function optionFinder(tree: Groupeds, target: unknown) {
   const values = treeFinder(tree, target);
 
   return values?.length && tree?.length

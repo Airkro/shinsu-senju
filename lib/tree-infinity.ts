@@ -1,10 +1,10 @@
 import { getBy } from './utils.ts';
-import type { DataRecord } from './utils.ts';
+import type { UnknownObject } from './utils.ts';
 
 /**
  * 表示树节点的基本结构
  */
-export interface TreeNode extends DataRecord {
+export interface TreeNode extends UnknownObject {
   /** 节点唯一标识符 */
   id?: unknown;
   /** 子节点数组 */

@@ -1,16 +1,15 @@
 import { customSort } from './sort.ts';
-import type { GroupNode, Table2Treed } from './table-grouping.ts';
 import { doCondition, getBy } from './utils.ts';
-import type { Condition, DataRecord, UnknownObject } from './utils.ts';
+import type { Condition, UnknownObject } from './utils.ts';
 
-export interface TreeNode {
+export interface TreeNode extends UnknownObject {
   label: unknown;
   value: unknown;
   extra?: unknown;
+  disabled?: boolean;
   selectable?: boolean;
   children?: Tree;
-  $meta?: GroupNode['$meta'];
-  $original?: object;
+  $original: UnknownObject;
 }
 
 export type Tree = TreeNode[];
@@ -19,12 +18,13 @@ export interface Mappers {
   label?: string;
   value?: string;
   extra?: string;
+  children?: string;
   selectable?: Condition;
   disabled?: Condition;
   sortBy?: string;
 }
 
-export function treeMapper(data: Table2Treed, options: Mappers = {}): Tree {
+export function treeMapper(data: UnknownObject[], options: Mappers = {}): Tree {
   if (data.length === 0) {
     return data as [];
   }
@@ -39,32 +39,14 @@ export function treeMapper(data: Table2Treed, options: Mappers = {}): Tree {
   } = options;
 
   return data
-    .toSorted((a: GroupNode | DataRecord, b: GroupNode | DataRecord) =>
-      customSort(
-        getBy((a.$original ?? a.$meta ?? a) as UnknownObject, sortBy),
-        getBy((b.$original ?? b.$meta ?? b) as UnknownObject, sortBy),
-      ),
+    .toSorted((a: UnknownObject, b: UnknownObject) =>
+      customSort(getBy(a, sortBy), getBy(b, sortBy)),
     )
-    .map((node: GroupNode | DataRecord) => {
+    .map((node: UnknownObject) => {
       const children =
         node.children && Array.isArray(node.children)
           ? treeMapper(node.children, options)
           : undefined;
-
-      if ('$meta' in node) {
-        const io = node as GroupNode;
-
-        const meta = io.$meta;
-
-        return {
-          $meta: meta,
-          label: ((meta.label || meta.value) as string) || meta.groupBy,
-          value: meta.value,
-          ...(extra && { extra: getBy(meta, extra) }),
-          ...(children && { children }),
-          selectable: false,
-        };
-      }
 
       const value = getBy(node, valuePath);
 
@@ -73,8 +55,8 @@ export function treeMapper(data: Table2Treed, options: Mappers = {}): Tree {
       return {
         label: (getBy(node, labelPath) || value) as string,
         value,
-        ...(extra && { extra: getBy(node, extra) }),
-        ...(children && { children }),
+        ...(extra ? { extra: getBy(node, extra) } : undefined),
+        ...(children ? { children } : undefined),
         ...(selectable
           ? {
               selectable: doCondition(node, selectable),

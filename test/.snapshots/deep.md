@@ -67,87 +67,81 @@ should handle deep groupBy key (dot notation)
 
 ## Output
 
+### treeMapper
+```json5
+[
+  {
+    "$original": {
+      "id": 1,
+      "info": {
+        "type": {
+          "code": "X",
+          "name": "联通",
+        },
+      },
+      "name": "Item 1",
+    },
+    "extra": "联通",
+    "label": "Item 1",
+    "value": 1,
+  },
+  {
+    "$original": {
+      "id": 2,
+      "info": {
+        "type": {
+          "code": "Y",
+          "name": "电信",
+        },
+      },
+      "name": "Item 2",
+    },
+    "extra": "电信",
+    "label": "Item 2",
+    "value": 2,
+  },
+  {
+    "$original": {
+      "id": 3,
+      "info": {
+        "type": {
+          "code": "X",
+          "name": "联通",
+        },
+      },
+      "name": "Item 3",
+    },
+    "extra": "联通",
+    "label": "Item 3",
+    "value": 3,
+  },
+  {
+    "$original": {
+      "id": 4,
+      "info": {
+        "type": {
+          "code": "Z",
+          "name": "移动",
+        },
+      },
+      "name": "Item 4",
+    },
+    "extra": "移动",
+    "label": "Item 4",
+    "value": 4,
+  },
+]
+```
+
 ### tableGrouping
 ```json5
 [
   {
     "$meta": {
       "groupBy": "info.type.code",
-      "label": "联通",
-      "value": "X",
-    },
-    "children": [
-      {
-        "id": 1,
-        "info": {
-          "type": {
-            "code": "X",
-            "name": "联通",
-          },
-        },
-        "name": "Item 1",
-      },
-      {
-        "id": 3,
-        "info": {
-          "type": {
-            "code": "X",
-            "name": "联通",
-          },
-        },
-        "name": "Item 3",
-      },
-    ],
-  },
-  {
-    "$meta": {
-      "groupBy": "info.type.code",
-      "label": "电信",
-      "value": "Y",
-    },
-    "children": [
-      {
-        "id": 2,
-        "info": {
-          "type": {
-            "code": "Y",
-            "name": "电信",
-          },
-        },
-        "name": "Item 2",
-      },
-    ],
-  },
-  {
-    "$meta": {
-      "groupBy": "info.type.code",
-      "label": "移动",
-      "value": "Z",
-    },
-    "children": [
-      {
-        "id": 4,
-        "info": {
-          "type": {
-            "code": "Z",
-            "name": "移动",
-          },
-        },
-        "name": "Item 4",
-      },
-    ],
-  },
-]
-```
-
-### treeMapper
-```json5
-[
-  {
-    "$meta": {
-      "groupBy": "info.type.code",
-      "label": "联通",
-      "value": "X",
+      "labelBy": "info.type.name",
+      "skipSingle": false,
+      "sortBy": "info.type.name",
     },
     "children": [
       {
@@ -181,7 +175,6 @@ should handle deep groupBy key (dot notation)
         "value": 3,
       },
     ],
-    "extra": undefined,
     "label": "联通",
     "selectable": false,
     "value": "X",
@@ -189,8 +182,9 @@ should handle deep groupBy key (dot notation)
   {
     "$meta": {
       "groupBy": "info.type.code",
-      "label": "电信",
-      "value": "Y",
+      "labelBy": "info.type.name",
+      "skipSingle": false,
+      "sortBy": "info.type.name",
     },
     "children": [
       {
@@ -209,7 +203,6 @@ should handle deep groupBy key (dot notation)
         "value": 2,
       },
     ],
-    "extra": undefined,
     "label": "电信",
     "selectable": false,
     "value": "Y",
@@ -217,8 +210,9 @@ should handle deep groupBy key (dot notation)
   {
     "$meta": {
       "groupBy": "info.type.code",
-      "label": "移动",
-      "value": "Z",
+      "labelBy": "info.type.name",
+      "skipSingle": false,
+      "sortBy": "info.type.name",
     },
     "children": [
       {
@@ -237,7 +231,6 @@ should handle deep groupBy key (dot notation)
         "value": 4,
       },
     ],
-    "extra": undefined,
     "label": "移动",
     "selectable": false,
     "value": "Z",

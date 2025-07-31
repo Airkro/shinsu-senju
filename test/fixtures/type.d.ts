@@ -1,10 +1,10 @@
 import type { GroupConfig } from '../../lib/table-grouping.ts'
 import type { Mappers } from '../../lib/tree-mapper.ts'
-import type { Condition } from '../../lib/utils.ts'
+import type { Condition, UnknownObject } from '../../lib/utils.ts'
 
 export type Fixture = {
   description: string
-  data: Record<string, unknown>[]
+  data: UnknownObject[]
   options?: {
     groups?: GroupConfig | GroupConfig[]
     parentKey?: string

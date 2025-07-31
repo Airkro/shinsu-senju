@@ -28,34 +28,30 @@ should handle single column grouping with one item
 
 ## Output
 
+### treeMapper
+```json5
+[
+  {
+    "$original": {
+      "group": "A",
+      "id": 1,
+      "name": "Single Item",
+    },
+    "label": "Single Item",
+    "value": 1,
+  },
+]
+```
+
 ### tableGrouping
 ```json5
 [
   {
     "$meta": {
       "groupBy": "group",
-      "label": "A",
-      "value": "A",
-    },
-    "children": [
-      {
-        "group": "A",
-        "id": 1,
-        "name": "Single Item",
-      },
-    ],
-  },
-]
-```
-
-### treeMapper
-```json5
-[
-  {
-    "$meta": {
-      "groupBy": "group",
-      "label": "A",
-      "value": "A",
+      "labelBy": "group",
+      "skipSingle": false,
+      "sortBy": "group",
     },
     "children": [
       {

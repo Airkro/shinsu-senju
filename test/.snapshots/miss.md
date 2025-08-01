@@ -80,6 +80,7 @@
 [
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "group",
       "labelBy": "group",
       "skipSingle": false,
@@ -113,6 +114,7 @@
   },
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "group",
       "labelBy": "group",
       "skipSingle": false,

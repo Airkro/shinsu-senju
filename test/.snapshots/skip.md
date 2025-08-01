@@ -81,6 +81,7 @@
 [
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "group",
       "labelBy": "group",
       "skipSingle": true,

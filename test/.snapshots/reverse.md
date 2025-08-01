@@ -193,6 +193,7 @@ reverse
 [
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -240,6 +241,7 @@ reverse
   },
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -287,6 +289,7 @@ reverse
   },
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -334,6 +337,7 @@ reverse
   },
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,

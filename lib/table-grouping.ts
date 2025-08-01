@@ -42,6 +42,7 @@ export interface GroupConfig extends Record<string, unknown> {
   readonly groupBy?: Getter;
   /** 分组标签的字段名，默认使用 groupBy 的值 */
   readonly labelBy?: Getter;
+  readonly extraBy?: Getter;
   /** 用于排序的字段名 */
   readonly sortBy?: Getter;
   /** 是否跳过单个子项的分组 */
@@ -61,6 +62,7 @@ interface GroupProcessConfig {
   readonly groupBy: Getter;
   /** 分组标签的字段名 */
   readonly labelBy: Getter;
+  readonly extraBy: Getter;
   /** 用于排序的字段名 */
   readonly sortBy: Getter;
   /** 是否跳过单个子项的分组 */
@@ -132,7 +134,7 @@ function groupRecursive(
     return groupRecursive(data, rest);
   }
 
-  const { groupBy, labelBy, skipSingle, sortBy } = current;
+  const { groupBy, labelBy, extraBy, skipSingle, sortBy } = current;
   const { groups, ungrouped } = groupByField(data, groupBy);
   const nodes: Groupeds = [];
 
@@ -145,6 +147,13 @@ function groupRecursive(
         label: items
           .map((item) => getBy(item.$original, labelBy))
           .find((item) => item !== undefined),
+        ...(extraBy
+          ? {
+              extra: items
+                .map((item) => getBy(item.$original, extraBy))
+                .find((item) => item !== undefined),
+            }
+          : undefined),
         value,
         selectable: false,
         children: rest.length > 0 ? groupRecursive(items, rest) : items,
@@ -177,10 +186,17 @@ export function tableGrouping(
   const configs = (
     Array.isArray(groupConfigs) ? groupConfigs : [groupConfigs]
   ).map(
-    ({ skipSingle = false, groupBy, labelBy = groupBy, sortBy = labelBy }) => ({
+    ({
+      skipSingle = false,
+      groupBy,
+      labelBy = groupBy,
+      extraBy,
+      sortBy = labelBy,
+    }) => ({
       groupBy,
       labelBy,
       sortBy,
+      extraBy,
       skipSingle,
     }),
   );

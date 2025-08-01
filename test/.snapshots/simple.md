@@ -77,6 +77,7 @@ should group data by column and return tree structure
 [
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -110,6 +111,7 @@ should group data by column and return tree structure
   },
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,

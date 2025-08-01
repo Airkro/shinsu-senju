@@ -279,6 +279,7 @@ should handle nested grouping
 [
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "level1",
       "labelBy": "level1",
       "skipSingle": false,
@@ -287,6 +288,7 @@ should handle nested grouping
     "children": [
       {
         "$group": {
+          "extraBy": undefined,
           "groupBy": "level2",
           "labelBy": "level2",
           "skipSingle": false,
@@ -295,6 +297,7 @@ should handle nested grouping
         "children": [
           {
             "$group": {
+              "extraBy": undefined,
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -332,6 +335,7 @@ should handle nested grouping
           },
           {
             "$group": {
+              "extraBy": undefined,
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -362,6 +366,7 @@ should handle nested grouping
       },
       {
         "$group": {
+          "extraBy": undefined,
           "groupBy": "level2",
           "labelBy": "level2",
           "skipSingle": false,
@@ -370,6 +375,7 @@ should handle nested grouping
         "children": [
           {
             "$group": {
+              "extraBy": undefined,
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -395,6 +401,7 @@ should handle nested grouping
           },
           {
             "$group": {
+              "extraBy": undefined,
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -430,6 +437,7 @@ should handle nested grouping
   },
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "level1",
       "labelBy": "level1",
       "skipSingle": false,
@@ -438,6 +446,7 @@ should handle nested grouping
     "children": [
       {
         "$group": {
+          "extraBy": undefined,
           "groupBy": "level2",
           "labelBy": "level2",
           "skipSingle": false,
@@ -446,6 +455,7 @@ should handle nested grouping
         "children": [
           {
             "$group": {
+              "extraBy": undefined,
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -471,6 +481,7 @@ should handle nested grouping
           },
           {
             "$group": {
+              "extraBy": undefined,
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -501,6 +512,7 @@ should handle nested grouping
       },
       {
         "$group": {
+          "extraBy": undefined,
           "groupBy": "level2",
           "labelBy": "level2",
           "skipSingle": false,
@@ -509,6 +521,7 @@ should handle nested grouping
         "children": [
           {
             "$group": {
+              "extraBy": undefined,
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -534,6 +547,7 @@ should handle nested grouping
           },
           {
             "$group": {
+              "extraBy": undefined,
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -581,6 +595,7 @@ should handle nested grouping
   },
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "level2",
       "labelBy": "level2",
       "skipSingle": false,
@@ -589,6 +604,7 @@ should handle nested grouping
     "children": [
       {
         "$group": {
+          "extraBy": undefined,
           "groupBy": "level3",
           "labelBy": "level3",
           "skipSingle": false,

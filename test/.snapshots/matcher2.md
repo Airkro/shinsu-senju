@@ -177,6 +177,7 @@ matcher
 [
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -220,6 +221,7 @@ matcher
   },
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -263,6 +265,7 @@ matcher
   },
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -306,6 +309,7 @@ matcher
   },
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,

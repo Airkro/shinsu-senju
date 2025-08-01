@@ -123,6 +123,7 @@
 [
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "group.id",
       "labelBy": "group.name",
       "skipSingle": false,
@@ -172,6 +173,7 @@
   },
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "group.id",
       "labelBy": "group.name",
       "skipSingle": false,

@@ -150,6 +150,7 @@ should handle deep groupBy key (dot notation)
 [
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "info.type.code",
       "labelBy": "info.type.name",
       "skipSingle": false,
@@ -199,6 +200,7 @@ should handle deep groupBy key (dot notation)
   },
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "info.type.code",
       "labelBy": "info.type.name",
       "skipSingle": false,
@@ -230,6 +232,7 @@ should handle deep groupBy key (dot notation)
   },
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "info.type.code",
       "labelBy": "info.type.name",
       "skipSingle": false,

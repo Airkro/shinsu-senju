@@ -49,6 +49,7 @@ should handle single column grouping with one item
 [
   {
     "$group": {
+      "extraBy": undefined,
       "groupBy": "group",
       "labelBy": "group",
       "skipSingle": false,

@@ -3,14 +3,14 @@ import type { Groupeds, Groups } from './table-grouping.ts';
 import { treeFilter } from './tree-filter.ts';
 import { treeInfinity } from './tree-infinity.ts';
 import { treeMapper } from './tree-mapper.ts';
-import type { Mappers, Tree } from './tree-mapper.ts';
+import type { Mapper, Tree } from './tree-mapper.ts';
 import type { Condition, Getter, UnknownObject } from './utils.ts';
 
 export { tableGrouping, treeFilter, treeInfinity, treeMapper };
 
 export type Options = {
   groups?: Groups;
-  mapper?: Mappers;
+  mapper?: Mapper;
   parentKey?: Getter;
   filterBy?: Condition;
 };

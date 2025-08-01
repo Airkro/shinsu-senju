@@ -14,7 +14,7 @@ export interface TreeNode extends UnknownObject {
 
 export type Tree = TreeNode[];
 
-export interface Mappers {
+export type Mapper = {
   label?: Getter;
   value?: Getter;
   extra?: Getter;
@@ -22,9 +22,9 @@ export interface Mappers {
   selectable?: Condition;
   disabled?: Condition;
   sortBy?: Getter;
-}
+};
 
-export function treeMapper(data: UnknownObject[], options: Mappers = {}): Tree {
+export function treeMapper(data: UnknownObject[], options: Mapper = {}): Tree {
   if (data.length === 0) {
     return data as [];
   }

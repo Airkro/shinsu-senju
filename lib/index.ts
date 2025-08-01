@@ -18,9 +18,9 @@ export type Options = {
 export function grouping(
   data: UnknownObject[],
   { groups, mapper, parentKey, filterBy }: Options = {},
-) {
+): Groupeds | Tree {
   if (data.length === 0) {
-    return data;
+    return data as [];
   }
 
   const filtered = filterBy ? treeFilter(data, { filterBy, parentKey }) : data;
@@ -34,4 +34,4 @@ export function grouping(
     : tableGrouping(mapped, groups);
 }
 
-export type { Groupeds, Tree };
+export type { Groupeds, Tree, UnknownObject };

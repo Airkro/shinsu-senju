@@ -73,6 +73,19 @@ matcher
 ```json5
 [
   {
+    "$mapper": {
+      "disabled": {
+        "const": "C",
+        "when": "parent",
+      },
+      "selectable": {
+        "enum": [
+          "A",
+          "B",
+        ],
+        "when": "parent",
+      },
+    },
     "$original": {
       "id": 1,
       "name": "Item 1",
@@ -84,6 +97,19 @@ matcher
     "value": 1,
   },
   {
+    "$mapper": {
+      "disabled": {
+        "const": "C",
+        "when": "parent",
+      },
+      "selectable": {
+        "enum": [
+          "A",
+          "B",
+        ],
+        "when": "parent",
+      },
+    },
     "$original": {
       "id": 2,
       "name": "Item 2",
@@ -95,6 +121,19 @@ matcher
     "value": 2,
   },
   {
+    "$mapper": {
+      "disabled": {
+        "const": "C",
+        "when": "parent",
+      },
+      "selectable": {
+        "enum": [
+          "A",
+          "B",
+        ],
+        "when": "parent",
+      },
+    },
     "$original": {
       "id": 3,
       "name": "Item 3",
@@ -106,6 +145,19 @@ matcher
     "value": 3,
   },
   {
+    "$mapper": {
+      "disabled": {
+        "const": "C",
+        "when": "parent",
+      },
+      "selectable": {
+        "enum": [
+          "A",
+          "B",
+        ],
+        "when": "parent",
+      },
+    },
     "$original": {
       "id": 4,
       "name": "Item 4",
@@ -117,6 +169,19 @@ matcher
     "value": 4,
   },
   {
+    "$mapper": {
+      "disabled": {
+        "const": "C",
+        "when": "parent",
+      },
+      "selectable": {
+        "enum": [
+          "A",
+          "B",
+        ],
+        "when": "parent",
+      },
+    },
     "$original": {
       "id": 5,
       "name": "Item 5",
@@ -128,6 +193,19 @@ matcher
     "value": 5,
   },
   {
+    "$mapper": {
+      "disabled": {
+        "const": "C",
+        "when": "parent",
+      },
+      "selectable": {
+        "enum": [
+          "A",
+          "B",
+        ],
+        "when": "parent",
+      },
+    },
     "$original": {
       "id": 6,
       "name": "Item 6",
@@ -139,6 +217,19 @@ matcher
     "value": 6,
   },
   {
+    "$mapper": {
+      "disabled": {
+        "const": "C",
+        "when": "parent",
+      },
+      "selectable": {
+        "enum": [
+          "A",
+          "B",
+        ],
+        "when": "parent",
+      },
+    },
     "$original": {
       "id": 7,
       "name": "Item 7",
@@ -156,7 +247,7 @@ matcher
 ```json5
 [
   {
-    "$meta": {
+    "$group": {
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -164,6 +255,19 @@ matcher
     },
     "children": [
       {
+        "$mapper": {
+          "disabled": {
+            "const": "C",
+            "when": "parent",
+          },
+          "selectable": {
+            "enum": [
+              "A",
+              "B",
+            ],
+            "when": "parent",
+          },
+        },
         "$original": {
           "id": 1,
           "name": "Item 1",
@@ -175,6 +279,19 @@ matcher
         "value": 1,
       },
       {
+        "$mapper": {
+          "disabled": {
+            "const": "C",
+            "when": "parent",
+          },
+          "selectable": {
+            "enum": [
+              "A",
+              "B",
+            ],
+            "when": "parent",
+          },
+        },
         "$original": {
           "id": 2,
           "name": "Item 2",
@@ -191,7 +308,7 @@ matcher
     "value": "A",
   },
   {
-    "$meta": {
+    "$group": {
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -199,6 +316,19 @@ matcher
     },
     "children": [
       {
+        "$mapper": {
+          "disabled": {
+            "const": "C",
+            "when": "parent",
+          },
+          "selectable": {
+            "enum": [
+              "A",
+              "B",
+            ],
+            "when": "parent",
+          },
+        },
         "$original": {
           "id": 3,
           "name": "Item 3",
@@ -210,6 +340,19 @@ matcher
         "value": 3,
       },
       {
+        "$mapper": {
+          "disabled": {
+            "const": "C",
+            "when": "parent",
+          },
+          "selectable": {
+            "enum": [
+              "A",
+              "B",
+            ],
+            "when": "parent",
+          },
+        },
         "$original": {
           "id": 4,
           "name": "Item 4",
@@ -226,7 +369,7 @@ matcher
     "value": "B",
   },
   {
-    "$meta": {
+    "$group": {
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -234,6 +377,19 @@ matcher
     },
     "children": [
       {
+        "$mapper": {
+          "disabled": {
+            "const": "C",
+            "when": "parent",
+          },
+          "selectable": {
+            "enum": [
+              "A",
+              "B",
+            ],
+            "when": "parent",
+          },
+        },
         "$original": {
           "id": 5,
           "name": "Item 5",
@@ -245,6 +401,19 @@ matcher
         "value": 5,
       },
       {
+        "$mapper": {
+          "disabled": {
+            "const": "C",
+            "when": "parent",
+          },
+          "selectable": {
+            "enum": [
+              "A",
+              "B",
+            ],
+            "when": "parent",
+          },
+        },
         "$original": {
           "id": 6,
           "name": "Item 6",
@@ -261,7 +430,7 @@ matcher
     "value": "C",
   },
   {
-    "$meta": {
+    "$group": {
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -269,6 +438,19 @@ matcher
     },
     "children": [
       {
+        "$mapper": {
+          "disabled": {
+            "const": "C",
+            "when": "parent",
+          },
+          "selectable": {
+            "enum": [
+              "A",
+              "B",
+            ],
+            "when": "parent",
+          },
+        },
         "$original": {
           "id": 7,
           "name": "Item 7",

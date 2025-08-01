@@ -32,6 +32,7 @@ should handle single column grouping with one item
 ```json5
 [
   {
+    "$mapper": {},
     "$original": {
       "group": "A",
       "id": 1,
@@ -47,7 +48,7 @@ should handle single column grouping with one item
 ```json5
 [
   {
-    "$meta": {
+    "$group": {
       "groupBy": "group",
       "labelBy": "group",
       "skipSingle": false,
@@ -55,6 +56,7 @@ should handle single column grouping with one item
     },
     "children": [
       {
+        "$mapper": {},
         "$original": {
           "group": "A",
           "id": 1,

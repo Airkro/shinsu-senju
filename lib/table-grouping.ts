@@ -17,7 +17,7 @@ export type FieldValue = unknown;
  */
 export interface GroupNode extends UnknownObject {
   /** 节点元数据 */
-  readonly $meta: GroupProcessConfig;
+  readonly $group: GroupProcessConfig;
   readonly label: unknown;
   readonly value: unknown;
   /** 子节点列表 */
@@ -141,7 +141,7 @@ function groupRecursive(
       nodes.push(items[0]);
     } else {
       nodes.push({
-        $meta: current,
+        $group: current,
         label: items
           .map((item) => getBy(item.$original, labelBy))
           .find((item) => item !== undefined),
@@ -155,12 +155,9 @@ function groupRecursive(
   const processedUngrouped =
     rest.length > 0 ? groupRecursive(ungrouped, rest) : ungrouped;
 
-  return [
-    ...nodes,
-    ...processedUngrouped.toSorted((a, b) =>
-      customSort(getBy(a, sortBy), getBy(b, sortBy)),
-    ),
-  ];
+  return [...nodes, ...processedUngrouped].toSorted((a, b) =>
+    customSort(getBy(a, sortBy), getBy(b, sortBy)),
+  );
 }
 
 /**

@@ -32,17 +32,26 @@ export function treeMapper(data: UnknownObject[], options: Mappers = {}): Tree {
   const {
     label: labelPath = 'name',
     value: valuePath = 'id',
-    extra = '',
+    extra,
     sortBy = labelPath,
     selectable,
     disabled,
   } = options;
 
+  const $mapper = {
+    label: labelPath,
+    value: valuePath,
+    extra,
+    sortBy,
+    selectable,
+    disabled,
+  };
+
   return data
     .map((node: UnknownObject) => {
       const children =
         node.children && Array.isArray(node.children)
-          ? treeMapper(node.children, options)
+          ? treeMapper(node.children, $mapper)
           : undefined;
 
       const value = getBy(node, valuePath);
@@ -65,6 +74,7 @@ export function treeMapper(data: UnknownObject[], options: Mappers = {}): Tree {
             }
           : undefined),
         $original,
+        $mapper: options,
       };
     })
     .toSorted((a: TreeNode, b: TreeNode) =>

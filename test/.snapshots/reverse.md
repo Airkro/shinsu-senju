@@ -67,6 +67,13 @@ reverse
 ```json5
 [
   {
+    "$mapper": {
+      "disabled": {
+        "const": "C",
+        "reverse": true,
+        "when": "parent",
+      },
+    },
     "$original": {
       "id": 1,
       "name": "Item 1",
@@ -77,6 +84,13 @@ reverse
     "value": 1,
   },
   {
+    "$mapper": {
+      "disabled": {
+        "const": "C",
+        "reverse": true,
+        "when": "parent",
+      },
+    },
     "$original": {
       "id": 2,
       "name": "Item 2",
@@ -87,6 +101,13 @@ reverse
     "value": 2,
   },
   {
+    "$mapper": {
+      "disabled": {
+        "const": "C",
+        "reverse": true,
+        "when": "parent",
+      },
+    },
     "$original": {
       "id": 3,
       "name": "Item 3",
@@ -97,6 +118,13 @@ reverse
     "value": 3,
   },
   {
+    "$mapper": {
+      "disabled": {
+        "const": "C",
+        "reverse": true,
+        "when": "parent",
+      },
+    },
     "$original": {
       "id": 4,
       "name": "Item 4",
@@ -107,6 +135,13 @@ reverse
     "value": 4,
   },
   {
+    "$mapper": {
+      "disabled": {
+        "const": "C",
+        "reverse": true,
+        "when": "parent",
+      },
+    },
     "$original": {
       "id": 5,
       "name": "Item 5",
@@ -117,6 +152,13 @@ reverse
     "value": 5,
   },
   {
+    "$mapper": {
+      "disabled": {
+        "const": "C",
+        "reverse": true,
+        "when": "parent",
+      },
+    },
     "$original": {
       "id": 6,
       "name": "Item 6",
@@ -127,6 +169,13 @@ reverse
     "value": 6,
   },
   {
+    "$mapper": {
+      "disabled": {
+        "const": "C",
+        "reverse": true,
+        "when": "parent",
+      },
+    },
     "$original": {
       "id": 7,
       "name": "Item",
@@ -143,7 +192,7 @@ reverse
 ```json5
 [
   {
-    "$meta": {
+    "$group": {
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -151,6 +200,13 @@ reverse
     },
     "children": [
       {
+        "$mapper": {
+          "disabled": {
+            "const": "C",
+            "reverse": true,
+            "when": "parent",
+          },
+        },
         "$original": {
           "id": 1,
           "name": "Item 1",
@@ -161,6 +217,13 @@ reverse
         "value": 1,
       },
       {
+        "$mapper": {
+          "disabled": {
+            "const": "C",
+            "reverse": true,
+            "when": "parent",
+          },
+        },
         "$original": {
           "id": 2,
           "name": "Item 2",
@@ -176,7 +239,7 @@ reverse
     "value": "A",
   },
   {
-    "$meta": {
+    "$group": {
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -184,6 +247,13 @@ reverse
     },
     "children": [
       {
+        "$mapper": {
+          "disabled": {
+            "const": "C",
+            "reverse": true,
+            "when": "parent",
+          },
+        },
         "$original": {
           "id": 3,
           "name": "Item 3",
@@ -194,6 +264,13 @@ reverse
         "value": 3,
       },
       {
+        "$mapper": {
+          "disabled": {
+            "const": "C",
+            "reverse": true,
+            "when": "parent",
+          },
+        },
         "$original": {
           "id": 4,
           "name": "Item 4",
@@ -209,7 +286,7 @@ reverse
     "value": "B",
   },
   {
-    "$meta": {
+    "$group": {
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -217,6 +294,13 @@ reverse
     },
     "children": [
       {
+        "$mapper": {
+          "disabled": {
+            "const": "C",
+            "reverse": true,
+            "when": "parent",
+          },
+        },
         "$original": {
           "id": 5,
           "name": "Item 5",
@@ -227,6 +311,13 @@ reverse
         "value": 5,
       },
       {
+        "$mapper": {
+          "disabled": {
+            "const": "C",
+            "reverse": true,
+            "when": "parent",
+          },
+        },
         "$original": {
           "id": 6,
           "name": "Item 6",
@@ -242,7 +333,7 @@ reverse
     "value": "C",
   },
   {
-    "$meta": {
+    "$group": {
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -250,6 +341,13 @@ reverse
     },
     "children": [
       {
+        "$mapper": {
+          "disabled": {
+            "const": "C",
+            "reverse": true,
+            "when": "parent",
+          },
+        },
         "$original": {
           "id": 7,
           "name": "Item",

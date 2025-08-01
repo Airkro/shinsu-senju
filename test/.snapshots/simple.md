@@ -40,6 +40,7 @@ should group data by column and return tree structure
 ```json5
 [
   {
+    "$mapper": {},
     "$original": {
       "id": 1,
       "name": "Item 1",
@@ -49,6 +50,7 @@ should group data by column and return tree structure
     "value": 1,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 3,
       "name": "Item 3",
@@ -58,6 +60,7 @@ should group data by column and return tree structure
     "value": 3,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 2,
       "name2": "Item 2",
@@ -73,7 +76,7 @@ should group data by column and return tree structure
 ```json5
 [
   {
-    "$meta": {
+    "$group": {
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -81,6 +84,7 @@ should group data by column and return tree structure
     },
     "children": [
       {
+        "$mapper": {},
         "$original": {
           "id": 1,
           "name": "Item 1",
@@ -90,6 +94,7 @@ should group data by column and return tree structure
         "value": 1,
       },
       {
+        "$mapper": {},
         "$original": {
           "id": 2,
           "name2": "Item 2",
@@ -104,7 +109,7 @@ should group data by column and return tree structure
     "value": "A",
   },
   {
-    "$meta": {
+    "$group": {
       "groupBy": "parent",
       "labelBy": "parent",
       "skipSingle": false,
@@ -112,6 +117,7 @@ should group data by column and return tree structure
     },
     "children": [
       {
+        "$mapper": {},
         "$original": {
           "id": 3,
           "name": "Item 3",

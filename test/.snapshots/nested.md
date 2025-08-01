@@ -120,6 +120,7 @@ should handle nested grouping
 ```json5
 [
   {
+    "$mapper": {},
     "$original": {
       "id": 1,
       "level1": "A",
@@ -131,6 +132,7 @@ should handle nested grouping
     "value": 1,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 2,
       "level1": "A",
@@ -142,6 +144,7 @@ should handle nested grouping
     "value": 2,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 3,
       "level1": "A",
@@ -153,6 +156,7 @@ should handle nested grouping
     "value": 3,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 4,
       "level1": "A",
@@ -164,6 +168,7 @@ should handle nested grouping
     "value": 4,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 5,
       "level1": "A",
@@ -175,6 +180,7 @@ should handle nested grouping
     "value": 5,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 6,
       "level1": "B",
@@ -186,6 +192,7 @@ should handle nested grouping
     "value": 6,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 7,
       "level1": "B",
@@ -197,6 +204,7 @@ should handle nested grouping
     "value": 7,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 8,
       "level1": "B",
@@ -208,6 +216,7 @@ should handle nested grouping
     "value": 8,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 9,
       "level1": "B",
@@ -219,6 +228,7 @@ should handle nested grouping
     "value": 9,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 10,
       "level1": "B",
@@ -230,6 +240,7 @@ should handle nested grouping
     "value": 10,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 11,
       "level2": "Y",
@@ -240,6 +251,7 @@ should handle nested grouping
     "value": 11,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 12,
       "level2": "Y",
@@ -250,6 +262,7 @@ should handle nested grouping
     "value": 12,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 13,
       "level2": "Y",
@@ -265,7 +278,7 @@ should handle nested grouping
 ```json5
 [
   {
-    "$meta": {
+    "$group": {
       "groupBy": "level1",
       "labelBy": "level1",
       "skipSingle": false,
@@ -273,7 +286,7 @@ should handle nested grouping
     },
     "children": [
       {
-        "$meta": {
+        "$group": {
           "groupBy": "level2",
           "labelBy": "level2",
           "skipSingle": false,
@@ -281,7 +294,7 @@ should handle nested grouping
         },
         "children": [
           {
-            "$meta": {
+            "$group": {
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -289,6 +302,7 @@ should handle nested grouping
             },
             "children": [
               {
+                "$mapper": {},
                 "$original": {
                   "id": 1,
                   "level1": "A",
@@ -300,6 +314,7 @@ should handle nested grouping
                 "value": 1,
               },
               {
+                "$mapper": {},
                 "$original": {
                   "id": 2,
                   "level1": "A",
@@ -316,7 +331,7 @@ should handle nested grouping
             "value": "I",
           },
           {
-            "$meta": {
+            "$group": {
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -324,6 +339,7 @@ should handle nested grouping
             },
             "children": [
               {
+                "$mapper": {},
                 "$original": {
                   "id": 3,
                   "level1": "A",
@@ -345,7 +361,7 @@ should handle nested grouping
         "value": "X",
       },
       {
-        "$meta": {
+        "$group": {
           "groupBy": "level2",
           "labelBy": "level2",
           "skipSingle": false,
@@ -353,7 +369,7 @@ should handle nested grouping
         },
         "children": [
           {
-            "$meta": {
+            "$group": {
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -361,6 +377,7 @@ should handle nested grouping
             },
             "children": [
               {
+                "$mapper": {},
                 "$original": {
                   "id": 4,
                   "level1": "A",
@@ -377,7 +394,7 @@ should handle nested grouping
             "value": "I",
           },
           {
-            "$meta": {
+            "$group": {
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -385,6 +402,7 @@ should handle nested grouping
             },
             "children": [
               {
+                "$mapper": {},
                 "$original": {
                   "id": 5,
                   "level1": "A",
@@ -411,7 +429,7 @@ should handle nested grouping
     "value": "A",
   },
   {
-    "$meta": {
+    "$group": {
       "groupBy": "level1",
       "labelBy": "level1",
       "skipSingle": false,
@@ -419,7 +437,7 @@ should handle nested grouping
     },
     "children": [
       {
-        "$meta": {
+        "$group": {
           "groupBy": "level2",
           "labelBy": "level2",
           "skipSingle": false,
@@ -427,7 +445,7 @@ should handle nested grouping
         },
         "children": [
           {
-            "$meta": {
+            "$group": {
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -435,6 +453,7 @@ should handle nested grouping
             },
             "children": [
               {
+                "$mapper": {},
                 "$original": {
                   "id": 6,
                   "level1": "B",
@@ -451,7 +470,7 @@ should handle nested grouping
             "value": "I",
           },
           {
-            "$meta": {
+            "$group": {
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -459,6 +478,7 @@ should handle nested grouping
             },
             "children": [
               {
+                "$mapper": {},
                 "$original": {
                   "id": 7,
                   "level1": "B",
@@ -480,7 +500,7 @@ should handle nested grouping
         "value": "X",
       },
       {
-        "$meta": {
+        "$group": {
           "groupBy": "level2",
           "labelBy": "level2",
           "skipSingle": false,
@@ -488,7 +508,7 @@ should handle nested grouping
         },
         "children": [
           {
-            "$meta": {
+            "$group": {
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -496,6 +516,7 @@ should handle nested grouping
             },
             "children": [
               {
+                "$mapper": {},
                 "$original": {
                   "id": 8,
                   "level1": "B",
@@ -512,7 +533,7 @@ should handle nested grouping
             "value": "II",
           },
           {
-            "$meta": {
+            "$group": {
               "groupBy": "level3",
               "labelBy": "level3",
               "skipSingle": false,
@@ -520,6 +541,7 @@ should handle nested grouping
             },
             "children": [
               {
+                "$mapper": {},
                 "$original": {
                   "id": 9,
                   "level1": "B",
@@ -531,6 +553,7 @@ should handle nested grouping
                 "value": 9,
               },
               {
+                "$mapper": {},
                 "$original": {
                   "id": 10,
                   "level1": "B",
@@ -557,7 +580,7 @@ should handle nested grouping
     "value": "B",
   },
   {
-    "$meta": {
+    "$group": {
       "groupBy": "level2",
       "labelBy": "level2",
       "skipSingle": false,
@@ -565,7 +588,7 @@ should handle nested grouping
     },
     "children": [
       {
-        "$meta": {
+        "$group": {
           "groupBy": "level3",
           "labelBy": "level3",
           "skipSingle": false,
@@ -573,6 +596,7 @@ should handle nested grouping
         },
         "children": [
           {
+            "$mapper": {},
             "$original": {
               "id": 11,
               "level2": "Y",
@@ -583,6 +607,7 @@ should handle nested grouping
             "value": 11,
           },
           {
+            "$mapper": {},
             "$original": {
               "id": 12,
               "level2": "Y",
@@ -598,6 +623,7 @@ should handle nested grouping
         "value": "III",
       },
       {
+        "$mapper": {},
         "$original": {
           "id": 13,
           "level2": "Y",

@@ -62,6 +62,10 @@
 ```json5
 [
   {
+    "$mapper": {
+      "label": "user.name",
+      "value": "user.id",
+    },
     "$original": {
       "group": {
         "id": 2,
@@ -76,6 +80,10 @@
     "value": 555,
   },
   {
+    "$mapper": {
+      "label": "user.name",
+      "value": "user.id",
+    },
     "$original": {
       "group": {
         "id": 2,
@@ -90,6 +98,10 @@
     "value": 555,
   },
   {
+    "$mapper": {
+      "label": "user.name",
+      "value": "user.id",
+    },
     "$original": {
       "group": {
         "id": 1,
@@ -110,7 +122,7 @@
 ```json5
 [
   {
-    "$meta": {
+    "$group": {
       "groupBy": "group.id",
       "labelBy": "group.name",
       "skipSingle": false,
@@ -118,6 +130,10 @@
     },
     "children": [
       {
+        "$mapper": {
+          "label": "user.name",
+          "value": "user.id",
+        },
         "$original": {
           "group": {
             "id": 2,
@@ -132,6 +148,10 @@
         "value": 555,
       },
       {
+        "$mapper": {
+          "label": "user.name",
+          "value": "user.id",
+        },
         "$original": {
           "group": {
             "id": 2,
@@ -151,7 +171,7 @@
     "value": 2,
   },
   {
-    "$meta": {
+    "$group": {
       "groupBy": "group.id",
       "labelBy": "group.name",
       "skipSingle": false,
@@ -159,6 +179,10 @@
     },
     "children": [
       {
+        "$mapper": {
+          "label": "user.name",
+          "value": "user.id",
+        },
         "$original": {
           "group": {
             "id": 1,

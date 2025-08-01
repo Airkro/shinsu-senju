@@ -71,6 +71,9 @@ should handle deep groupBy key (dot notation)
 ```json5
 [
   {
+    "$mapper": {
+      "extra": "info.type.name",
+    },
     "$original": {
       "id": 1,
       "info": {
@@ -86,6 +89,9 @@ should handle deep groupBy key (dot notation)
     "value": 1,
   },
   {
+    "$mapper": {
+      "extra": "info.type.name",
+    },
     "$original": {
       "id": 2,
       "info": {
@@ -101,6 +107,9 @@ should handle deep groupBy key (dot notation)
     "value": 2,
   },
   {
+    "$mapper": {
+      "extra": "info.type.name",
+    },
     "$original": {
       "id": 3,
       "info": {
@@ -116,6 +125,9 @@ should handle deep groupBy key (dot notation)
     "value": 3,
   },
   {
+    "$mapper": {
+      "extra": "info.type.name",
+    },
     "$original": {
       "id": 4,
       "info": {
@@ -137,7 +149,7 @@ should handle deep groupBy key (dot notation)
 ```json5
 [
   {
-    "$meta": {
+    "$group": {
       "groupBy": "info.type.code",
       "labelBy": "info.type.name",
       "skipSingle": false,
@@ -145,6 +157,9 @@ should handle deep groupBy key (dot notation)
     },
     "children": [
       {
+        "$mapper": {
+          "extra": "info.type.name",
+        },
         "$original": {
           "id": 1,
           "info": {
@@ -160,6 +175,9 @@ should handle deep groupBy key (dot notation)
         "value": 1,
       },
       {
+        "$mapper": {
+          "extra": "info.type.name",
+        },
         "$original": {
           "id": 3,
           "info": {
@@ -180,7 +198,7 @@ should handle deep groupBy key (dot notation)
     "value": "X",
   },
   {
-    "$meta": {
+    "$group": {
       "groupBy": "info.type.code",
       "labelBy": "info.type.name",
       "skipSingle": false,
@@ -188,6 +206,9 @@ should handle deep groupBy key (dot notation)
     },
     "children": [
       {
+        "$mapper": {
+          "extra": "info.type.name",
+        },
         "$original": {
           "id": 2,
           "info": {
@@ -208,7 +229,7 @@ should handle deep groupBy key (dot notation)
     "value": "Y",
   },
   {
-    "$meta": {
+    "$group": {
       "groupBy": "info.type.code",
       "labelBy": "info.type.name",
       "skipSingle": false,
@@ -216,6 +237,9 @@ should handle deep groupBy key (dot notation)
     },
     "children": [
       {
+        "$mapper": {
+          "extra": "info.type.name",
+        },
         "$original": {
           "id": 4,
           "info": {

@@ -42,6 +42,7 @@ should group data by column and return tree structure
 ```json5
 [
   {
+    "$mapper": {},
     "$original": {
       "id": 1,
       "name": "Item 1",
@@ -51,6 +52,7 @@ should group data by column and return tree structure
     "value": 1,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 2,
       "name": "Item 2",
@@ -60,6 +62,7 @@ should group data by column and return tree structure
     "value": 2,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 3,
       "name": "Item 3",
@@ -67,6 +70,14 @@ should group data by column and return tree structure
     },
     "children": [
       {
+        "$mapper": {
+          "disabled": undefined,
+          "extra": undefined,
+          "label": "name",
+          "selectable": undefined,
+          "sortBy": "name",
+          "value": "id",
+        },
         "$original": {
           "id": 4,
           "name": "Item 4",
@@ -85,6 +96,7 @@ should group data by column and return tree structure
 ```json5
 [
   {
+    "$mapper": {},
     "$original": {
       "id": 1,
       "name": "Item 1",
@@ -94,6 +106,7 @@ should group data by column and return tree structure
     "value": 1,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 2,
       "name": "Item 2",
@@ -103,6 +116,7 @@ should group data by column and return tree structure
     "value": 2,
   },
   {
+    "$mapper": {},
     "$original": {
       "id": 3,
       "name": "Item 3",
@@ -110,6 +124,14 @@ should group data by column and return tree structure
     },
     "children": [
       {
+        "$mapper": {
+          "disabled": undefined,
+          "extra": undefined,
+          "label": "name",
+          "selectable": undefined,
+          "sortBy": "name",
+          "value": "id",
+        },
         "$original": {
           "id": 4,
           "name": "Item 4",

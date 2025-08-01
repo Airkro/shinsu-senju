@@ -43,6 +43,7 @@
 ```json5
 [
   {
+    "$mapper": {},
     "$original": {
       "group": "A",
       "id": 1,
@@ -52,6 +53,7 @@
     "value": 1,
   },
   {
+    "$mapper": {},
     "$original": {
       "group": "A",
       "id": 2,
@@ -61,6 +63,7 @@
     "value": 2,
   },
   {
+    "$mapper": {},
     "$original": {
       "group": "B",
       "id": 3,
@@ -76,7 +79,7 @@
 ```json5
 [
   {
-    "$meta": {
+    "$group": {
       "groupBy": "group",
       "labelBy": "group",
       "skipSingle": false,
@@ -84,6 +87,7 @@
     },
     "children": [
       {
+        "$mapper": {},
         "$original": {
           "group": "A",
           "id": 1,
@@ -93,6 +97,7 @@
         "value": 1,
       },
       {
+        "$mapper": {},
         "$original": {
           "group": "A",
           "id": 2,
@@ -107,7 +112,7 @@
     "value": "A",
   },
   {
-    "$meta": {
+    "$group": {
       "groupBy": "group",
       "labelBy": "group",
       "skipSingle": false,
@@ -115,6 +120,7 @@
     },
     "children": [
       {
+        "$mapper": {},
         "$original": {
           "group": "B",
           "id": 3,

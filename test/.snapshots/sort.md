@@ -70,6 +70,7 @@
 ```json5
 [
   {
+    "$mapper": {},
     "$original": {
       "name": "01",
     },
@@ -77,6 +78,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "1",
     },
@@ -84,6 +86,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "9",
     },
@@ -91,6 +94,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "11",
     },
@@ -98,6 +102,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "100",
     },
@@ -105,6 +110,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "01号",
     },
@@ -112,6 +118,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "02号",
     },
@@ -119,6 +126,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "1号",
     },
@@ -126,6 +134,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "2号",
     },
@@ -133,6 +142,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "9号",
     },
@@ -140,6 +150,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "11号",
     },
@@ -147,6 +158,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "100号",
     },
@@ -154,6 +166,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "房间01",
     },
@@ -161,6 +174,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "房间1",
     },
@@ -168,6 +182,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "房间9",
     },
@@ -175,6 +190,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "房间11",
     },
@@ -182,6 +198,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "房间100",
     },
@@ -189,6 +206,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "房间",
     },
@@ -202,6 +220,7 @@
 ```json5
 [
   {
+    "$mapper": {},
     "$original": {
       "name": "01",
     },
@@ -209,6 +228,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "1",
     },
@@ -216,6 +236,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "9",
     },
@@ -223,6 +244,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "11",
     },
@@ -230,6 +252,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "100",
     },
@@ -237,6 +260,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "01号",
     },
@@ -244,6 +268,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "02号",
     },
@@ -251,6 +276,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "1号",
     },
@@ -258,6 +284,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "2号",
     },
@@ -265,6 +292,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "9号",
     },
@@ -272,6 +300,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "11号",
     },
@@ -279,6 +308,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "100号",
     },
@@ -286,6 +316,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "房间01",
     },
@@ -293,6 +324,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "房间1",
     },
@@ -300,6 +332,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "房间9",
     },
@@ -307,6 +340,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "房间11",
     },
@@ -314,6 +348,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "房间100",
     },
@@ -321,6 +356,7 @@
     "value": undefined,
   },
   {
+    "$mapper": {},
     "$original": {
       "name": "房间",
     },

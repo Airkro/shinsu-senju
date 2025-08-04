@@ -1,6 +1,6 @@
 {
   "name": "shinsu-senju",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Tree mapper utils",
   "license": "MIT",
   "author": {
@@ -37,11 +37,9 @@
   },
   "devDependencies": {
     "@bring-it/npm": "^0.8.3",
-    "@nice-move/all-in-base": "^0.6.1",
-    "@vitest/coverage-v8": "^3.2.4",
-    "@vitest/ui": "^3.2.4",
+    "@nice-move/all-in-base": "^0.6.6",
     "eslint": "^9.32.0",
-    "garou": "^0.9.11",
+    "garou": "^0.9.12",
     "prettier": "~3.6.2",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"

@@ -5,88 +5,88 @@
 ## Input
 
 ### Options
-```json5
-{
-  "target": "target",
+```js
+export default {
+  target: 'target'
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "children": [
+    id: 1,
+    value: null,
+    children: [
       {
-        "id": 2,
-        "value": "a",
+        id: 2,
+        value: 'a'
       },
       {
-        "id": 3,
-        "value": null,
+        id: 3,
+        value: null
       },
       {
-        "children": [
+        id: 4,
+        value: 'target',
+        children: [
           {
-            "id": 5,
-            "value": null,
-          },
-        ],
-        "id": 4,
-        "value": "target",
-      },
-    ],
-    "id": 1,
-    "value": null,
-  },
+            id: 5,
+            value: null
+          }
+        ]
+      }
+    ]
+  }
 ]
 ```
 
 ## Output
 
 ### treeFinder
-```json5
-[
+```js
+export default [
   null,
-  "target",
+  'target'
 ]
 ```
 
 ### optionFinder
-```json5
-[
+```js
+export default [
   {
-    "children": [
+    id: 1,
+    value: null,
+    children: [
       {
-        "id": 2,
-        "value": "a",
+        id: 2,
+        value: 'a'
       },
       {
-        "id": 3,
-        "value": null,
+        id: 3,
+        value: null
       },
       {
-        "children": [
+        id: 4,
+        value: 'target',
+        children: [
           {
-            "id": 5,
-            "value": null,
-          },
-        ],
-        "id": 4,
-        "value": "target",
-      },
-    ],
-    "id": 1,
-    "value": null,
+            id: 5,
+            value: null
+          }
+        ]
+      }
+    ]
   },
   {
-    "children": [
+    id: 4,
+    value: 'target',
+    children: [
       {
-        "id": 5,
-        "value": null,
-      },
-    ],
-    "id": 4,
-    "value": "target",
-  },
+        id: 5,
+        value: null
+      }
+    ]
+  }
 ]
 ```

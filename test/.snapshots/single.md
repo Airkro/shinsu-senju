@@ -5,71 +5,71 @@ should handle single column grouping with one item
 ## Input
 
 ### Options
-```json5
-{
-  "groups": [
+```js
+export default {
+  groups: [
     {
-      "groupBy": "group",
-    },
-  ],
+      groupBy: 'group'
+    }
+  ]
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "group": "A",
-    "id": 1,
-    "name": "Single Item",
-  },
+    id: 1,
+    group: 'A',
+    name: 'Single Item'
+  }
 ]
 ```
 
 ## Output
 
 ### treeMapper
-```json5
-[
+```js
+export default [
   {
-    "$mapper": {},
-    "$original": {
-      "group": "A",
-      "id": 1,
-      "name": "Single Item",
+    label: 'Single Item',
+    value: 1,
+    $original: {
+      id: 1,
+      group: 'A',
+      name: 'Single Item'
     },
-    "label": "Single Item",
-    "value": 1,
-  },
+    $mapper: {}
+  }
 ]
 ```
 
 ### tableGrouping
-```json5
-[
+```js
+export default [
   {
-    "$group": {
-      "extraBy": undefined,
-      "groupBy": "group",
-      "labelBy": "group",
-      "skipSingle": false,
-      "sortBy": "group",
+    $group: {
+      groupBy: 'group',
+      labelBy: 'group',
+      sortBy: 'group',
+      extraBy: undefined,
+      skipSingle: false
     },
-    "children": [
+    label: 'A',
+    value: 'A',
+    selectable: false,
+    children: [
       {
-        "$mapper": {},
-        "$original": {
-          "group": "A",
-          "id": 1,
-          "name": "Single Item",
+        label: 'Single Item',
+        value: 1,
+        $original: {
+          id: 1,
+          group: 'A',
+          name: 'Single Item'
         },
-        "label": "Single Item",
-        "value": 1,
-      },
-    ],
-    "label": "A",
-    "selectable": false,
-    "value": "A",
-  },
+        $mapper: {}
+      }
+    ]
+  }
 ]
 ```

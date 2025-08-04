@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "test",
+  "version": "0.0.0",
+  "dependencies": {
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "javascript-stringify": "^2.1.0"
+  },
+  "peerDependencies": {
+    "vitest": "^3.2.4"
+  }
+}

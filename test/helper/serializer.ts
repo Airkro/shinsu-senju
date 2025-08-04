@@ -1,4 +1,9 @@
+import { stringify } from 'javascript-stringify';
 import type { SnapshotSerializer } from 'vitest';
+
+function print(val: unknown) {
+  return `export default ${stringify(val, null, 2)}`;
+}
 
 interface SnapshotValue {
   $root: boolean;
@@ -10,14 +15,10 @@ interface SnapshotValue {
   treeMapper: unknown;
 }
 
-const printSection = (
-  printer: (val: unknown) => string,
-  title: string,
-  content: unknown,
-): string[] =>
+const printSection = (title: string, content: unknown): string[] =>
   content === undefined
     ? []
-    : ['', `### ${title}`, '```json5', printer(content), '```'];
+    : ['', `### ${title}`, '```js', print(content) ?? '', '```'];
 
 export default {
   test(value: unknown): boolean {
@@ -29,7 +30,7 @@ export default {
     );
   },
 
-  serialize(value: unknown, config, indent, depth, refs, printer): string {
+  serialize(value: unknown): string {
     const {
       $root,
       name = '',
@@ -39,21 +40,17 @@ export default {
       ...rest
     } = value as SnapshotValue;
 
-    const print = (io: unknown) => printer(io, config, indent, depth, refs);
-
     const sections: string[] = [
       `# Snapshot ${name}`,
       '',
       description,
       '',
       '## Input',
-      ...printSection(print, 'Options', options),
-      ...printSection(print, 'Data', data),
+      ...printSection('Options', options),
+      ...printSection('Data', data),
       '',
       '## Output',
-      ...Object.entries(rest).flatMap(([key, io]) =>
-        printSection(print, key, io),
-      ),
+      ...Object.entries(rest).flatMap(([key, io]) => printSection(key, io)),
     ];
 
     return sections.join('\n');

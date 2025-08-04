@@ -5,111 +5,111 @@ should support infinite levels of nesting
 ## Input
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "id": 7,
-    "parentId": 6,
+    id: 7,
+    parentId: 6
   },
   {
-    "id": 8,
-    "parentId": 7,
+    id: 8,
+    parentId: 7
   },
   {
-    "id": 9,
-    "parentId": 8,
+    id: 9,
+    parentId: 8
   },
   {
-    "id": 10,
-    "parentId": 9,
+    id: 10,
+    parentId: 9
   },
   {
-    "id": 1,
+    id: 1
   },
   {
-    "id": 2,
-    "parentId": 1,
+    id: 2,
+    parentId: 1
   },
   {
-    "id": 3,
-    "parentId": 2,
+    id: 3,
+    parentId: 2
   },
   {
-    "id": 4,
-    "parentId": 3,
+    id: 4,
+    parentId: 3
   },
   {
-    "id": 5,
-    "parentId": 4,
+    id: 5,
+    parentId: 4
   },
   {
-    "id": 6,
-    "parentId": 5,
-  },
+    id: 6,
+    parentId: 5
+  }
 ]
 ```
 
 ## Output
 
 ### treeInfinity
-```json5
-[
+```js
+export default [
   {
-    "children": [
+    id: 1,
+    children: [
       {
-        "children": [
+        id: 2,
+        parentId: 1,
+        children: [
           {
-            "children": [
+            id: 3,
+            parentId: 2,
+            children: [
               {
-                "children": [
+                id: 4,
+                parentId: 3,
+                children: [
                   {
-                    "children": [
+                    id: 5,
+                    parentId: 4,
+                    children: [
                       {
-                        "children": [
+                        id: 6,
+                        parentId: 5,
+                        children: [
                           {
-                            "children": [
+                            id: 7,
+                            parentId: 6,
+                            children: [
                               {
-                                "children": [
+                                id: 8,
+                                parentId: 7,
+                                children: [
                                   {
-                                    "children": [
+                                    id: 9,
+                                    parentId: 8,
+                                    children: [
                                       {
-                                        "id": 10,
-                                        "parentId": 9,
-                                      },
-                                    ],
-                                    "id": 9,
-                                    "parentId": 8,
-                                  },
-                                ],
-                                "id": 8,
-                                "parentId": 7,
-                              },
-                            ],
-                            "id": 7,
-                            "parentId": 6,
-                          },
-                        ],
-                        "id": 6,
-                        "parentId": 5,
-                      },
-                    ],
-                    "id": 5,
-                    "parentId": 4,
-                  },
-                ],
-                "id": 4,
-                "parentId": 3,
-              },
-            ],
-            "id": 3,
-            "parentId": 2,
-          },
-        ],
-        "id": 2,
-        "parentId": 1,
-      },
-    ],
-    "id": 1,
-  },
+                                        id: 10,
+                                        parentId: 9
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 ]
 ```

@@ -5,47 +5,47 @@ should filter basic tree structure
 ## Input
 
 ### Options
-```json5
-{
-  "filterBy": [Function],
-  "parentKey": "parentId",
+```js
+export default {
+  parentKey: 'parentId',
+  filterBy: (item) => item.name === "Grandchild"
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "id": 1,
-    "name": "Root",
+    id: 1,
+    name: 'Root'
   },
   {
-    "id": 2,
-    "name": "Child 1",
-    "parentId": 1,
+    id: 2,
+    parentId: 1,
+    name: 'Child 1'
   },
   {
-    "id": 3,
-    "name": "Child 2",
-    "parentId": 1,
+    id: 3,
+    parentId: 1,
+    name: 'Child 2'
   },
   {
-    "id": 4,
-    "name": "Grandchild",
-    "parentId": 2,
-  },
+    id: 4,
+    parentId: 2,
+    name: 'Grandchild'
+  }
 ]
 ```
 
 ## Output
 
 ### treeFilter
-```json5
-[
+```js
+export default [
   {
-    "id": 4,
-    "name": "Grandchild",
-    "parentId": 2,
-  },
+    id: 4,
+    parentId: 2,
+    name: 'Grandchild'
+  }
 ]
 ```

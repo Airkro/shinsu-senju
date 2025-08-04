@@ -5,20 +5,20 @@
 ## Input
 
 ### Options
-```json5
-{
-  "target": "any",
+```js
+export default {
+  target: 'any'
 }
 ```
 
 ### Data
-```json5
-[]
+```js
+export default []
 ```
 
 ## Output
 
 ### treeFinder
-```json5
-[]
+```js
+export default []
 ```

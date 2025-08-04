@@ -5,366 +5,366 @@ reverse
 ## Input
 
 ### Options
-```json5
-{
-  "groups": {
-    "groupBy": "parent",
+```js
+export default {
+  groups: {
+    groupBy: 'parent'
   },
-  "mappers": {
-    "disabled": {
-      "const": "C",
-      "reverse": true,
-      "when": "parent",
-    },
-  },
+  mappers: {
+    disabled: {
+      when: 'parent',
+      'const': 'C',
+      reverse: true
+    }
+  }
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "id": 5,
-    "name": "Item 5",
-    "parent": "C",
+    id: 5,
+    parent: 'C',
+    name: 'Item 5'
   },
   {
-    "id": 6,
-    "name": "Item 6",
-    "parent": "C",
+    id: 6,
+    parent: 'C',
+    name: 'Item 6'
   },
   {
-    "id": 1,
-    "name": "Item 1",
-    "parent": "A",
+    id: 1,
+    parent: 'A',
+    name: 'Item 1'
   },
   {
-    "id": 2,
-    "name": "Item 2",
-    "parent": "A",
+    id: 2,
+    parent: 'A',
+    name: 'Item 2'
   },
   {
-    "id": 3,
-    "name": "Item 3",
-    "parent": "B",
+    id: 3,
+    parent: 'B',
+    name: 'Item 3'
   },
   {
-    "id": 4,
-    "name": "Item 4",
-    "parent": "B",
+    id: 4,
+    parent: 'B',
+    name: 'Item 4'
   },
   {
-    "id": 7,
-    "name": "Item",
-    "parent": "D",
-  },
+    id: 7,
+    parent: 'D',
+    name: 'Item'
+  }
 ]
 ```
 
 ## Output
 
 ### treeMapper
-```json5
-[
+```js
+export default [
   {
-    "$mapper": {
-      "disabled": {
-        "const": "C",
-        "reverse": true,
-        "when": "parent",
-      },
+    label: 'Item 1',
+    value: 1,
+    disabled: true,
+    $original: {
+      id: 1,
+      parent: 'A',
+      name: 'Item 1'
     },
-    "$original": {
-      "id": 1,
-      "name": "Item 1",
-      "parent": "A",
-    },
-    "disabled": true,
-    "label": "Item 1",
-    "value": 1,
+    $mapper: {
+      disabled: {
+        when: 'parent',
+        'const': 'C',
+        reverse: true
+      }
+    }
   },
   {
-    "$mapper": {
-      "disabled": {
-        "const": "C",
-        "reverse": true,
-        "when": "parent",
-      },
+    label: 'Item 2',
+    value: 2,
+    disabled: true,
+    $original: {
+      id: 2,
+      parent: 'A',
+      name: 'Item 2'
     },
-    "$original": {
-      "id": 2,
-      "name": "Item 2",
-      "parent": "A",
-    },
-    "disabled": true,
-    "label": "Item 2",
-    "value": 2,
+    $mapper: {
+      disabled: {
+        when: 'parent',
+        'const': 'C',
+        reverse: true
+      }
+    }
   },
   {
-    "$mapper": {
-      "disabled": {
-        "const": "C",
-        "reverse": true,
-        "when": "parent",
-      },
+    label: 'Item 3',
+    value: 3,
+    disabled: true,
+    $original: {
+      id: 3,
+      parent: 'B',
+      name: 'Item 3'
     },
-    "$original": {
-      "id": 3,
-      "name": "Item 3",
-      "parent": "B",
-    },
-    "disabled": true,
-    "label": "Item 3",
-    "value": 3,
+    $mapper: {
+      disabled: {
+        when: 'parent',
+        'const': 'C',
+        reverse: true
+      }
+    }
   },
   {
-    "$mapper": {
-      "disabled": {
-        "const": "C",
-        "reverse": true,
-        "when": "parent",
-      },
+    label: 'Item 4',
+    value: 4,
+    disabled: true,
+    $original: {
+      id: 4,
+      parent: 'B',
+      name: 'Item 4'
     },
-    "$original": {
-      "id": 4,
-      "name": "Item 4",
-      "parent": "B",
-    },
-    "disabled": true,
-    "label": "Item 4",
-    "value": 4,
+    $mapper: {
+      disabled: {
+        when: 'parent',
+        'const': 'C',
+        reverse: true
+      }
+    }
   },
   {
-    "$mapper": {
-      "disabled": {
-        "const": "C",
-        "reverse": true,
-        "when": "parent",
-      },
+    label: 'Item 5',
+    value: 5,
+    disabled: false,
+    $original: {
+      id: 5,
+      parent: 'C',
+      name: 'Item 5'
     },
-    "$original": {
-      "id": 5,
-      "name": "Item 5",
-      "parent": "C",
-    },
-    "disabled": false,
-    "label": "Item 5",
-    "value": 5,
+    $mapper: {
+      disabled: {
+        when: 'parent',
+        'const': 'C',
+        reverse: true
+      }
+    }
   },
   {
-    "$mapper": {
-      "disabled": {
-        "const": "C",
-        "reverse": true,
-        "when": "parent",
-      },
+    label: 'Item 6',
+    value: 6,
+    disabled: false,
+    $original: {
+      id: 6,
+      parent: 'C',
+      name: 'Item 6'
     },
-    "$original": {
-      "id": 6,
-      "name": "Item 6",
-      "parent": "C",
-    },
-    "disabled": false,
-    "label": "Item 6",
-    "value": 6,
+    $mapper: {
+      disabled: {
+        when: 'parent',
+        'const': 'C',
+        reverse: true
+      }
+    }
   },
   {
-    "$mapper": {
-      "disabled": {
-        "const": "C",
-        "reverse": true,
-        "when": "parent",
-      },
+    label: 'Item',
+    value: 7,
+    disabled: true,
+    $original: {
+      id: 7,
+      parent: 'D',
+      name: 'Item'
     },
-    "$original": {
-      "id": 7,
-      "name": "Item",
-      "parent": "D",
-    },
-    "disabled": true,
-    "label": "Item",
-    "value": 7,
-  },
+    $mapper: {
+      disabled: {
+        when: 'parent',
+        'const': 'C',
+        reverse: true
+      }
+    }
+  }
 ]
 ```
 
 ### tableGrouping
-```json5
-[
+```js
+export default [
   {
-    "$group": {
-      "extraBy": undefined,
-      "groupBy": "parent",
-      "labelBy": "parent",
-      "skipSingle": false,
-      "sortBy": "parent",
+    $group: {
+      groupBy: 'parent',
+      labelBy: 'parent',
+      sortBy: 'parent',
+      extraBy: undefined,
+      skipSingle: false
     },
-    "children": [
+    label: 'A',
+    value: 'A',
+    selectable: false,
+    children: [
       {
-        "$mapper": {
-          "disabled": {
-            "const": "C",
-            "reverse": true,
-            "when": "parent",
-          },
+        label: 'Item 1',
+        value: 1,
+        disabled: true,
+        $original: {
+          id: 1,
+          parent: 'A',
+          name: 'Item 1'
         },
-        "$original": {
-          "id": 1,
-          "name": "Item 1",
-          "parent": "A",
-        },
-        "disabled": true,
-        "label": "Item 1",
-        "value": 1,
+        $mapper: {
+          disabled: {
+            when: 'parent',
+            'const': 'C',
+            reverse: true
+          }
+        }
       },
       {
-        "$mapper": {
-          "disabled": {
-            "const": "C",
-            "reverse": true,
-            "when": "parent",
-          },
+        label: 'Item 2',
+        value: 2,
+        disabled: true,
+        $original: {
+          id: 2,
+          parent: 'A',
+          name: 'Item 2'
         },
-        "$original": {
-          "id": 2,
-          "name": "Item 2",
-          "parent": "A",
-        },
-        "disabled": true,
-        "label": "Item 2",
-        "value": 2,
-      },
-    ],
-    "label": "A",
-    "selectable": false,
-    "value": "A",
+        $mapper: {
+          disabled: {
+            when: 'parent',
+            'const': 'C',
+            reverse: true
+          }
+        }
+      }
+    ]
   },
   {
-    "$group": {
-      "extraBy": undefined,
-      "groupBy": "parent",
-      "labelBy": "parent",
-      "skipSingle": false,
-      "sortBy": "parent",
+    $group: {
+      groupBy: 'parent',
+      labelBy: 'parent',
+      sortBy: 'parent',
+      extraBy: undefined,
+      skipSingle: false
     },
-    "children": [
+    label: 'B',
+    value: 'B',
+    selectable: false,
+    children: [
       {
-        "$mapper": {
-          "disabled": {
-            "const": "C",
-            "reverse": true,
-            "when": "parent",
-          },
+        label: 'Item 3',
+        value: 3,
+        disabled: true,
+        $original: {
+          id: 3,
+          parent: 'B',
+          name: 'Item 3'
         },
-        "$original": {
-          "id": 3,
-          "name": "Item 3",
-          "parent": "B",
-        },
-        "disabled": true,
-        "label": "Item 3",
-        "value": 3,
+        $mapper: {
+          disabled: {
+            when: 'parent',
+            'const': 'C',
+            reverse: true
+          }
+        }
       },
       {
-        "$mapper": {
-          "disabled": {
-            "const": "C",
-            "reverse": true,
-            "when": "parent",
-          },
+        label: 'Item 4',
+        value: 4,
+        disabled: true,
+        $original: {
+          id: 4,
+          parent: 'B',
+          name: 'Item 4'
         },
-        "$original": {
-          "id": 4,
-          "name": "Item 4",
-          "parent": "B",
-        },
-        "disabled": true,
-        "label": "Item 4",
-        "value": 4,
-      },
-    ],
-    "label": "B",
-    "selectable": false,
-    "value": "B",
+        $mapper: {
+          disabled: {
+            when: 'parent',
+            'const': 'C',
+            reverse: true
+          }
+        }
+      }
+    ]
   },
   {
-    "$group": {
-      "extraBy": undefined,
-      "groupBy": "parent",
-      "labelBy": "parent",
-      "skipSingle": false,
-      "sortBy": "parent",
+    $group: {
+      groupBy: 'parent',
+      labelBy: 'parent',
+      sortBy: 'parent',
+      extraBy: undefined,
+      skipSingle: false
     },
-    "children": [
+    label: 'C',
+    value: 'C',
+    selectable: false,
+    children: [
       {
-        "$mapper": {
-          "disabled": {
-            "const": "C",
-            "reverse": true,
-            "when": "parent",
-          },
+        label: 'Item 5',
+        value: 5,
+        disabled: false,
+        $original: {
+          id: 5,
+          parent: 'C',
+          name: 'Item 5'
         },
-        "$original": {
-          "id": 5,
-          "name": "Item 5",
-          "parent": "C",
-        },
-        "disabled": false,
-        "label": "Item 5",
-        "value": 5,
+        $mapper: {
+          disabled: {
+            when: 'parent',
+            'const': 'C',
+            reverse: true
+          }
+        }
       },
       {
-        "$mapper": {
-          "disabled": {
-            "const": "C",
-            "reverse": true,
-            "when": "parent",
-          },
+        label: 'Item 6',
+        value: 6,
+        disabled: false,
+        $original: {
+          id: 6,
+          parent: 'C',
+          name: 'Item 6'
         },
-        "$original": {
-          "id": 6,
-          "name": "Item 6",
-          "parent": "C",
-        },
-        "disabled": false,
-        "label": "Item 6",
-        "value": 6,
-      },
-    ],
-    "label": "C",
-    "selectable": false,
-    "value": "C",
+        $mapper: {
+          disabled: {
+            when: 'parent',
+            'const': 'C',
+            reverse: true
+          }
+        }
+      }
+    ]
   },
   {
-    "$group": {
-      "extraBy": undefined,
-      "groupBy": "parent",
-      "labelBy": "parent",
-      "skipSingle": false,
-      "sortBy": "parent",
+    $group: {
+      groupBy: 'parent',
+      labelBy: 'parent',
+      sortBy: 'parent',
+      extraBy: undefined,
+      skipSingle: false
     },
-    "children": [
+    label: 'D',
+    value: 'D',
+    selectable: false,
+    children: [
       {
-        "$mapper": {
-          "disabled": {
-            "const": "C",
-            "reverse": true,
-            "when": "parent",
-          },
+        label: 'Item',
+        value: 7,
+        disabled: true,
+        $original: {
+          id: 7,
+          parent: 'D',
+          name: 'Item'
         },
-        "$original": {
-          "id": 7,
-          "name": "Item",
-          "parent": "D",
-        },
-        "disabled": true,
-        "label": "Item",
-        "value": 7,
-      },
-    ],
-    "label": "D",
-    "selectable": false,
-    "value": "D",
-  },
+        $mapper: {
+          disabled: {
+            when: 'parent',
+            'const': 'C',
+            reverse: true
+          }
+        }
+      }
+    ]
+  }
 ]
 ```

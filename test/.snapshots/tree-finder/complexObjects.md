@@ -5,51 +5,51 @@
 ## Input
 
 ### Options
-```json5
-{
-  "target": {
-    "name": "target.txt",
-    "size": 1024,
-    "type": "file",
-  },
+```js
+export default {
+  target: {
+    type: 'file',
+    name: 'target.txt',
+    size: 1024
+  }
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "children": [
-      {
-        "children": [
-          {
-            "id": 3,
-            "value": {
-              "name": "target.txt",
-              "size": 1024,
-              "type": "file",
-            },
-          },
-        ],
-        "id": 2,
-        "value": {
-          "name": "subfolder",
-          "type": "folder",
-        },
-      },
-    ],
-    "id": 1,
-    "value": {
-      "name": "root",
-      "type": "folder",
+    id: 1,
+    value: {
+      type: 'folder',
+      name: 'root'
     },
-  },
+    children: [
+      {
+        id: 2,
+        value: {
+          type: 'folder',
+          name: 'subfolder'
+        },
+        children: [
+          {
+            id: 3,
+            value: {
+              type: 'file',
+              name: 'target.txt',
+              size: 1024
+            }
+          }
+        ]
+      }
+    ]
+  }
 ]
 ```
 
 ## Output
 
 ### treeFinder
-```json5
-[]
+```js
+export default []
 ```

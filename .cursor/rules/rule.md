@@ -10,20 +10,3 @@ Forbidden typescript non-null assertion
 尽量简化逻辑,减少代码量，但也要保证可读性
 简化代码，但拆分复杂逻辑到多个函数
 简单的逻辑没有必要注释
-
-优先使用 迭代器 Iterator Helpers (es2025以支持)替代 for...of 和 传统for/foreach:
-
-```js
-Iterator.drop();
-Iterator.every();
-Iterator.filter();
-Iterator.find();
-Iterator.flatMap();
-Iterator.forEach();
-Iterator.from();
-Iterator.map();
-Iterator.reduce();
-Iterator.some();
-Iterator.take();
-Iterator.toArray();
-```

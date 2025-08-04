@@ -5,63 +5,63 @@ should handle mixed root nodes and children
 ## Input
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "id": 1,
+    id: 1
   },
   {
-    "id": 2,
-    "parentId": 1,
+    id: 2,
+    parentId: 1
   },
   {
-    "id": 3,
+    id: 3
   },
   {
-    "id": 4,
-    "parentId": 2,
+    id: 4,
+    parentId: 2
   },
   {
-    "id": 5,
+    id: 5
   },
   {
-    "id": 6,
-    "parentId": 3,
-  },
+    id: 6,
+    parentId: 3
+  }
 ]
 ```
 
 ## Output
 
 ### treeInfinity
-```json5
-[
+```js
+export default [
   {
-    "children": [
+    id: 1,
+    children: [
       {
-        "children": [
+        id: 2,
+        parentId: 1,
+        children: [
           {
-            "id": 4,
-            "parentId": 2,
-          },
-        ],
-        "id": 2,
-        "parentId": 1,
-      },
-    ],
-    "id": 1,
+            id: 4,
+            parentId: 2
+          }
+        ]
+      }
+    ]
   },
   {
-    "children": [
+    id: 3,
+    children: [
       {
-        "id": 6,
-        "parentId": 3,
-      },
-    ],
-    "id": 3,
+        id: 6,
+        parentId: 3
+      }
+    ]
   },
   {
-    "id": 5,
-  },
+    id: 5
+  }
 ]
 ```

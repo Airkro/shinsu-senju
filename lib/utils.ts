@@ -12,11 +12,13 @@ export function getBy(data: UnknownObject, getter: Getter): unknown {
   return get(data, getter);
 }
 
+type Matched = number | string | boolean | bigint | null;
+
 export type Condition =
   | {
       when: Getter;
-      const?: unknown;
-      enum?: unknown[];
+      const?: Matched;
+      enum?: Matched[];
       reverse?: boolean;
     }
   | ((item: UnknownObject) => boolean);
@@ -26,11 +28,14 @@ export function doCondition(data: UnknownObject, matcher: Condition): boolean {
     return matcher(data);
   }
 
-  const io = matcher.const
-    ? getBy(data, matcher.when) === matcher.const
-    : matcher.enum
-      ? matcher.enum.includes(getBy(data, matcher.when))
-      : Boolean(getBy(data, matcher.when));
+  const target = getBy(data, matcher.when) as Matched;
+
+  const io =
+    matcher.const === undefined
+      ? matcher.enum === undefined
+        ? Boolean(target)
+        : matcher.enum.includes(target)
+      : target === matcher.const;
 
   return matcher.reverse ? !io : io;
 }

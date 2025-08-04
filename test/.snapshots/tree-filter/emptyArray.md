@@ -5,21 +5,21 @@ should handle empty array
 ## Input
 
 ### Options
-```json5
-{
-  "filterBy": [Function],
-  "parentKey": "parentId",
+```js
+export default {
+  parentKey: 'parentId',
+  filterBy: () => true
 }
 ```
 
 ### Data
-```json5
-[]
+```js
+export default []
 ```
 
 ## Output
 
 ### treeFilter
-```json5
-[]
+```js
+export default []
 ```

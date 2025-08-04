@@ -5,470 +5,470 @@ matcher
 ## Input
 
 ### Options
-```json5
-{
-  "groups": {
-    "groupBy": "parent",
+```js
+export default {
+  groups: {
+    groupBy: 'parent'
   },
-  "mappers": {
-    "disabled": {
-      "const": "C",
-      "when": "parent",
+  mappers: {
+    selectable: {
+      when: 'parent',
+      'enum': [
+        'A',
+        'B'
+      ]
     },
-    "selectable": {
-      "enum": [
-        "A",
-        "B",
-      ],
-      "when": "parent",
-    },
-  },
+    disabled: {
+      when: 'parent',
+      'const': 'C'
+    }
+  }
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "id": 1,
-    "name": "Item 1",
-    "parent": "A",
+    id: 1,
+    parent: 'A',
+    name: 'Item 1'
   },
   {
-    "id": 2,
-    "name": "Item 2",
-    "parent": "A",
+    id: 2,
+    parent: 'A',
+    name: 'Item 2'
   },
   {
-    "id": 3,
-    "name": "Item 3",
-    "parent": "B",
+    id: 3,
+    parent: 'B',
+    name: 'Item 3'
   },
   {
-    "id": 4,
-    "name": "Item 4",
-    "parent": "B",
+    id: 4,
+    parent: 'B',
+    name: 'Item 4'
   },
   {
-    "id": 5,
-    "name": "Item 5",
-    "parent": "C",
+    id: 5,
+    parent: 'C',
+    name: 'Item 5'
   },
   {
-    "id": 6,
-    "name": "Item 6",
-    "parent": "C",
+    id: 6,
+    parent: 'C',
+    name: 'Item 6'
   },
   {
-    "id": 7,
-    "name": "Item 7",
-    "parent": "D",
-  },
+    id: 7,
+    parent: 'D',
+    name: 'Item 7'
+  }
 ]
 ```
 
 ## Output
 
 ### treeMapper
-```json5
-[
+```js
+export default [
   {
-    "$mapper": {
-      "disabled": {
-        "const": "C",
-        "when": "parent",
-      },
-      "selectable": {
-        "enum": [
-          "A",
-          "B",
-        ],
-        "when": "parent",
-      },
+    label: 'Item 1',
+    value: 1,
+    selectable: true,
+    disabled: false,
+    $original: {
+      id: 1,
+      parent: 'A',
+      name: 'Item 1'
     },
-    "$original": {
-      "id": 1,
-      "name": "Item 1",
-      "parent": "A",
-    },
-    "disabled": false,
-    "label": "Item 1",
-    "selectable": true,
-    "value": 1,
+    $mapper: {
+      selectable: {
+        when: 'parent',
+        'enum': [
+          'A',
+          'B'
+        ]
+      },
+      disabled: {
+        when: 'parent',
+        'const': 'C'
+      }
+    }
   },
   {
-    "$mapper": {
-      "disabled": {
-        "const": "C",
-        "when": "parent",
-      },
-      "selectable": {
-        "enum": [
-          "A",
-          "B",
-        ],
-        "when": "parent",
-      },
+    label: 'Item 2',
+    value: 2,
+    selectable: true,
+    disabled: false,
+    $original: {
+      id: 2,
+      parent: 'A',
+      name: 'Item 2'
     },
-    "$original": {
-      "id": 2,
-      "name": "Item 2",
-      "parent": "A",
-    },
-    "disabled": false,
-    "label": "Item 2",
-    "selectable": true,
-    "value": 2,
+    $mapper: {
+      selectable: {
+        when: 'parent',
+        'enum': [
+          'A',
+          'B'
+        ]
+      },
+      disabled: {
+        when: 'parent',
+        'const': 'C'
+      }
+    }
   },
   {
-    "$mapper": {
-      "disabled": {
-        "const": "C",
-        "when": "parent",
-      },
-      "selectable": {
-        "enum": [
-          "A",
-          "B",
-        ],
-        "when": "parent",
-      },
+    label: 'Item 3',
+    value: 3,
+    selectable: true,
+    disabled: false,
+    $original: {
+      id: 3,
+      parent: 'B',
+      name: 'Item 3'
     },
-    "$original": {
-      "id": 3,
-      "name": "Item 3",
-      "parent": "B",
-    },
-    "disabled": false,
-    "label": "Item 3",
-    "selectable": true,
-    "value": 3,
+    $mapper: {
+      selectable: {
+        when: 'parent',
+        'enum': [
+          'A',
+          'B'
+        ]
+      },
+      disabled: {
+        when: 'parent',
+        'const': 'C'
+      }
+    }
   },
   {
-    "$mapper": {
-      "disabled": {
-        "const": "C",
-        "when": "parent",
-      },
-      "selectable": {
-        "enum": [
-          "A",
-          "B",
-        ],
-        "when": "parent",
-      },
+    label: 'Item 4',
+    value: 4,
+    selectable: true,
+    disabled: false,
+    $original: {
+      id: 4,
+      parent: 'B',
+      name: 'Item 4'
     },
-    "$original": {
-      "id": 4,
-      "name": "Item 4",
-      "parent": "B",
-    },
-    "disabled": false,
-    "label": "Item 4",
-    "selectable": true,
-    "value": 4,
+    $mapper: {
+      selectable: {
+        when: 'parent',
+        'enum': [
+          'A',
+          'B'
+        ]
+      },
+      disabled: {
+        when: 'parent',
+        'const': 'C'
+      }
+    }
   },
   {
-    "$mapper": {
-      "disabled": {
-        "const": "C",
-        "when": "parent",
-      },
-      "selectable": {
-        "enum": [
-          "A",
-          "B",
-        ],
-        "when": "parent",
-      },
+    label: 'Item 5',
+    value: 5,
+    selectable: false,
+    disabled: true,
+    $original: {
+      id: 5,
+      parent: 'C',
+      name: 'Item 5'
     },
-    "$original": {
-      "id": 5,
-      "name": "Item 5",
-      "parent": "C",
-    },
-    "disabled": true,
-    "label": "Item 5",
-    "selectable": false,
-    "value": 5,
+    $mapper: {
+      selectable: {
+        when: 'parent',
+        'enum': [
+          'A',
+          'B'
+        ]
+      },
+      disabled: {
+        when: 'parent',
+        'const': 'C'
+      }
+    }
   },
   {
-    "$mapper": {
-      "disabled": {
-        "const": "C",
-        "when": "parent",
-      },
-      "selectable": {
-        "enum": [
-          "A",
-          "B",
-        ],
-        "when": "parent",
-      },
+    label: 'Item 6',
+    value: 6,
+    selectable: false,
+    disabled: true,
+    $original: {
+      id: 6,
+      parent: 'C',
+      name: 'Item 6'
     },
-    "$original": {
-      "id": 6,
-      "name": "Item 6",
-      "parent": "C",
-    },
-    "disabled": true,
-    "label": "Item 6",
-    "selectable": false,
-    "value": 6,
+    $mapper: {
+      selectable: {
+        when: 'parent',
+        'enum': [
+          'A',
+          'B'
+        ]
+      },
+      disabled: {
+        when: 'parent',
+        'const': 'C'
+      }
+    }
   },
   {
-    "$mapper": {
-      "disabled": {
-        "const": "C",
-        "when": "parent",
-      },
-      "selectable": {
-        "enum": [
-          "A",
-          "B",
-        ],
-        "when": "parent",
-      },
+    label: 'Item 7',
+    value: 7,
+    selectable: false,
+    disabled: false,
+    $original: {
+      id: 7,
+      parent: 'D',
+      name: 'Item 7'
     },
-    "$original": {
-      "id": 7,
-      "name": "Item 7",
-      "parent": "D",
-    },
-    "disabled": false,
-    "label": "Item 7",
-    "selectable": false,
-    "value": 7,
-  },
+    $mapper: {
+      selectable: {
+        when: 'parent',
+        'enum': [
+          'A',
+          'B'
+        ]
+      },
+      disabled: {
+        when: 'parent',
+        'const': 'C'
+      }
+    }
+  }
 ]
 ```
 
 ### tableGrouping
-```json5
-[
+```js
+export default [
   {
-    "$group": {
-      "extraBy": undefined,
-      "groupBy": "parent",
-      "labelBy": "parent",
-      "skipSingle": false,
-      "sortBy": "parent",
+    $group: {
+      groupBy: 'parent',
+      labelBy: 'parent',
+      sortBy: 'parent',
+      extraBy: undefined,
+      skipSingle: false
     },
-    "children": [
+    label: 'A',
+    value: 'A',
+    selectable: false,
+    children: [
       {
-        "$mapper": {
-          "disabled": {
-            "const": "C",
-            "when": "parent",
-          },
-          "selectable": {
-            "enum": [
-              "A",
-              "B",
-            ],
-            "when": "parent",
-          },
+        label: 'Item 1',
+        value: 1,
+        selectable: true,
+        disabled: false,
+        $original: {
+          id: 1,
+          parent: 'A',
+          name: 'Item 1'
         },
-        "$original": {
-          "id": 1,
-          "name": "Item 1",
-          "parent": "A",
-        },
-        "disabled": false,
-        "label": "Item 1",
-        "selectable": true,
-        "value": 1,
+        $mapper: {
+          selectable: {
+            when: 'parent',
+            'enum': [
+              'A',
+              'B'
+            ]
+          },
+          disabled: {
+            when: 'parent',
+            'const': 'C'
+          }
+        }
       },
       {
-        "$mapper": {
-          "disabled": {
-            "const": "C",
-            "when": "parent",
-          },
-          "selectable": {
-            "enum": [
-              "A",
-              "B",
-            ],
-            "when": "parent",
-          },
+        label: 'Item 2',
+        value: 2,
+        selectable: true,
+        disabled: false,
+        $original: {
+          id: 2,
+          parent: 'A',
+          name: 'Item 2'
         },
-        "$original": {
-          "id": 2,
-          "name": "Item 2",
-          "parent": "A",
-        },
-        "disabled": false,
-        "label": "Item 2",
-        "selectable": true,
-        "value": 2,
-      },
-    ],
-    "label": "A",
-    "selectable": false,
-    "value": "A",
+        $mapper: {
+          selectable: {
+            when: 'parent',
+            'enum': [
+              'A',
+              'B'
+            ]
+          },
+          disabled: {
+            when: 'parent',
+            'const': 'C'
+          }
+        }
+      }
+    ]
   },
   {
-    "$group": {
-      "extraBy": undefined,
-      "groupBy": "parent",
-      "labelBy": "parent",
-      "skipSingle": false,
-      "sortBy": "parent",
+    $group: {
+      groupBy: 'parent',
+      labelBy: 'parent',
+      sortBy: 'parent',
+      extraBy: undefined,
+      skipSingle: false
     },
-    "children": [
+    label: 'B',
+    value: 'B',
+    selectable: false,
+    children: [
       {
-        "$mapper": {
-          "disabled": {
-            "const": "C",
-            "when": "parent",
-          },
-          "selectable": {
-            "enum": [
-              "A",
-              "B",
-            ],
-            "when": "parent",
-          },
+        label: 'Item 3',
+        value: 3,
+        selectable: true,
+        disabled: false,
+        $original: {
+          id: 3,
+          parent: 'B',
+          name: 'Item 3'
         },
-        "$original": {
-          "id": 3,
-          "name": "Item 3",
-          "parent": "B",
-        },
-        "disabled": false,
-        "label": "Item 3",
-        "selectable": true,
-        "value": 3,
+        $mapper: {
+          selectable: {
+            when: 'parent',
+            'enum': [
+              'A',
+              'B'
+            ]
+          },
+          disabled: {
+            when: 'parent',
+            'const': 'C'
+          }
+        }
       },
       {
-        "$mapper": {
-          "disabled": {
-            "const": "C",
-            "when": "parent",
-          },
-          "selectable": {
-            "enum": [
-              "A",
-              "B",
-            ],
-            "when": "parent",
-          },
+        label: 'Item 4',
+        value: 4,
+        selectable: true,
+        disabled: false,
+        $original: {
+          id: 4,
+          parent: 'B',
+          name: 'Item 4'
         },
-        "$original": {
-          "id": 4,
-          "name": "Item 4",
-          "parent": "B",
-        },
-        "disabled": false,
-        "label": "Item 4",
-        "selectable": true,
-        "value": 4,
-      },
-    ],
-    "label": "B",
-    "selectable": false,
-    "value": "B",
+        $mapper: {
+          selectable: {
+            when: 'parent',
+            'enum': [
+              'A',
+              'B'
+            ]
+          },
+          disabled: {
+            when: 'parent',
+            'const': 'C'
+          }
+        }
+      }
+    ]
   },
   {
-    "$group": {
-      "extraBy": undefined,
-      "groupBy": "parent",
-      "labelBy": "parent",
-      "skipSingle": false,
-      "sortBy": "parent",
+    $group: {
+      groupBy: 'parent',
+      labelBy: 'parent',
+      sortBy: 'parent',
+      extraBy: undefined,
+      skipSingle: false
     },
-    "children": [
+    label: 'C',
+    value: 'C',
+    selectable: false,
+    children: [
       {
-        "$mapper": {
-          "disabled": {
-            "const": "C",
-            "when": "parent",
-          },
-          "selectable": {
-            "enum": [
-              "A",
-              "B",
-            ],
-            "when": "parent",
-          },
+        label: 'Item 5',
+        value: 5,
+        selectable: false,
+        disabled: true,
+        $original: {
+          id: 5,
+          parent: 'C',
+          name: 'Item 5'
         },
-        "$original": {
-          "id": 5,
-          "name": "Item 5",
-          "parent": "C",
-        },
-        "disabled": true,
-        "label": "Item 5",
-        "selectable": false,
-        "value": 5,
+        $mapper: {
+          selectable: {
+            when: 'parent',
+            'enum': [
+              'A',
+              'B'
+            ]
+          },
+          disabled: {
+            when: 'parent',
+            'const': 'C'
+          }
+        }
       },
       {
-        "$mapper": {
-          "disabled": {
-            "const": "C",
-            "when": "parent",
-          },
-          "selectable": {
-            "enum": [
-              "A",
-              "B",
-            ],
-            "when": "parent",
-          },
+        label: 'Item 6',
+        value: 6,
+        selectable: false,
+        disabled: true,
+        $original: {
+          id: 6,
+          parent: 'C',
+          name: 'Item 6'
         },
-        "$original": {
-          "id": 6,
-          "name": "Item 6",
-          "parent": "C",
-        },
-        "disabled": true,
-        "label": "Item 6",
-        "selectable": false,
-        "value": 6,
-      },
-    ],
-    "label": "C",
-    "selectable": false,
-    "value": "C",
+        $mapper: {
+          selectable: {
+            when: 'parent',
+            'enum': [
+              'A',
+              'B'
+            ]
+          },
+          disabled: {
+            when: 'parent',
+            'const': 'C'
+          }
+        }
+      }
+    ]
   },
   {
-    "$group": {
-      "extraBy": undefined,
-      "groupBy": "parent",
-      "labelBy": "parent",
-      "skipSingle": false,
-      "sortBy": "parent",
+    $group: {
+      groupBy: 'parent',
+      labelBy: 'parent',
+      sortBy: 'parent',
+      extraBy: undefined,
+      skipSingle: false
     },
-    "children": [
+    label: 'D',
+    value: 'D',
+    selectable: false,
+    children: [
       {
-        "$mapper": {
-          "disabled": {
-            "const": "C",
-            "when": "parent",
-          },
-          "selectable": {
-            "enum": [
-              "A",
-              "B",
-            ],
-            "when": "parent",
-          },
+        label: 'Item 7',
+        value: 7,
+        selectable: false,
+        disabled: false,
+        $original: {
+          id: 7,
+          parent: 'D',
+          name: 'Item 7'
         },
-        "$original": {
-          "id": 7,
-          "name": "Item 7",
-          "parent": "D",
-        },
-        "disabled": false,
-        "label": "Item 7",
-        "selectable": false,
-        "value": 7,
-      },
-    ],
-    "label": "D",
-    "selectable": false,
-    "value": "D",
-  },
+        $mapper: {
+          selectable: {
+            when: 'parent',
+            'enum': [
+              'A',
+              'B'
+            ]
+          },
+          disabled: {
+            when: 'parent',
+            'const': 'C'
+          }
+        }
+      }
+    ]
+  }
 ]
 ```

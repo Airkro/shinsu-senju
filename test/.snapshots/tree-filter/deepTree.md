@@ -5,52 +5,52 @@ should handle deep tree structure
 ## Input
 
 ### Options
-```json5
-{
-  "filterBy": [Function],
-  "parentKey": "parentId",
+```js
+export default {
+  parentKey: 'parentId',
+  filterBy: (item) => item.name === "Level 4"
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "id": 1,
-    "name": "Root",
+    id: 1,
+    name: 'Root'
   },
   {
-    "id": 2,
-    "name": "Level 1",
-    "parentId": 1,
+    id: 2,
+    parentId: 1,
+    name: 'Level 1'
   },
   {
-    "id": 3,
-    "name": "Level 2",
-    "parentId": 2,
+    id: 3,
+    parentId: 2,
+    name: 'Level 2'
   },
   {
-    "id": 4,
-    "name": "Level 3",
-    "parentId": 3,
+    id: 4,
+    parentId: 3,
+    name: 'Level 3'
   },
   {
-    "id": 5,
-    "name": "Level 4",
-    "parentId": 4,
-  },
+    id: 5,
+    parentId: 4,
+    name: 'Level 4'
+  }
 ]
 ```
 
 ## Output
 
 ### treeFilter
-```json5
-[
+```js
+export default [
   {
-    "id": 5,
-    "name": "Level 4",
-    "parentId": 4,
-  },
+    id: 5,
+    parentId: 4,
+    name: 'Level 4'
+  }
 ]
 ```

@@ -5,106 +5,106 @@
 ## Input
 
 ### Options
-```json5
-{
-  "target": "target",
+```js
+export default {
+  target: 'target'
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "children": [
+    id: 1,
+    value: 'root',
+    children: [
       {
-        "children": [
+        id: 2,
+        value: 'level1',
+        children: [
           {
-            "children": [
+            id: 3,
+            value: 'level2',
+            children: [
               {
-                "id": 4,
-                "value": "target",
-              },
-            ],
-            "id": 3,
-            "value": "level2",
-          },
-        ],
-        "id": 2,
-        "value": "level1",
-      },
-    ],
-    "id": 1,
-    "value": "root",
-  },
+                id: 4,
+                value: 'target'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 ]
 ```
 
 ## Output
 
 ### treeFinder
-```json5
-[
-  "root",
-  "level1",
-  "level2",
-  "target",
+```js
+export default [
+  'root',
+  'level1',
+  'level2',
+  'target'
 ]
 ```
 
 ### optionFinder
-```json5
-[
+```js
+export default [
   {
-    "children": [
+    id: 1,
+    value: 'root',
+    children: [
       {
-        "children": [
+        id: 2,
+        value: 'level1',
+        children: [
           {
-            "children": [
+            id: 3,
+            value: 'level2',
+            children: [
               {
-                "id": 4,
-                "value": "target",
-              },
-            ],
-            "id": 3,
-            "value": "level2",
-          },
-        ],
-        "id": 2,
-        "value": "level1",
-      },
-    ],
-    "id": 1,
-    "value": "root",
+                id: 4,
+                value: 'target'
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
-    "children": [
+    id: 2,
+    value: 'level1',
+    children: [
       {
-        "children": [
+        id: 3,
+        value: 'level2',
+        children: [
           {
-            "id": 4,
-            "value": "target",
-          },
-        ],
-        "id": 3,
-        "value": "level2",
-      },
-    ],
-    "id": 2,
-    "value": "level1",
+            id: 4,
+            value: 'target'
+          }
+        ]
+      }
+    ]
   },
   {
-    "children": [
+    id: 3,
+    value: 'level2',
+    children: [
       {
-        "id": 4,
-        "value": "target",
-      },
-    ],
-    "id": 3,
-    "value": "level2",
+        id: 4,
+        value: 'target'
+      }
+    ]
   },
   {
-    "id": 4,
-    "value": "target",
-  },
+    id: 4,
+    value: 'target'
+  }
 ]
 ```

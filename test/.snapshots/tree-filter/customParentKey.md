@@ -5,42 +5,42 @@ should work with custom parent key
 ## Input
 
 ### Options
-```json5
-{
-  "filterBy": [Function],
-  "parentKey": "parent",
+```js
+export default {
+  parentKey: 'parent',
+  filterBy: (item) => item.name === "Child 1"
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "id": 1,
-    "name": "Root",
+    id: 1,
+    name: 'Root'
   },
   {
-    "id": 2,
-    "name": "Child 1",
-    "parent": 1,
+    id: 2,
+    parent: 1,
+    name: 'Child 1'
   },
   {
-    "id": 3,
-    "name": "Child 2",
-    "parent": 1,
-  },
+    id: 3,
+    parent: 1,
+    name: 'Child 2'
+  }
 ]
 ```
 
 ## Output
 
 ### treeFilter
-```json5
-[
+```js
+export default [
   {
-    "id": 2,
-    "name": "Child 1",
-    "parent": 1,
-  },
+    id: 2,
+    parent: 1,
+    name: 'Child 1'
+  }
 ]
 ```

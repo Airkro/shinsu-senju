@@ -5,63 +5,63 @@ should organize flat array into tree structure
 ## Input
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "id": 4,
-    "parentId": 2,
+    id: 4,
+    parentId: 2
   },
   {
-    "id": 5,
-    "parentId": 2,
+    id: 5,
+    parentId: 2
   },
   {
-    "id": 1,
+    id: 1
   },
   {
-    "id": 2,
-    "parentId": 1,
+    id: 2,
+    parentId: 1
   },
   {
-    "id": 3,
-    "parentId": 1,
+    id: 3,
+    parentId: 1
   },
   {
-    "id": 6,
-  },
+    id: 6
+  }
 ]
 ```
 
 ## Output
 
 ### treeInfinity
-```json5
-[
+```js
+export default [
   {
-    "children": [
+    id: 1,
+    children: [
       {
-        "children": [
+        id: 2,
+        parentId: 1,
+        children: [
           {
-            "id": 4,
-            "parentId": 2,
+            id: 4,
+            parentId: 2
           },
           {
-            "id": 5,
-            "parentId": 2,
-          },
-        ],
-        "id": 2,
-        "parentId": 1,
+            id: 5,
+            parentId: 2
+          }
+        ]
       },
       {
-        "id": 3,
-        "parentId": 1,
-      },
-    ],
-    "id": 1,
+        id: 3,
+        parentId: 1
+      }
+    ]
   },
   {
-    "id": 6,
-  },
+    id: 6
+  }
 ]
 ```

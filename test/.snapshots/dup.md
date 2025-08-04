@@ -5,203 +5,201 @@
 ## Input
 
 ### Options
-```json5
-{
-  "groups": [
-    {
-      "groupBy": "group.id",
-      "labelBy": "group.name",
-    },
-  ],
-  "mappers": {
-    "label": "user.name",
-    "value": "user.id",
+```js
+export default {
+  groups: {
+    groupBy: 'group.id',
+    labelBy: 'group.name'
   },
+  mappers: {
+    label: 'user.name',
+    value: 'user.id'
+  }
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "group": {
-      "id": 2,
-      "name": "group2",
+    group: {
+      id: 2,
+      name: 'group2'
     },
-    "user": {
-      "id": 555,
-      "name": "李",
-    },
+    user: {
+      id: 555,
+      name: '李'
+    }
   },
   {
-    "group": {
-      "id": 2,
-      "name": "group2",
+    group: {
+      id: 2,
+      name: 'group2'
     },
-    "user": {
-      "id": 555,
-      "name": "李",
-    },
+    user: {
+      id: 555,
+      name: '李'
+    }
   },
   {
-    "group": {
-      "id": 1,
-      "name": "group1",
+    group: {
+      id: 1,
+      name: 'group1'
     },
-    "user": {
-      "id": 555,
-      "name": "李",
-    },
-  },
+    user: {
+      id: 555,
+      name: '李'
+    }
+  }
 ]
 ```
 
 ## Output
 
 ### treeMapper
-```json5
-[
+```js
+export default [
   {
-    "$mapper": {
-      "label": "user.name",
-      "value": "user.id",
-    },
-    "$original": {
-      "group": {
-        "id": 2,
-        "name": "group2",
+    label: '李',
+    value: 555,
+    $original: {
+      group: {
+        id: 2,
+        name: 'group2'
       },
-      "user": {
-        "id": 555,
-        "name": "李",
-      },
+      user: {
+        id: 555,
+        name: '李'
+      }
     },
-    "label": "李",
-    "value": 555,
+    $mapper: {
+      label: 'user.name',
+      value: 'user.id'
+    }
   },
   {
-    "$mapper": {
-      "label": "user.name",
-      "value": "user.id",
-    },
-    "$original": {
-      "group": {
-        "id": 2,
-        "name": "group2",
+    label: '李',
+    value: 555,
+    $original: {
+      group: {
+        id: 2,
+        name: 'group2'
       },
-      "user": {
-        "id": 555,
-        "name": "李",
-      },
+      user: {
+        id: 555,
+        name: '李'
+      }
     },
-    "label": "李",
-    "value": 555,
+    $mapper: {
+      label: 'user.name',
+      value: 'user.id'
+    }
   },
   {
-    "$mapper": {
-      "label": "user.name",
-      "value": "user.id",
-    },
-    "$original": {
-      "group": {
-        "id": 1,
-        "name": "group1",
+    label: '李',
+    value: 555,
+    $original: {
+      group: {
+        id: 1,
+        name: 'group1'
       },
-      "user": {
-        "id": 555,
-        "name": "李",
-      },
+      user: {
+        id: 555,
+        name: '李'
+      }
     },
-    "label": "李",
-    "value": 555,
-  },
+    $mapper: {
+      label: 'user.name',
+      value: 'user.id'
+    }
+  }
 ]
 ```
 
 ### tableGrouping
-```json5
-[
+```js
+export default [
   {
-    "$group": {
-      "extraBy": undefined,
-      "groupBy": "group.id",
-      "labelBy": "group.name",
-      "skipSingle": false,
-      "sortBy": "group.name",
+    $group: {
+      groupBy: 'group.id',
+      labelBy: 'group.name',
+      sortBy: 'group.name',
+      extraBy: undefined,
+      skipSingle: false
     },
-    "children": [
+    label: 'group2',
+    value: 2,
+    selectable: false,
+    children: [
       {
-        "$mapper": {
-          "label": "user.name",
-          "value": "user.id",
-        },
-        "$original": {
-          "group": {
-            "id": 2,
-            "name": "group2",
+        label: '李',
+        value: 555,
+        $original: {
+          group: {
+            id: 2,
+            name: 'group2'
           },
-          "user": {
-            "id": 555,
-            "name": "李",
-          },
+          user: {
+            id: 555,
+            name: '李'
+          }
         },
-        "label": "李",
-        "value": 555,
+        $mapper: {
+          label: 'user.name',
+          value: 'user.id'
+        }
       },
       {
-        "$mapper": {
-          "label": "user.name",
-          "value": "user.id",
-        },
-        "$original": {
-          "group": {
-            "id": 2,
-            "name": "group2",
+        label: '李',
+        value: 555,
+        $original: {
+          group: {
+            id: 2,
+            name: 'group2'
           },
-          "user": {
-            "id": 555,
-            "name": "李",
-          },
+          user: {
+            id: 555,
+            name: '李'
+          }
         },
-        "label": "李",
-        "value": 555,
-      },
-    ],
-    "label": "group2",
-    "selectable": false,
-    "value": 2,
+        $mapper: {
+          label: 'user.name',
+          value: 'user.id'
+        }
+      }
+    ]
   },
   {
-    "$group": {
-      "extraBy": undefined,
-      "groupBy": "group.id",
-      "labelBy": "group.name",
-      "skipSingle": false,
-      "sortBy": "group.name",
+    $group: {
+      groupBy: 'group.id',
+      labelBy: 'group.name',
+      sortBy: 'group.name',
+      extraBy: undefined,
+      skipSingle: false
     },
-    "children": [
+    label: 'group1',
+    value: 1,
+    selectable: false,
+    children: [
       {
-        "$mapper": {
-          "label": "user.name",
-          "value": "user.id",
-        },
-        "$original": {
-          "group": {
-            "id": 1,
-            "name": "group1",
+        label: '李',
+        value: 555,
+        $original: {
+          group: {
+            id: 1,
+            name: 'group1'
           },
-          "user": {
-            "id": 555,
-            "name": "李",
-          },
+          user: {
+            id: 555,
+            name: '李'
+          }
         },
-        "label": "李",
-        "value": 555,
-      },
-    ],
-    "label": "group1",
-    "selectable": false,
-    "value": 1,
-  },
+        $mapper: {
+          label: 'user.name',
+          value: 'user.id'
+        }
+      }
+    ]
+  }
 ]
 ```

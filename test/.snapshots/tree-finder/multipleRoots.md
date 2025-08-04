@@ -5,64 +5,64 @@
 ## Input
 
 ### Options
-```json5
-{
-  "target": "target",
+```js
+export default {
+  target: 'target'
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "children": [
+    id: 1,
+    value: 'root1',
+    children: [
       {
-        "id": 2,
-        "value": "child1",
-      },
-    ],
-    "id": 1,
-    "value": "root1",
+        id: 2,
+        value: 'child1'
+      }
+    ]
   },
   {
-    "children": [
+    id: 3,
+    value: 'root2',
+    children: [
       {
-        "id": 4,
-        "value": "target",
-      },
-    ],
-    "id": 3,
-    "value": "root2",
-  },
+        id: 4,
+        value: 'target'
+      }
+    ]
+  }
 ]
 ```
 
 ## Output
 
 ### treeFinder
-```json5
-[
-  "root2",
-  "target",
+```js
+export default [
+  'root2',
+  'target'
 ]
 ```
 
 ### optionFinder
-```json5
-[
+```js
+export default [
   {
-    "children": [
+    id: 3,
+    value: 'root2',
+    children: [
       {
-        "id": 4,
-        "value": "target",
-      },
-    ],
-    "id": 3,
-    "value": "root2",
+        id: 4,
+        value: 'target'
+      }
+    ]
   },
   {
-    "id": 4,
-    "value": "target",
-  },
+    id: 4,
+    value: 'target'
+  }
 ]
 ```

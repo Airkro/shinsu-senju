@@ -5,62 +5,62 @@ should handle multiple matches
 ## Input
 
 ### Options
-```json5
-{
-  "filterBy": [Function],
-  "parentKey": "parentId",
+```js
+export default {
+  parentKey: 'parentId',
+  filterBy: (item) => typeof item.name === "string" && item.name.startsWith("Active")
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "id": 1,
-    "name": "Root",
+    id: 1,
+    name: 'Root'
   },
   {
-    "id": 2,
-    "name": "Active 1",
-    "parentId": 1,
+    id: 2,
+    parentId: 1,
+    name: 'Active 1'
   },
   {
-    "id": 3,
-    "name": "Active 2",
-    "parentId": 1,
+    id: 3,
+    parentId: 1,
+    name: 'Active 2'
   },
   {
-    "id": 4,
-    "name": "Inactive",
-    "parentId": 2,
+    id: 4,
+    parentId: 2,
+    name: 'Inactive'
   },
   {
-    "id": 5,
-    "name": "Active 3",
-    "parentId": 3,
-  },
+    id: 5,
+    parentId: 3,
+    name: 'Active 3'
+  }
 ]
 ```
 
 ## Output
 
 ### treeFilter
-```json5
-[
+```js
+export default [
   {
-    "id": 2,
-    "name": "Active 1",
-    "parentId": 1,
+    id: 2,
+    parentId: 1,
+    name: 'Active 1'
   },
   {
-    "id": 3,
-    "name": "Active 2",
-    "parentId": 1,
+    id: 3,
+    parentId: 1,
+    name: 'Active 2'
   },
   {
-    "id": 5,
-    "name": "Active 3",
-    "parentId": 3,
-  },
+    id: 5,
+    parentId: 3,
+    name: 'Active 3'
+  }
 ]
 ```

@@ -5,133 +5,133 @@ should group data by column and return tree structure
 ## Input
 
 ### Options
-```json5
-{
-  "groups": {
-    "groupBy": "parent",
-  },
+```js
+export default {
+  groups: {
+    groupBy: 'parent'
+  }
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "id": 1,
-    "name": "Item 1",
-    "parent": "A",
+    id: 1,
+    parent: 'A',
+    name: 'Item 1'
   },
   {
-    "id": 2,
-    "name2": "Item 2",
-    "parent": "A",
+    id: 2,
+    parent: 'A',
+    name2: 'Item 2'
   },
   {
-    "id": 3,
-    "name": "Item 3",
-    "parent": "B",
-  },
+    id: 3,
+    parent: 'B',
+    name: 'Item 3'
+  }
 ]
 ```
 
 ## Output
 
 ### treeMapper
-```json5
-[
+```js
+export default [
   {
-    "$mapper": {},
-    "$original": {
-      "id": 1,
-      "name": "Item 1",
-      "parent": "A",
+    label: 'Item 1',
+    value: 1,
+    $original: {
+      id: 1,
+      parent: 'A',
+      name: 'Item 1'
     },
-    "label": "Item 1",
-    "value": 1,
+    $mapper: {}
   },
   {
-    "$mapper": {},
-    "$original": {
-      "id": 3,
-      "name": "Item 3",
-      "parent": "B",
+    label: 'Item 3',
+    value: 3,
+    $original: {
+      id: 3,
+      parent: 'B',
+      name: 'Item 3'
     },
-    "label": "Item 3",
-    "value": 3,
+    $mapper: {}
   },
   {
-    "$mapper": {},
-    "$original": {
-      "id": 2,
-      "name2": "Item 2",
-      "parent": "A",
+    label: 2,
+    value: 2,
+    $original: {
+      id: 2,
+      parent: 'A',
+      name2: 'Item 2'
     },
-    "label": 2,
-    "value": 2,
-  },
+    $mapper: {}
+  }
 ]
 ```
 
 ### tableGrouping
-```json5
-[
+```js
+export default [
   {
-    "$group": {
-      "extraBy": undefined,
-      "groupBy": "parent",
-      "labelBy": "parent",
-      "skipSingle": false,
-      "sortBy": "parent",
+    $group: {
+      groupBy: 'parent',
+      labelBy: 'parent',
+      sortBy: 'parent',
+      extraBy: undefined,
+      skipSingle: false
     },
-    "children": [
+    label: 'A',
+    value: 'A',
+    selectable: false,
+    children: [
       {
-        "$mapper": {},
-        "$original": {
-          "id": 1,
-          "name": "Item 1",
-          "parent": "A",
+        label: 'Item 1',
+        value: 1,
+        $original: {
+          id: 1,
+          parent: 'A',
+          name: 'Item 1'
         },
-        "label": "Item 1",
-        "value": 1,
+        $mapper: {}
       },
       {
-        "$mapper": {},
-        "$original": {
-          "id": 2,
-          "name2": "Item 2",
-          "parent": "A",
+        label: 2,
+        value: 2,
+        $original: {
+          id: 2,
+          parent: 'A',
+          name2: 'Item 2'
         },
-        "label": 2,
-        "value": 2,
-      },
-    ],
-    "label": "A",
-    "selectable": false,
-    "value": "A",
+        $mapper: {}
+      }
+    ]
   },
   {
-    "$group": {
-      "extraBy": undefined,
-      "groupBy": "parent",
-      "labelBy": "parent",
-      "skipSingle": false,
-      "sortBy": "parent",
+    $group: {
+      groupBy: 'parent',
+      labelBy: 'parent',
+      sortBy: 'parent',
+      extraBy: undefined,
+      skipSingle: false
     },
-    "children": [
+    label: 'B',
+    value: 'B',
+    selectable: false,
+    children: [
       {
-        "$mapper": {},
-        "$original": {
-          "id": 3,
-          "name": "Item 3",
-          "parent": "B",
+        label: 'Item 3',
+        value: 3,
+        $original: {
+          id: 3,
+          parent: 'B',
+          name: 'Item 3'
         },
-        "label": "Item 3",
-        "value": 3,
-      },
-    ],
-    "label": "B",
-    "selectable": false,
-    "value": "B",
-  },
+        $mapper: {}
+      }
+    ]
+  }
 ]
 ```

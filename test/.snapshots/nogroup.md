@@ -5,143 +5,143 @@ should group data by column and return tree structure
 ## Input
 
 ### Options
-```json5
-{}
+```js
+export default {}
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "id": 1,
-    "name": "Item 1",
-    "parent": "A",
+    id: 1,
+    parent: 'A',
+    name: 'Item 1'
   },
   {
-    "id": 2,
-    "name": "Item 2",
-    "parent": "A",
+    id: 2,
+    parent: 'A',
+    name: 'Item 2'
   },
   {
-    "children": [
+    id: 3,
+    parent: 'B',
+    name: 'Item 3',
+    children: [
       {
-        "id": 4,
-        "name": "Item 4",
-      },
-    ],
-    "id": 3,
-    "name": "Item 3",
-    "parent": "B",
-  },
+        id: 4,
+        name: 'Item 4'
+      }
+    ]
+  }
 ]
 ```
 
 ## Output
 
 ### treeMapper
-```json5
-[
+```js
+export default [
   {
-    "$mapper": {},
-    "$original": {
-      "id": 1,
-      "name": "Item 1",
-      "parent": "A",
+    label: 'Item 1',
+    value: 1,
+    $original: {
+      id: 1,
+      parent: 'A',
+      name: 'Item 1'
     },
-    "label": "Item 1",
-    "value": 1,
+    $mapper: {}
   },
   {
-    "$mapper": {},
-    "$original": {
-      "id": 2,
-      "name": "Item 2",
-      "parent": "A",
+    label: 'Item 2',
+    value: 2,
+    $original: {
+      id: 2,
+      parent: 'A',
+      name: 'Item 2'
     },
-    "label": "Item 2",
-    "value": 2,
+    $mapper: {}
   },
   {
-    "$mapper": {},
-    "$original": {
-      "id": 3,
-      "name": "Item 3",
-      "parent": "B",
-    },
-    "children": [
+    label: 'Item 3',
+    value: 3,
+    children: [
       {
-        "$mapper": {
-          "disabled": undefined,
-          "extra": undefined,
-          "label": "name",
-          "selectable": undefined,
-          "sortBy": "name",
-          "value": "id",
+        label: 'Item 4',
+        value: 4,
+        $original: {
+          id: 4,
+          name: 'Item 4'
         },
-        "$original": {
-          "id": 4,
-          "name": "Item 4",
-        },
-        "label": "Item 4",
-        "value": 4,
-      },
+        $mapper: {
+          label: 'name',
+          value: 'id',
+          extra: undefined,
+          sortBy: 'name',
+          selectable: undefined,
+          disabled: undefined
+        }
+      }
     ],
-    "label": "Item 3",
-    "value": 3,
-  },
+    $original: {
+      id: 3,
+      parent: 'B',
+      name: 'Item 3'
+    },
+    $mapper: {}
+  }
 ]
 ```
 
 ### tableGrouping
-```json5
-[
+```js
+export default [
   {
-    "$mapper": {},
-    "$original": {
-      "id": 1,
-      "name": "Item 1",
-      "parent": "A",
+    label: 'Item 1',
+    value: 1,
+    $original: {
+      id: 1,
+      parent: 'A',
+      name: 'Item 1'
     },
-    "label": "Item 1",
-    "value": 1,
+    $mapper: {}
   },
   {
-    "$mapper": {},
-    "$original": {
-      "id": 2,
-      "name": "Item 2",
-      "parent": "A",
+    label: 'Item 2',
+    value: 2,
+    $original: {
+      id: 2,
+      parent: 'A',
+      name: 'Item 2'
     },
-    "label": "Item 2",
-    "value": 2,
+    $mapper: {}
   },
   {
-    "$mapper": {},
-    "$original": {
-      "id": 3,
-      "name": "Item 3",
-      "parent": "B",
-    },
-    "children": [
+    label: 'Item 3',
+    value: 3,
+    children: [
       {
-        "$mapper": {
-          "disabled": undefined,
-          "extra": undefined,
-          "label": "name",
-          "selectable": undefined,
-          "sortBy": "name",
-          "value": "id",
+        label: 'Item 4',
+        value: 4,
+        $original: {
+          id: 4,
+          name: 'Item 4'
         },
-        "$original": {
-          "id": 4,
-          "name": "Item 4",
-        },
-        "label": "Item 4",
-        "value": 4,
-      },
+        $mapper: {
+          label: 'name',
+          value: 'id',
+          extra: undefined,
+          sortBy: 'name',
+          selectable: undefined,
+          disabled: undefined
+        }
+      }
     ],
-    "label": "Item 3",
-    "value": 3,
-  },
+    $original: {
+      id: 3,
+      parent: 'B',
+      name: 'Item 3'
+    },
+    $mapper: {}
+  }
 ]
 ```

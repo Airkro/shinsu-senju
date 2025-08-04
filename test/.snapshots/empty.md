@@ -5,29 +5,29 @@ should handle empty data array
 ## Input
 
 ### Options
-```json5
-{
-  "groups": [
+```js
+export default {
+  groups: [
     {
-      "groupBy": "group",
-    },
-  ],
+      groupBy: 'group'
+    }
+  ]
 }
 ```
 
 ### Data
-```json5
-[]
+```js
+export default []
 ```
 
 ## Output
 
 ### treeMapper
-```json5
-[]
+```js
+export default []
 ```
 
 ### tableGrouping
-```json5
-[]
+```js
+export default []
 ```

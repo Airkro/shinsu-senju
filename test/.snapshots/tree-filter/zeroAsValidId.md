@@ -5,42 +5,42 @@ should handle zero as valid ID
 ## Input
 
 ### Options
-```json5
-{
-  "filterBy": [Function],
-  "parentKey": "parentId",
+```js
+export default {
+  parentKey: 'parentId',
+  filterBy: (item) => item.name === "Target"
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "id": 0,
-    "name": "Root",
+    id: 0,
+    name: 'Root'
   },
   {
-    "id": 1,
-    "name": "Child of Zero",
-    "parentId": 0,
+    id: 1,
+    parentId: 0,
+    name: 'Child of Zero'
   },
   {
-    "id": 2,
-    "name": "Target",
-    "parentId": 1,
-  },
+    id: 2,
+    parentId: 1,
+    name: 'Target'
+  }
 ]
 ```
 
 ## Output
 
 ### treeFilter
-```json5
-[
+```js
+export default [
   {
-    "id": 2,
-    "name": "Target",
-    "parentId": 1,
-  },
+    id: 2,
+    parentId: 1,
+    name: 'Target'
+  }
 ]
 ```

@@ -5,48 +5,48 @@
 ## Input
 
 ### Options
-```json5
-{
-  "target": [
-    "target",
-    "found",
-  ],
+```js
+export default {
+  target: [
+    'target',
+    'found'
+  ]
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "children": [
+    id: 1,
+    value: [
+      'root'
+    ],
+    children: [
       {
-        "children": [
+        id: 2,
+        value: [
+          'branch',
+          'leaf'
+        ],
+        children: [
           {
-            "id": 3,
-            "value": [
-              "target",
-              "found",
-            ],
-          },
-        ],
-        "id": 2,
-        "value": [
-          "branch",
-          "leaf",
-        ],
-      },
-    ],
-    "id": 1,
-    "value": [
-      "root",
-    ],
-  },
+            id: 3,
+            value: [
+              'target',
+              'found'
+            ]
+          }
+        ]
+      }
+    ]
+  }
 ]
 ```
 
 ## Output
 
 ### treeFinder
-```json5
-[]
+```js
+export default []
 ```

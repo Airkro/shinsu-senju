@@ -5,136 +5,136 @@
 ## Input
 
 ### Options
-```json5
-{
-  "groups": [
+```js
+export default {
+  groups: [
     {},
     {
-      "groupBy": "group",
-    },
-  ],
+      groupBy: 'group'
+    }
+  ]
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "group": "A",
-    "id": 1,
-    "name": "Item",
+    id: 1,
+    group: 'A',
+    name: 'Item'
   },
   {
-    "group": "A",
-    "id": 2,
-    "name": "Item",
+    id: 2,
+    group: 'A',
+    name: 'Item'
   },
   {
-    "group": "B",
-    "id": 3,
-    "name": "Item",
-  },
+    id: 3,
+    group: 'B',
+    name: 'Item'
+  }
 ]
 ```
 
 ## Output
 
 ### treeMapper
-```json5
-[
+```js
+export default [
   {
-    "$mapper": {},
-    "$original": {
-      "group": "A",
-      "id": 1,
-      "name": "Item",
+    label: 'Item',
+    value: 1,
+    $original: {
+      id: 1,
+      group: 'A',
+      name: 'Item'
     },
-    "label": "Item",
-    "value": 1,
+    $mapper: {}
   },
   {
-    "$mapper": {},
-    "$original": {
-      "group": "A",
-      "id": 2,
-      "name": "Item",
+    label: 'Item',
+    value: 2,
+    $original: {
+      id: 2,
+      group: 'A',
+      name: 'Item'
     },
-    "label": "Item",
-    "value": 2,
+    $mapper: {}
   },
   {
-    "$mapper": {},
-    "$original": {
-      "group": "B",
-      "id": 3,
-      "name": "Item",
+    label: 'Item',
+    value: 3,
+    $original: {
+      id: 3,
+      group: 'B',
+      name: 'Item'
     },
-    "label": "Item",
-    "value": 3,
-  },
+    $mapper: {}
+  }
 ]
 ```
 
 ### tableGrouping
-```json5
-[
+```js
+export default [
   {
-    "$group": {
-      "extraBy": undefined,
-      "groupBy": "group",
-      "labelBy": "group",
-      "skipSingle": false,
-      "sortBy": "group",
+    $group: {
+      groupBy: 'group',
+      labelBy: 'group',
+      sortBy: 'group',
+      extraBy: undefined,
+      skipSingle: false
     },
-    "children": [
+    label: 'A',
+    value: 'A',
+    selectable: false,
+    children: [
       {
-        "$mapper": {},
-        "$original": {
-          "group": "A",
-          "id": 1,
-          "name": "Item",
+        label: 'Item',
+        value: 1,
+        $original: {
+          id: 1,
+          group: 'A',
+          name: 'Item'
         },
-        "label": "Item",
-        "value": 1,
+        $mapper: {}
       },
       {
-        "$mapper": {},
-        "$original": {
-          "group": "A",
-          "id": 2,
-          "name": "Item",
+        label: 'Item',
+        value: 2,
+        $original: {
+          id: 2,
+          group: 'A',
+          name: 'Item'
         },
-        "label": "Item",
-        "value": 2,
-      },
-    ],
-    "label": "A",
-    "selectable": false,
-    "value": "A",
+        $mapper: {}
+      }
+    ]
   },
   {
-    "$group": {
-      "extraBy": undefined,
-      "groupBy": "group",
-      "labelBy": "group",
-      "skipSingle": false,
-      "sortBy": "group",
+    $group: {
+      groupBy: 'group',
+      labelBy: 'group',
+      sortBy: 'group',
+      extraBy: undefined,
+      skipSingle: false
     },
-    "children": [
+    label: 'B',
+    value: 'B',
+    selectable: false,
+    children: [
       {
-        "$mapper": {},
-        "$original": {
-          "group": "B",
-          "id": 3,
-          "name": "Item",
+        label: 'Item',
+        value: 3,
+        $original: {
+          id: 3,
+          group: 'B',
+          name: 'Item'
         },
-        "label": "Item",
-        "value": 3,
-      },
-    ],
-    "label": "B",
-    "selectable": false,
-    "value": "B",
-  },
+        $mapper: {}
+      }
+    ]
+  }
 ]
 ```

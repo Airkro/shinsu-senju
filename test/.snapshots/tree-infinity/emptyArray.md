@@ -5,13 +5,13 @@ should handle empty array
 ## Input
 
 ### Data
-```json5
-[]
+```js
+export default []
 ```
 
 ## Output
 
 ### treeInfinity
-```json5
-[]
+```js
+export default []
 ```

@@ -5,57 +5,57 @@ should handle invalid parent IDs
 ## Input
 
 ### Options
-```json5
-{
-  "filterBy": [Function],
-  "parentKey": "parentId",
+```js
+export default {
+  parentKey: 'parentId',
+  filterBy: (item) => typeof item.name === "string" && item.name.includes("Parent")
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "id": 1,
-    "name": "Root",
+    id: 1,
+    name: 'Root'
   },
   {
-    "id": 2,
-    "name": "Invalid Parent",
-    "parentId": 999,
+    id: 2,
+    parentId: 999,
+    name: 'Invalid Parent'
   },
   {
-    "id": 3,
-    "name": "Null Parent",
-    "parentId": null,
+    id: 3,
+    parentId: null,
+    name: 'Null Parent'
   },
   {
-    "id": 4,
-    "name": "Undefined Parent",
-    "parentId": undefined,
-  },
+    id: 4,
+    parentId: undefined,
+    name: 'Undefined Parent'
+  }
 ]
 ```
 
 ## Output
 
 ### treeFilter
-```json5
-[
+```js
+export default [
   {
-    "id": 2,
-    "name": "Invalid Parent",
-    "parentId": 999,
+    id: 2,
+    parentId: 999,
+    name: 'Invalid Parent'
   },
   {
-    "id": 3,
-    "name": "Null Parent",
-    "parentId": null,
+    id: 3,
+    parentId: null,
+    name: 'Null Parent'
   },
   {
-    "id": 4,
-    "name": "Undefined Parent",
-    "parentId": undefined,
-  },
+    id: 4,
+    parentId: undefined,
+    name: 'Undefined Parent'
+  }
 ]
 ```

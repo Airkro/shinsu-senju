@@ -5,92 +5,92 @@
 ## Input
 
 ### Options
-```json5
-{
-  "target": "target",
+```js
+export default {
+  target: 'target'
 }
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "children": [
+    id: 1,
+    value: undefined,
+    children: [
       {
-        "id": 2,
-        "value": "a",
+        id: 2,
+        value: 'a'
       },
       {
-        "id": 3,
-        "value": undefined,
+        id: 3,
+        value: undefined
       },
       {
-        "children": [
+        id: 4,
+        value: 'target',
+        children: [
           {
-            "id": 5,
-            "value": undefined,
-          },
-        ],
-        "id": 4,
-        "value": "target",
-      },
-    ],
-    "id": 1,
-    "value": undefined,
-  },
+            id: 5,
+            value: undefined
+          }
+        ]
+      }
+    ]
+  }
 ]
 ```
 
 ## Output
 
 ### treeFinder
-```json5
-[
+```js
+export default [
   undefined,
-  "target",
+  'target'
 ]
 ```
 
 ### optionFinder
-```json5
-[
+```js
+export default [
   {
-    "children": [
+    id: 1,
+    value: undefined,
+    children: [
       {
-        "id": 2,
-        "value": "a",
+        id: 2,
+        value: 'a'
       },
       {
-        "id": 3,
-        "value": undefined,
+        id: 3,
+        value: undefined
       },
       {
-        "children": [
+        id: 4,
+        value: 'target',
+        children: [
           {
-            "id": 5,
-            "value": undefined,
-          },
-        ],
-        "id": 4,
-        "value": "target",
-      },
-    ],
-    "id": 1,
-    "value": undefined,
+            id: 5,
+            value: undefined
+          }
+        ]
+      }
+    ]
   },
   {
-    "children": [
+    id: 4,
+    value: 'target',
+    children: [
       {
-        "id": 5,
-        "value": undefined,
-      },
-    ],
-    "id": 4,
-    "value": "target",
+        id: 5,
+        value: undefined
+      }
+    ]
   },
   {
-    "id": 5,
-    "value": undefined,
-  },
+    id: 5,
+    value: undefined
+  }
 ]
 ```

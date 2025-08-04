@@ -214,12 +214,10 @@ export const dup: Fixture = {
     },
   ],
   options: {
-    groups: [
-      {
-        groupBy: 'group.id',
-        labelBy: 'group.name',
-      },
-    ],
+    groups: {
+      groupBy: 'group.id',
+      labelBy: 'group.name',
+    },
     mappers: {
       label: 'user.name',
       value: 'user.id',

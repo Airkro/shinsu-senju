@@ -5,28 +5,28 @@ should handle empty options
 ## Input
 
 ### Options
-```json5
-{}
+```js
+export default {}
 ```
 
 ### Data
-```json5
-[
+```js
+export default [
   {
-    "id": 1,
-    "name": "Root",
-  },
+    id: 1,
+    name: 'Root'
+  }
 ]
 ```
 
 ## Output
 
 ### treeFilter
-```json5
-[
+```js
+export default [
   {
-    "id": 1,
-    "name": "Root",
-  },
+    id: 1,
+    name: 'Root'
+  }
 ]
 ```

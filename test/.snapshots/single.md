@@ -39,7 +39,10 @@ export default [
       group: 'A',
       name: 'Single Item'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   }
 ]
 ```
@@ -67,7 +70,10 @@ export default [
           group: 'A',
           name: 'Single Item'
         },
-        $mapper: {}
+        $mapper: {
+          label: 'name',
+          value: 'id'
+        }
       }
     ]
   }

@@ -1,6 +1,6 @@
 {
   "name": "shinsu-senju",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "description": "Tree mapper utils",
   "license": "MIT",
   "author": {
@@ -36,8 +36,8 @@
     "es-toolkit": "^1.39.10"
   },
   "devDependencies": {
-    "@bring-it/npm": "^0.8.3",
-    "@nice-move/all-in-base": "^0.6.8",
+    "@bring-it/npm": "^0.9.0",
+    "@nice-move/all-in-base": "^0.6.9",
     "@vitest/coverage-v8": "^3.2.4",
     "@vitest/ui": "^3.2.4",
     "eslint": "^9.34.0",
@@ -46,9 +46,9 @@
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
   },
-  "packageManager": "pnpm@10.15.0",
+  "packageManager": "pnpm@10.15.1",
   "engines": {
-    "node": "^22.0.0"
+    "node": "^22.18.0"
   },
   "publishConfig": {
     "access": "public",

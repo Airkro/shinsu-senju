@@ -47,7 +47,10 @@ export default [
       parent: 'A',
       name: 'Item 1'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 3',
@@ -57,17 +60,23 @@ export default [
       parent: 'B',
       name: 'Item 3'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
-    label: 2,
+    label: undefined,
     value: 2,
     $original: {
       id: 2,
       parent: 'A',
       name2: 'Item 2'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   }
 ]
 ```
@@ -95,17 +104,23 @@ export default [
           parent: 'A',
           name: 'Item 1'
         },
-        $mapper: {}
+        $mapper: {
+          label: 'name',
+          value: 'id'
+        }
       },
       {
-        label: 2,
+        label: undefined,
         value: 2,
         $original: {
           id: 2,
           parent: 'A',
           name2: 'Item 2'
         },
-        $mapper: {}
+        $mapper: {
+          label: 'name',
+          value: 'id'
+        }
       }
     ]
   },
@@ -129,7 +144,10 @@ export default [
           parent: 'B',
           name: 'Item 3'
         },
-        $mapper: {}
+        $mapper: {
+          label: 'name',
+          value: 'id'
+        }
       }
     ]
   }

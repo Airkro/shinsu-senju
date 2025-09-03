@@ -10,3 +10,4 @@ Forbidden typescript non-null assertion
 尽量简化逻辑,减少代码量，但也要保证可读性
 简化代码，但拆分复杂逻辑到多个函数
 简单的逻辑没有必要注释
+不要读取过多外部文件

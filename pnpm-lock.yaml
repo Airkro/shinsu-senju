@@ -16,11 +16,11 @@ importers:
         version: 1.39.10
     devDependencies:
       '@bring-it/npm':
-        specifier: ^0.8.3
-        version: 0.8.3(@bring-it/cli@0.10.0)
+        specifier: ^0.9.0
+        version: 0.9.0(@bring-it/cli@0.10.0)
       '@nice-move/all-in-base':
-        specifier: ^0.6.8
-        version: 0.6.8(@babel/core@7.27.4)(@typescript-eslint/parser@8.41.0(eslint@9.34.0)(typescript@5.9.2))(eslint@9.34.0)(garou@0.9.13(eslint@9.34.0)(typescript@5.9.2))(postcss@8.5.6)(prettier@3.6.2)(typescript@5.9.2)
+        specifier: ^0.6.9
+        version: 0.6.9(@babel/core@7.27.4)(@typescript-eslint/parser@8.41.0(eslint@9.34.0)(typescript@5.9.2))(eslint@9.34.0)(garou@0.9.13(eslint@9.34.0)(typescript@5.9.2))(postcss@8.5.6)(prettier@3.6.2)(typescript@5.9.2)
       '@vitest/coverage-v8':
         specifier: ^3.2.4
         version: 3.2.4(vitest@3.2.4)
@@ -162,12 +162,12 @@ packages:
     engines: {node: '>=22.11.0 || ^20.18.1'}
     hasBin: true
 
-  '@bring-it/npm@0.8.3':
-    resolution: {integrity: sha512-cDeRRM8Z/S0vxNkc5/4TgECwdUbjh3Bf0Pan/IWEoWBfkO8UCs1rlXH8IWhE+2HFa4sS8ujTAtT6BuUQhQ95sw==}
-    engines: {node: '>=22.11.0 || ^20.18.1', npm: ^10.5.0, pnpm: ^10.13.1}
+  '@bring-it/npm@0.9.0':
+    resolution: {integrity: sha512-JBY2jXYw1UxoBJFAUpt26l6qVJ/XPbQfRQ2A165CE9xUG37bZsJpRL8wc+nZB3sCOZSalhyjMMg4xdvZFfnjOw==}
+    engines: {node: '>=22.18.0', npm: ^10.5.0, pnpm: ^10.15.0}
     hasBin: true
     peerDependencies:
-      '@bring-it/cli': ^0.10.0
+      '@bring-it/cli': ^0.11.0
 
   '@esbuild/aix-ppc64@0.25.9':
     resolution: {integrity: sha512-OaGtL73Jck6pBKjNIe24BnFE6agGl+6KxDtTfHhy1HmhthfKouEcOhqpSL64K4/0WCtbKFLOdzD/44cJ4k9opA==}
@@ -410,13 +410,13 @@ packages:
   '@jridgewell/trace-mapping@0.3.30':
     resolution: {integrity: sha512-GQ7Nw5G2lTu/BtHTKfXhKHok2WGetd4XYcVKGx00SjAk8GMwgJM3zr6zORiPGuOE+/vkc90KtTosSSvaCjKb2Q==}
 
-  '@nice-move/all-in-base@0.6.8':
-    resolution: {integrity: sha512-EPxe7K6zo6ajhhrnlDSELDZNTu1RT8JzJIThLbfXhSk5OrFA9LXGbWNOq0pXZXAh1BCmaag5Krq76cOsf+FAhg==}
+  '@nice-move/all-in-base@0.6.9':
+    resolution: {integrity: sha512-VR8akuR0P7L/KOkLvXvHCMT1QCON7zcysfCqSfi5NC49JNY/LmKamQyJQAd0t50TCWLnInMNW7Atfz+S2Ew5BQ==}
     engines: {node: ^22.18.0 || ^24.0.0}
     hasBin: true
     peerDependencies:
-      eslint: ^9.32.0
-      garou: ^0.9.12
+      eslint: ^9.34.0
+      garou: ^0.9.13
       prettier: ~3.6.2
       typescript: ~5.9.2
     peerDependenciesMeta:
@@ -430,11 +430,11 @@ packages:
     engines: {node: ^20.19.2 || ^22.14.0 || ^24.0.0}
     hasBin: true
 
-  '@nice-move/eslint-config-base@0.13.1':
-    resolution: {integrity: sha512-oD3PGETA2qon4EkQHsiOPaZR9DJC2didoi/jE0K1Z0Keqg5RxhXScYTfrzolncAEqW6Zd2D0NQjOa8zA03jEkQ==}
+  '@nice-move/eslint-config-base@0.13.2':
+    resolution: {integrity: sha512-Tcxxa1zdJjfLxP+dHnDQMJhxFC0oJ/WR8srDw3aR4CiKiBtaBrxR2CZoSCVvky8bPnySgjpRvSAPNfEppCAz5Q==}
     engines: {node: ^22.18.0 || ^24.0.0}
     peerDependencies:
-      eslint: ^9.32.0
+      eslint: ^9.34.0
 
   '@nice-move/eslint-plugin-html@0.1.1':
     resolution: {integrity: sha512-iW7zcxNjYI+8WySl1iMCPCL1oKmKGsTwqnhxL5nH6jePZWF97vrz9caaq0Q6xTk3I0vM9D+/8MOBhze/LX26+w==}
@@ -454,8 +454,8 @@ packages:
     peerDependencies:
       prettier: ^3.5.3
 
-  '@nice-move/tsconfig@0.3.6':
-    resolution: {integrity: sha512-qmDyF7cYHZ26QagRRTRieQpjWW/GM9pwh0hgSoPiiAcTIhZ9LeZ2GKmzJAXiJoc7xUX62vFT1MpW64Nz5oZfYA==}
+  '@nice-move/tsconfig@0.3.7':
+    resolution: {integrity: sha512-6+auBgkp42BvdJMBBfUWDA5v95aUm4aIr3y/mmv51u1GN9cPz24julHO3z/+4ZtFDUjqCmpWaLeb57fF82glPQ==}
     engines: {node: ^22.18.0 || ^24.0.0}
     peerDependencies:
       typescript: ~5.9.2
@@ -2424,7 +2424,7 @@ snapshots:
       globby: 14.1.0
       yargs: 17.7.2
 
-  '@bring-it/npm@0.8.3(@bring-it/cli@0.10.0)':
+  '@bring-it/npm@0.9.0(@bring-it/cli@0.10.0)':
     dependencies:
       '@bring-it/cli': 0.10.0
 
@@ -2594,12 +2594,12 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@nice-move/all-in-base@0.6.8(@babel/core@7.27.4)(@typescript-eslint/parser@8.41.0(eslint@9.34.0)(typescript@5.9.2))(eslint@9.34.0)(garou@0.9.13(eslint@9.34.0)(typescript@5.9.2))(postcss@8.5.6)(prettier@3.6.2)(typescript@5.9.2)':
+  '@nice-move/all-in-base@0.6.9(@babel/core@7.27.4)(@typescript-eslint/parser@8.41.0(eslint@9.34.0)(typescript@5.9.2))(eslint@9.34.0)(garou@0.9.13(eslint@9.34.0)(typescript@5.9.2))(postcss@8.5.6)(prettier@3.6.2)(typescript@5.9.2)':
     dependencies:
       '@nice-move/cli': 0.11.26
-      '@nice-move/eslint-config-base': 0.13.1(@typescript-eslint/parser@8.41.0(eslint@9.34.0)(typescript@5.9.2))(eslint@9.34.0)(typescript@5.9.2)
+      '@nice-move/eslint-config-base': 0.13.2(@typescript-eslint/parser@8.41.0(eslint@9.34.0)(typescript@5.9.2))(eslint@9.34.0)(typescript@5.9.2)
       '@nice-move/prettier-config': 0.15.6(@babel/core@7.27.4)(postcss@8.5.6)(prettier@3.6.2)
-      '@nice-move/tsconfig': 0.3.6(typescript@5.9.2)
+      '@nice-move/tsconfig': 0.3.7(typescript@5.9.2)
       eslint: 9.34.0
       prettier: 3.6.2
     optionalDependencies:
@@ -2617,7 +2617,7 @@ snapshots:
     dependencies:
       cheetor: 0.13.0
 
-  '@nice-move/eslint-config-base@0.13.1(@typescript-eslint/parser@8.41.0(eslint@9.34.0)(typescript@5.9.2))(eslint@9.34.0)(typescript@5.9.2)':
+  '@nice-move/eslint-config-base@0.13.2(@typescript-eslint/parser@8.41.0(eslint@9.34.0)(typescript@5.9.2))(eslint@9.34.0)(typescript@5.9.2)':
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments': 4.5.0(eslint@9.34.0)
       '@eslint/eslintrc': 3.3.1
@@ -2669,7 +2669,7 @@ snapshots:
     dependencies:
       prettier: 3.6.2
 
-  '@nice-move/tsconfig@0.3.6(typescript@5.9.2)':
+  '@nice-move/tsconfig@0.3.7(typescript@5.9.2)':
     dependencies:
       '@types/whatwg-url': 13.0.0
       typescript: 5.9.2

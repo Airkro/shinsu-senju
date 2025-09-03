@@ -11,6 +11,8 @@ export default {
     groupBy: 'parent'
   },
   mappers: {
+    label: 'name',
+    value: 'id',
     selectable: {
       when: 'parent',
       'enum': [
@@ -83,6 +85,8 @@ export default [
       name: 'Item 1'
     },
     $mapper: {
+      label: 'name',
+      value: 'id',
       selectable: {
         when: 'parent',
         'enum': [
@@ -107,6 +111,8 @@ export default [
       name: 'Item 2'
     },
     $mapper: {
+      label: 'name',
+      value: 'id',
       selectable: {
         when: 'parent',
         'enum': [
@@ -131,6 +137,8 @@ export default [
       name: 'Item 3'
     },
     $mapper: {
+      label: 'name',
+      value: 'id',
       selectable: {
         when: 'parent',
         'enum': [
@@ -155,6 +163,8 @@ export default [
       name: 'Item 4'
     },
     $mapper: {
+      label: 'name',
+      value: 'id',
       selectable: {
         when: 'parent',
         'enum': [
@@ -179,6 +189,8 @@ export default [
       name: 'Item 5'
     },
     $mapper: {
+      label: 'name',
+      value: 'id',
       selectable: {
         when: 'parent',
         'enum': [
@@ -203,6 +215,8 @@ export default [
       name: 'Item 6'
     },
     $mapper: {
+      label: 'name',
+      value: 'id',
       selectable: {
         when: 'parent',
         'enum': [
@@ -227,6 +241,8 @@ export default [
       name: 'Item 7'
     },
     $mapper: {
+      label: 'name',
+      value: 'id',
       selectable: {
         when: 'parent',
         'enum': [
@@ -269,6 +285,8 @@ export default [
           name: 'Item 1'
         },
         $mapper: {
+          label: 'name',
+          value: 'id',
           selectable: {
             when: 'parent',
             'enum': [
@@ -293,6 +311,8 @@ export default [
           name: 'Item 2'
         },
         $mapper: {
+          label: 'name',
+          value: 'id',
           selectable: {
             when: 'parent',
             'enum': [
@@ -331,6 +351,8 @@ export default [
           name: 'Item 3'
         },
         $mapper: {
+          label: 'name',
+          value: 'id',
           selectable: {
             when: 'parent',
             'enum': [
@@ -355,6 +377,8 @@ export default [
           name: 'Item 4'
         },
         $mapper: {
+          label: 'name',
+          value: 'id',
           selectable: {
             when: 'parent',
             'enum': [
@@ -393,6 +417,8 @@ export default [
           name: 'Item 5'
         },
         $mapper: {
+          label: 'name',
+          value: 'id',
           selectable: {
             when: 'parent',
             'enum': [
@@ -417,6 +443,8 @@ export default [
           name: 'Item 6'
         },
         $mapper: {
+          label: 'name',
+          value: 'id',
           selectable: {
             when: 'parent',
             'enum': [
@@ -455,6 +483,8 @@ export default [
           name: 'Item 7'
         },
         $mapper: {
+          label: 'name',
+          value: 'id',
           selectable: {
             when: 'parent',
             'enum': [

@@ -75,7 +75,10 @@ export default [
     $original: {
       name: '01'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '1',
@@ -83,7 +86,10 @@ export default [
     $original: {
       name: '1'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '9',
@@ -91,7 +97,10 @@ export default [
     $original: {
       name: '9'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '11',
@@ -99,7 +108,10 @@ export default [
     $original: {
       name: '11'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '100',
@@ -107,7 +119,10 @@ export default [
     $original: {
       name: '100'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '01号',
@@ -115,7 +130,10 @@ export default [
     $original: {
       name: '01号'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '02号',
@@ -123,7 +141,10 @@ export default [
     $original: {
       name: '02号'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '1号',
@@ -131,7 +152,10 @@ export default [
     $original: {
       name: '1号'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '2号',
@@ -139,7 +163,10 @@ export default [
     $original: {
       name: '2号'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '9号',
@@ -147,7 +174,10 @@ export default [
     $original: {
       name: '9号'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '11号',
@@ -155,7 +185,10 @@ export default [
     $original: {
       name: '11号'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '100号',
@@ -163,7 +196,10 @@ export default [
     $original: {
       name: '100号'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '房间01',
@@ -171,7 +207,10 @@ export default [
     $original: {
       name: '房间01'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '房间1',
@@ -179,7 +218,10 @@ export default [
     $original: {
       name: '房间1'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '房间9',
@@ -187,7 +229,10 @@ export default [
     $original: {
       name: '房间9'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '房间11',
@@ -195,7 +240,10 @@ export default [
     $original: {
       name: '房间11'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '房间100',
@@ -203,7 +251,10 @@ export default [
     $original: {
       name: '房间100'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '房间',
@@ -211,7 +262,10 @@ export default [
     $original: {
       name: '房间'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   }
 ]
 ```
@@ -225,7 +279,10 @@ export default [
     $original: {
       name: '01'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '1',
@@ -233,7 +290,10 @@ export default [
     $original: {
       name: '1'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '9',
@@ -241,7 +301,10 @@ export default [
     $original: {
       name: '9'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '11',
@@ -249,7 +312,10 @@ export default [
     $original: {
       name: '11'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '100',
@@ -257,7 +323,10 @@ export default [
     $original: {
       name: '100'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '01号',
@@ -265,7 +334,10 @@ export default [
     $original: {
       name: '01号'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '02号',
@@ -273,7 +345,10 @@ export default [
     $original: {
       name: '02号'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '1号',
@@ -281,7 +356,10 @@ export default [
     $original: {
       name: '1号'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '2号',
@@ -289,7 +367,10 @@ export default [
     $original: {
       name: '2号'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '9号',
@@ -297,7 +378,10 @@ export default [
     $original: {
       name: '9号'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '11号',
@@ -305,7 +389,10 @@ export default [
     $original: {
       name: '11号'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '100号',
@@ -313,7 +400,10 @@ export default [
     $original: {
       name: '100号'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '房间01',
@@ -321,7 +411,10 @@ export default [
     $original: {
       name: '房间01'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '房间1',
@@ -329,7 +422,10 @@ export default [
     $original: {
       name: '房间1'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '房间9',
@@ -337,7 +433,10 @@ export default [
     $original: {
       name: '房间9'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '房间11',
@@ -345,7 +444,10 @@ export default [
     $original: {
       name: '房间11'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '房间100',
@@ -353,7 +455,10 @@ export default [
     $original: {
       name: '房间100'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: '房间',
@@ -361,7 +466,10 @@ export default [
     $original: {
       name: '房间'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   }
 ]
 ```

@@ -51,7 +51,10 @@ export default [
       group: 'A',
       name: 'Item'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item',
@@ -61,7 +64,10 @@ export default [
       group: 'A',
       name: 'Item'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item',
@@ -71,7 +77,10 @@ export default [
       group: 'B',
       name: 'Item'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   }
 ]
 ```
@@ -99,7 +108,10 @@ export default [
           group: 'A',
           name: 'Item'
         },
-        $mapper: {}
+        $mapper: {
+          label: 'name',
+          value: 'id'
+        }
       },
       {
         label: 'Item',
@@ -109,7 +121,10 @@ export default [
           group: 'A',
           name: 'Item'
         },
-        $mapper: {}
+        $mapper: {
+          label: 'name',
+          value: 'id'
+        }
       }
     ]
   },
@@ -121,7 +136,10 @@ export default [
       group: 'B',
       name: 'Item'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   }
 ]
 ```

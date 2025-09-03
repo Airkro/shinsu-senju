@@ -129,7 +129,10 @@ export default [
       level3: 'I',
       name: 'Item 1'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 2',
@@ -141,7 +144,10 @@ export default [
       level3: 'I',
       name: 'Item 2'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 3',
@@ -153,7 +159,10 @@ export default [
       level3: 'II',
       name: 'Item 3'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 4',
@@ -165,7 +174,10 @@ export default [
       level3: 'I',
       name: 'Item 4'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 5',
@@ -177,7 +189,10 @@ export default [
       level3: 'II',
       name: 'Item 5'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 6',
@@ -189,7 +204,10 @@ export default [
       level3: 'I',
       name: 'Item 6'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 7',
@@ -201,7 +219,10 @@ export default [
       level3: 'II',
       name: 'Item 7'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 8',
@@ -213,7 +234,10 @@ export default [
       level3: 'II',
       name: 'Item 8'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 9',
@@ -225,7 +249,10 @@ export default [
       level3: 'III',
       name: 'Item 9'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 10',
@@ -237,7 +264,10 @@ export default [
       level3: 'III',
       name: 'Item 10'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 11',
@@ -248,7 +278,10 @@ export default [
       level3: 'III',
       name: 'Item 11'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 12',
@@ -259,7 +292,10 @@ export default [
       level3: 'III',
       name: 'Item 12'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 13',
@@ -269,7 +305,10 @@ export default [
       level2: 'Y',
       name: 'Item 13'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   }
 ]
 ```
@@ -323,7 +362,10 @@ export default [
                   level3: 'I',
                   name: 'Item 1'
                 },
-                $mapper: {}
+                $mapper: {
+                  label: 'name',
+                  value: 'id'
+                }
               },
               {
                 label: 'Item 2',
@@ -335,7 +377,10 @@ export default [
                   level3: 'I',
                   name: 'Item 2'
                 },
-                $mapper: {}
+                $mapper: {
+                  label: 'name',
+                  value: 'id'
+                }
               }
             ]
           },
@@ -361,7 +406,10 @@ export default [
                   level3: 'II',
                   name: 'Item 3'
                 },
-                $mapper: {}
+                $mapper: {
+                  label: 'name',
+                  value: 'id'
+                }
               }
             ]
           }
@@ -401,7 +449,10 @@ export default [
                   level3: 'I',
                   name: 'Item 4'
                 },
-                $mapper: {}
+                $mapper: {
+                  label: 'name',
+                  value: 'id'
+                }
               }
             ]
           },
@@ -427,7 +478,10 @@ export default [
                   level3: 'II',
                   name: 'Item 5'
                 },
-                $mapper: {}
+                $mapper: {
+                  label: 'name',
+                  value: 'id'
+                }
               }
             ]
           }
@@ -481,7 +535,10 @@ export default [
                   level3: 'I',
                   name: 'Item 6'
                 },
-                $mapper: {}
+                $mapper: {
+                  label: 'name',
+                  value: 'id'
+                }
               }
             ]
           },
@@ -507,7 +564,10 @@ export default [
                   level3: 'II',
                   name: 'Item 7'
                 },
-                $mapper: {}
+                $mapper: {
+                  label: 'name',
+                  value: 'id'
+                }
               }
             ]
           }
@@ -547,7 +607,10 @@ export default [
                   level3: 'II',
                   name: 'Item 8'
                 },
-                $mapper: {}
+                $mapper: {
+                  label: 'name',
+                  value: 'id'
+                }
               }
             ]
           },
@@ -573,7 +636,10 @@ export default [
                   level3: 'III',
                   name: 'Item 9'
                 },
-                $mapper: {}
+                $mapper: {
+                  label: 'name',
+                  value: 'id'
+                }
               },
               {
                 label: 'Item 10',
@@ -585,7 +651,10 @@ export default [
                   level3: 'III',
                   name: 'Item 10'
                 },
-                $mapper: {}
+                $mapper: {
+                  label: 'name',
+                  value: 'id'
+                }
               }
             ]
           }
@@ -626,7 +695,10 @@ export default [
               level3: 'III',
               name: 'Item 11'
             },
-            $mapper: {}
+            $mapper: {
+              label: 'name',
+              value: 'id'
+            }
           },
           {
             label: 'Item 12',
@@ -637,7 +709,10 @@ export default [
               level3: 'III',
               name: 'Item 12'
             },
-            $mapper: {}
+            $mapper: {
+              label: 'name',
+              value: 'id'
+            }
           }
         ]
       },
@@ -649,7 +724,10 @@ export default [
           level2: 'Y',
           name: 'Item 13'
         },
-        $mapper: {}
+        $mapper: {
+          label: 'name',
+          value: 'id'
+        }
       }
     ]
   }

@@ -49,7 +49,10 @@ export default [
       parent: 'A',
       name: 'Item 1'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 2',
@@ -59,7 +62,10 @@ export default [
       parent: 'A',
       name: 'Item 2'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 3',
@@ -74,11 +80,7 @@ export default [
         },
         $mapper: {
           label: 'name',
-          value: 'id',
-          extra: undefined,
-          sortBy: 'name',
-          selectable: undefined,
-          disabled: undefined
+          value: 'id'
         }
       }
     ],
@@ -87,7 +89,10 @@ export default [
       parent: 'B',
       name: 'Item 3'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   }
 ]
 ```
@@ -103,7 +108,10 @@ export default [
       parent: 'A',
       name: 'Item 1'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 2',
@@ -113,7 +121,10 @@ export default [
       parent: 'A',
       name: 'Item 2'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   },
   {
     label: 'Item 3',
@@ -128,11 +139,7 @@ export default [
         },
         $mapper: {
           label: 'name',
-          value: 'id',
-          extra: undefined,
-          sortBy: 'name',
-          selectable: undefined,
-          disabled: undefined
+          value: 'id'
         }
       }
     ],
@@ -141,7 +148,10 @@ export default [
       parent: 'B',
       name: 'Item 3'
     },
-    $mapper: {}
+    $mapper: {
+      label: 'name',
+      value: 'id'
+    }
   }
 ]
 ```

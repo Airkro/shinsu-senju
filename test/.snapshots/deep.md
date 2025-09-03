@@ -14,6 +14,8 @@ export default {
     }
   ],
   mappers: {
+    label: 'name',
+    value: 'id',
     extra: 'info.type.name'
   }
 }
@@ -85,6 +87,8 @@ export default [
       name: 'Item 1'
     },
     $mapper: {
+      label: 'name',
+      value: 'id',
       extra: 'info.type.name'
     }
   },
@@ -103,6 +107,8 @@ export default [
       name: 'Item 2'
     },
     $mapper: {
+      label: 'name',
+      value: 'id',
       extra: 'info.type.name'
     }
   },
@@ -121,6 +127,8 @@ export default [
       name: 'Item 3'
     },
     $mapper: {
+      label: 'name',
+      value: 'id',
       extra: 'info.type.name'
     }
   },
@@ -139,6 +147,8 @@ export default [
       name: 'Item 4'
     },
     $mapper: {
+      label: 'name',
+      value: 'id',
       extra: 'info.type.name'
     }
   }
@@ -175,6 +185,8 @@ export default [
           name: 'Item 1'
         },
         $mapper: {
+          label: 'name',
+          value: 'id',
           extra: 'info.type.name'
         }
       },
@@ -193,6 +205,8 @@ export default [
           name: 'Item 3'
         },
         $mapper: {
+          label: 'name',
+          value: 'id',
           extra: 'info.type.name'
         }
       }
@@ -225,6 +239,8 @@ export default [
           name: 'Item 2'
         },
         $mapper: {
+          label: 'name',
+          value: 'id',
           extra: 'info.type.name'
         }
       }
@@ -257,6 +273,8 @@ export default [
           name: 'Item 4'
         },
         $mapper: {
+          label: 'name',
+          value: 'id',
           extra: 'info.type.name'
         }
       }

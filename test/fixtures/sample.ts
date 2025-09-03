@@ -104,6 +104,8 @@ export const deep: Fixture = {
       },
     ],
     mappers: {
+      label: 'name',
+      value: 'id',
       extra: 'info.type.name',
     },
   },
@@ -131,6 +133,8 @@ export const matcher: Fixture = {
   options: {
     groups: { groupBy: 'parent' },
     mappers: {
+      label: 'name',
+      value: 'id',
       selectable: {
         when: 'parent',
         enum: ['A', 'B'],
@@ -157,6 +161,8 @@ export const reverse: Fixture = {
   options: {
     groups: { groupBy: 'parent' },
     mappers: {
+      label: 'name',
+      value: 'id',
       disabled: {
         when: 'parent',
         const: 'C',
@@ -172,6 +178,8 @@ export const matcher2: Fixture = {
   options: {
     groups: { groupBy: 'parent' },
     mappers: {
+      label: 'name',
+      value: 'id',
       disabled: {
         when: 'parent',
       },

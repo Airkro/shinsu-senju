@@ -2,12 +2,17 @@ import { customSort } from './sort.ts';
 import { doCondition, getBy } from './utils.ts';
 import type { Condition, Getter, UnknownObject } from './utils.ts';
 
+declare global {
+  // eslint-disable-next-line vars-on-top
+  var DEBUG: boolean | undefined;
+}
+
 type TreeNodeBase = {
   disabled?: boolean;
   selectable?: boolean;
   children?: Tree;
   $original: UnknownObject;
-  $mapper?: Mapper;
+  $mapper: Mapper;
 };
 
 export type TreeNode = TreeNodeBase & {
@@ -27,7 +32,7 @@ export type Mapper = {
 
 export function treeMapper(data: UnknownObject[], options: Mapper = {}): Tree {
   if (data.length === 0) {
-    return data as [];
+    return [] as Tree;
   }
 
   if (Object.values(options).filter(Boolean).length === 0) {
@@ -44,7 +49,7 @@ export function treeMapper(data: UnknownObject[], options: Mapper = {}): Tree {
 
     const { children: _, ...$original } = node;
 
-    return {
+    const mapped: TreeNodeBase = {
       ...Object.fromEntries(
         Object.entries(rest).map(([key, getter]) => [
           key,
@@ -65,6 +70,18 @@ export function treeMapper(data: UnknownObject[], options: Mapper = {}): Tree {
       $original,
       $mapper: options,
     };
+
+    if (!globalThis.DEBUG) {
+      Object.defineProperty(mapped, '$original', {
+        enumerable: false,
+      });
+
+      Object.defineProperty(mapped, '$mapper', {
+        enumerable: false,
+      });
+    }
+
+    return mapped;
   });
 
   return sortBy === undefined

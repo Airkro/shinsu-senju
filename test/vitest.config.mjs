@@ -4,6 +4,7 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
+    setupFiles: [new URL('./helper/global.js', import.meta.url)],
     coverage: {
       reporter: ['html'],
     },

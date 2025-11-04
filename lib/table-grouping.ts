@@ -142,7 +142,7 @@ function groupRecursive(
     if (items.length === 1 && skipSingle && items[0] !== undefined) {
       nodes.push(items[0]);
     } else {
-      nodes.push({
+      const io = {
         $group: current,
         label: items
           .map((item) => getBy(item.$original, labelBy))
@@ -157,7 +157,15 @@ function groupRecursive(
         value,
         selectable: false,
         children: rest.length > 0 ? groupRecursive(items, rest) : items,
-      });
+      };
+
+      if (!globalThis.DEBUG) {
+        Object.defineProperty(io, '$group', {
+          enumerable: false,
+        });
+      }
+
+      nodes.push(io);
     }
   }
 

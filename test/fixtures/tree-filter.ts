@@ -5,7 +5,6 @@ export const emptyArray: Fixture = {
   data: [],
   options: {
     parentKey: 'parentId',
-    filterBy: () => true,
   },
 };
 

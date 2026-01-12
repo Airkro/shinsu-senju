@@ -30,6 +30,16 @@ export const simple: Fixture = {
   options: { groups: { groupBy: 'parent' } },
 };
 
+export const mapped: Fixture = {
+  description: 'should group data by column and return tree structure',
+  data: [
+    { id: 1, parent: 'A', name: 'Item 1' },
+    { id: 2, parent: 'A', name2: 'Item 2' },
+    { id: 3, parent: 'B', name: 'Item 3' },
+  ],
+  options: { mappers: { value: 'name' } },
+};
+
 export const nested: Fixture = {
   description: 'should handle nested grouping',
   data: [
@@ -91,9 +101,21 @@ export const skip: Fixture = {
 export const deep: Fixture = {
   description: 'should handle deep groupBy key (dot notation)',
   data: [
-    { id: 1, info: { type: { code: 'X', name: '联通' } }, name: 'Item 1' },
-    { id: 2, info: { type: { code: 'Y', name: '电信' } }, name: 'Item 2' },
-    { id: 3, info: { type: { code: 'X', name: '联通' } }, name: 'Item 3' },
+    {
+      id: 1,
+      info: { type: { code: 'X', name: '联通', count: 5 } },
+      name: 'Item 1',
+    },
+    {
+      id: 2,
+      info: { type: { code: 'Y', name: '电信', count: 4 } },
+      name: 'Item 2',
+    },
+    {
+      id: 3,
+      info: { type: { code: 'X', name: '联通', count: 6 } },
+      name: 'Item 3',
+    },
     { id: 4, info: { type: { code: 'Z', name: '移动' } }, name: 'Item 4' },
   ],
   options: {
@@ -101,6 +123,8 @@ export const deep: Fixture = {
       {
         groupBy: 'info.type.code',
         labelBy: 'info.type.name',
+        // @ts-expect-error -------------
+        extraBy: (io) => io?.info?.type?.count,
       },
     ],
     mappers: {
@@ -140,7 +164,7 @@ export const matcher: Fixture = {
         enum: ['A', 'B'],
       },
       disabled: {
-        when: 'parent',
+        when: (io: any) => io?.parent,
         const: 'C',
       },
     },

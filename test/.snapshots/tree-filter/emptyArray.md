@@ -7,8 +7,7 @@ should handle empty array
 ### Options
 ```js
 export default {
-  parentKey: 'parentId',
-  filterBy: () => true
+  parentKey: 'parentId'
 }
 ```
 

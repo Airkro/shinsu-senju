@@ -21,7 +21,7 @@ export default {
       ]
     },
     disabled: {
-      when: 'parent',
+      when: (io) => io?.parent,
       'const': 'C'
     }
   }
@@ -95,7 +95,7 @@ export default [
         ]
       },
       disabled: {
-        when: 'parent',
+        when: (io) => io?.parent,
         'const': 'C'
       }
     }
@@ -121,7 +121,7 @@ export default [
         ]
       },
       disabled: {
-        when: 'parent',
+        when: (io) => io?.parent,
         'const': 'C'
       }
     }
@@ -147,7 +147,7 @@ export default [
         ]
       },
       disabled: {
-        when: 'parent',
+        when: (io) => io?.parent,
         'const': 'C'
       }
     }
@@ -173,7 +173,7 @@ export default [
         ]
       },
       disabled: {
-        when: 'parent',
+        when: (io) => io?.parent,
         'const': 'C'
       }
     }
@@ -199,7 +199,7 @@ export default [
         ]
       },
       disabled: {
-        when: 'parent',
+        when: (io) => io?.parent,
         'const': 'C'
       }
     }
@@ -225,7 +225,7 @@ export default [
         ]
       },
       disabled: {
-        when: 'parent',
+        when: (io) => io?.parent,
         'const': 'C'
       }
     }
@@ -251,7 +251,7 @@ export default [
         ]
       },
       disabled: {
-        when: 'parent',
+        when: (io) => io?.parent,
         'const': 'C'
       }
     }
@@ -295,7 +295,7 @@ export default [
             ]
           },
           disabled: {
-            when: 'parent',
+            when: (io) => io?.parent,
             'const': 'C'
           }
         }
@@ -321,7 +321,7 @@ export default [
             ]
           },
           disabled: {
-            when: 'parent',
+            when: (io) => io?.parent,
             'const': 'C'
           }
         }
@@ -361,7 +361,7 @@ export default [
             ]
           },
           disabled: {
-            when: 'parent',
+            when: (io) => io?.parent,
             'const': 'C'
           }
         }
@@ -387,7 +387,7 @@ export default [
             ]
           },
           disabled: {
-            when: 'parent',
+            when: (io) => io?.parent,
             'const': 'C'
           }
         }
@@ -427,7 +427,7 @@ export default [
             ]
           },
           disabled: {
-            when: 'parent',
+            when: (io) => io?.parent,
             'const': 'C'
           }
         }
@@ -453,7 +453,7 @@ export default [
             ]
           },
           disabled: {
-            when: 'parent',
+            when: (io) => io?.parent,
             'const': 'C'
           }
         }
@@ -493,7 +493,7 @@ export default [
             ]
           },
           disabled: {
-            when: 'parent',
+            when: (io) => io?.parent,
             'const': 'C'
           }
         }

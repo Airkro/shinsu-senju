@@ -20,6 +20,8 @@ jobs:
   publish:
     needs: [test]
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     steps:
       - name: Run
         uses: airkro/bring-it@actions-oidc

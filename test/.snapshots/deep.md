@@ -10,7 +10,8 @@ export default {
   groups: [
     {
       groupBy: 'info.type.code',
-      labelBy: 'info.type.name'
+      labelBy: 'info.type.name',
+      extraBy: (io) => io?.info?.type?.count
     }
   ],
   mappers: {
@@ -29,7 +30,8 @@ export default [
     info: {
       type: {
         code: 'X',
-        name: '联通'
+        name: '联通',
+        count: 5
       }
     },
     name: 'Item 1'
@@ -39,7 +41,8 @@ export default [
     info: {
       type: {
         code: 'Y',
-        name: '电信'
+        name: '电信',
+        count: 4
       }
     },
     name: 'Item 2'
@@ -49,7 +52,8 @@ export default [
     info: {
       type: {
         code: 'X',
-        name: '联通'
+        name: '联通',
+        count: 6
       }
     },
     name: 'Item 3'
@@ -81,7 +85,8 @@ export default [
       info: {
         type: {
           code: 'X',
-          name: '联通'
+          name: '联通',
+          count: 5
         }
       },
       name: 'Item 1'
@@ -101,7 +106,8 @@ export default [
       info: {
         type: {
           code: 'Y',
-          name: '电信'
+          name: '电信',
+          count: 4
         }
       },
       name: 'Item 2'
@@ -121,7 +127,8 @@ export default [
       info: {
         type: {
           code: 'X',
-          name: '联通'
+          name: '联通',
+          count: 6
         }
       },
       name: 'Item 3'
@@ -163,10 +170,11 @@ export default [
       groupBy: 'info.type.code',
       labelBy: 'info.type.name',
       sortBy: 'info.type.name',
-      extraBy: undefined,
+      extraBy: (io) => io?.info?.type?.count,
       skipSingle: false
     },
     label: '联通',
+    extra: 5,
     value: 'X',
     selectable: false,
     children: [
@@ -179,7 +187,8 @@ export default [
           info: {
             type: {
               code: 'X',
-              name: '联通'
+              name: '联通',
+              count: 5
             }
           },
           name: 'Item 1'
@@ -199,7 +208,8 @@ export default [
           info: {
             type: {
               code: 'X',
-              name: '联通'
+              name: '联通',
+              count: 6
             }
           },
           name: 'Item 3'
@@ -217,10 +227,11 @@ export default [
       groupBy: 'info.type.code',
       labelBy: 'info.type.name',
       sortBy: 'info.type.name',
-      extraBy: undefined,
+      extraBy: (io) => io?.info?.type?.count,
       skipSingle: false
     },
     label: '电信',
+    extra: 4,
     value: 'Y',
     selectable: false,
     children: [
@@ -233,7 +244,8 @@ export default [
           info: {
             type: {
               code: 'Y',
-              name: '电信'
+              name: '电信',
+              count: 4
             }
           },
           name: 'Item 2'
@@ -251,10 +263,11 @@ export default [
       groupBy: 'info.type.code',
       labelBy: 'info.type.name',
       sortBy: 'info.type.name',
-      extraBy: undefined,
+      extraBy: (io) => io?.info?.type?.count,
       skipSingle: false
     },
     label: '移动',
+    extra: undefined,
     value: 'Z',
     selectable: false,
     children: [

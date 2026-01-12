@@ -3,11 +3,11 @@
   "name": "test",
   "version": "0.0.0",
   "dependencies": {
-    "@vitest/coverage-v8": "^4.0.8",
-    "@vitest/ui": "^4.0.8",
+    "@vitest/coverage-v8": "^4.0.16",
+    "@vitest/ui": "^4.0.16",
     "javascript-stringify": "^2.1.0"
   },
   "peerDependencies": {
-    "vitest": "^4.0.5"
+    "vitest": "^4.0.16"
   }
 }

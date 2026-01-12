@@ -1,3 +1,11 @@
+---
+description: 
+alwaysApply: true
+enabled: true
+updatedAt: 2026-01-12T03:25:45.229Z
+provider: 
+---
+
 # 代码生成规则
 
 优先使用最新语法，如 ESM, esnext

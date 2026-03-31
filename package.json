@@ -35,17 +35,17 @@
   },
   "dependencies": {
     "array-tree-filter": "^3.0.3",
-    "es-toolkit": "^1.43.0"
+    "es-toolkit": "^1.45.1"
   },
   "devDependencies": {
     "@bring-it/cli": "^0.11.1",
     "@bring-it/npm": "^0.9.3",
-    "@nice-move/all-in-base": "^0.6.31",
-    "eslint": "^9.39.2",
-    "garou": "^0.9.17",
-    "prettier": "~3.7.4",
+    "@nice-move/all-in-base": "^0.7.3",
+    "eslint": "^9.39.4",
+    "garou": "^0.9.18",
+    "prettier": "~3.8.1",
     "typescript": "~5.9.3",
-    "vitest": "^4.0.16"
+    "vitest": "^4.1.2"
   },
   "packageManager": "pnpm@10.28.0",
   "engines": {

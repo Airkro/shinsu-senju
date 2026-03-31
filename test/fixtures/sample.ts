@@ -20,6 +20,32 @@ export const nogroup: Fixture = {
   options: {},
 };
 
+export const child: Fixture = {
+  description: '',
+  data: [
+    { id: 1, name: 'Item 1' },
+    { id: 2, name: 'Item 2' },
+    {
+      id: 3,
+      name: 'Item 3',
+      sub: [
+        {
+          id: 4,
+          name: 'Item 4',
+        },
+      ],
+    },
+  ],
+  options: {
+    mappers: {
+      label: 'name',
+      value: 'id',
+      children: 'sub',
+      childrenKey: 'child',
+    },
+  },
+};
+
 export const simple: Fixture = {
   description: 'should group data by column and return tree structure',
   data: [

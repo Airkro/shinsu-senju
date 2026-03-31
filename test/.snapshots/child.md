@@ -1,12 +1,19 @@
-# Snapshot nogroup
+# Snapshot child
 
-should group data by column and return tree structure
+
 
 ## Input
 
 ### Options
 ```js
-export default {}
+export default {
+  mappers: {
+    label: 'name',
+    value: 'id',
+    children: 'sub',
+    childrenKey: 'child'
+  }
+}
 ```
 
 ### Data
@@ -14,19 +21,16 @@ export default {}
 export default [
   {
     id: 1,
-    parent: 'A',
     name: 'Item 1'
   },
   {
     id: 2,
-    parent: 'A',
     name: 'Item 2'
   },
   {
     id: 3,
-    parent: 'B',
     name: 'Item 3',
-    children: [
+    sub: [
       {
         id: 4,
         name: 'Item 4'
@@ -46,12 +50,13 @@ export default [
     value: 1,
     $original: {
       id: 1,
-      parent: 'A',
       name: 'Item 1'
     },
     $mapper: {
       label: 'name',
-      value: 'id'
+      value: 'id',
+      children: 'sub',
+      childrenKey: 'child'
     }
   },
   {
@@ -59,18 +64,19 @@ export default [
     value: 2,
     $original: {
       id: 2,
-      parent: 'A',
       name: 'Item 2'
     },
     $mapper: {
       label: 'name',
-      value: 'id'
+      value: 'id',
+      children: 'sub',
+      childrenKey: 'child'
     }
   },
   {
     label: 'Item 3',
     value: 3,
-    children: [
+    child: [
       {
         label: 'Item 4',
         value: 4,
@@ -80,15 +86,16 @@ export default [
         },
         $mapper: {
           label: 'name',
-          value: 'id'
+          value: 'id',
+          children: 'sub',
+          childrenKey: 'child'
         }
       }
     ],
     $original: {
       id: 3,
-      parent: 'B',
       name: 'Item 3',
-      children: [
+      sub: [
         {
           id: 4,
           name: 'Item 4'
@@ -97,7 +104,9 @@ export default [
     },
     $mapper: {
       label: 'name',
-      value: 'id'
+      value: 'id',
+      children: 'sub',
+      childrenKey: 'child'
     }
   }
 ]
@@ -111,12 +120,13 @@ export default [
     value: 1,
     $original: {
       id: 1,
-      parent: 'A',
       name: 'Item 1'
     },
     $mapper: {
       label: 'name',
-      value: 'id'
+      value: 'id',
+      children: 'sub',
+      childrenKey: 'child'
     }
   },
   {
@@ -124,18 +134,19 @@ export default [
     value: 2,
     $original: {
       id: 2,
-      parent: 'A',
       name: 'Item 2'
     },
     $mapper: {
       label: 'name',
-      value: 'id'
+      value: 'id',
+      children: 'sub',
+      childrenKey: 'child'
     }
   },
   {
     label: 'Item 3',
     value: 3,
-    children: [
+    child: [
       {
         label: 'Item 4',
         value: 4,
@@ -145,15 +156,16 @@ export default [
         },
         $mapper: {
           label: 'name',
-          value: 'id'
+          value: 'id',
+          children: 'sub',
+          childrenKey: 'child'
         }
       }
     ],
     $original: {
       id: 3,
-      parent: 'B',
       name: 'Item 3',
-      children: [
+      sub: [
         {
           id: 4,
           name: 'Item 4'
@@ -162,7 +174,9 @@ export default [
     },
     $mapper: {
       label: 'name',
-      value: 'id'
+      value: 'id',
+      children: 'sub',
+      childrenKey: 'child'
     }
   }
 ]

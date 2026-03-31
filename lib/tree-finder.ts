@@ -15,11 +15,13 @@ function findInNode(
     return currentPath;
   }
 
-  if (!node.children?.length) {
+  const { children } = node;
+
+  if (!Array.isArray(children) || children.length === 0) {
     return null;
   }
 
-  for (const child of node.children) {
+  for (const child of children) {
     const result = findInNode(child, target, currentPath);
 
     if (result) {

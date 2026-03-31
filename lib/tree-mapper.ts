@@ -10,7 +10,6 @@ declare global {
 type TreeNodeBase = {
   disabled?: boolean;
   selectable?: boolean;
-  children?: Tree;
   $original: UnknownObject;
   $mapper: Mapper;
 };
@@ -27,6 +26,7 @@ export type Mapper = {
   disabled?: Condition;
   sortBy?: Getter;
   children?: Getter;
+  childrenKey?: string;
   label?: Getter;
 };
 
@@ -39,24 +39,34 @@ export function treeMapper(data: UnknownObject[], options: Mapper = {}): Tree {
     return treeMapper(data, { label: 'name', value: 'id' });
   }
 
-  const { sortBy = options.label, selectable, disabled, ...rest } = options;
+  const {
+    sortBy = options.label,
+    selectable,
+    disabled,
+    childrenKey = 'children',
+    children: _children,
+    ...rest
+  } = options;
 
   const tmp = data.map((node: UnknownObject): TreeNode => {
+    const childrenData = options.children
+      ? getBy(node, options.children)
+      : node.children;
     const children =
-      node.children && Array.isArray(node.children)
-        ? treeMapper(node.children, options)
+      childrenData && Array.isArray(childrenData)
+        ? treeMapper(childrenData, options)
         : undefined;
-
-    const { children: _, ...$original } = node;
 
     const mapped: TreeNodeBase = {
       ...Object.fromEntries(
-        Object.entries(rest).map(([key, getter]) => [
-          key,
-          getter && getBy(node, getter as Getter),
-        ]),
+        Object.entries(rest)
+          .filter(([key]) => key !== options.children)
+          .map(([key, getter]) => [
+            key,
+            getter && getBy(node, getter as Getter),
+          ]),
       ),
-      ...(children ? { children } : undefined),
+      ...(children ? { [childrenKey]: children } : undefined),
       ...(selectable
         ? {
             selectable: doCondition(node, selectable),
@@ -67,7 +77,7 @@ export function treeMapper(data: UnknownObject[], options: Mapper = {}): Tree {
             disabled: doCondition(node, disabled),
           }
         : undefined),
-      $original,
+      $original: node,
       $mapper: options,
     };
 

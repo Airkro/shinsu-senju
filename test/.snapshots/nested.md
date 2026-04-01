@@ -122,6 +122,7 @@ export default [
   {
     label: 'Item 1',
     value: 1,
+    ident: 'id',
     $original: {
       id: 1,
       level1: 'A',
@@ -137,6 +138,7 @@ export default [
   {
     label: 'Item 2',
     value: 2,
+    ident: 'id',
     $original: {
       id: 2,
       level1: 'A',
@@ -152,6 +154,7 @@ export default [
   {
     label: 'Item 3',
     value: 3,
+    ident: 'id',
     $original: {
       id: 3,
       level1: 'A',
@@ -167,6 +170,7 @@ export default [
   {
     label: 'Item 4',
     value: 4,
+    ident: 'id',
     $original: {
       id: 4,
       level1: 'A',
@@ -182,6 +186,7 @@ export default [
   {
     label: 'Item 5',
     value: 5,
+    ident: 'id',
     $original: {
       id: 5,
       level1: 'A',
@@ -197,6 +202,7 @@ export default [
   {
     label: 'Item 6',
     value: 6,
+    ident: 'id',
     $original: {
       id: 6,
       level1: 'B',
@@ -212,6 +218,7 @@ export default [
   {
     label: 'Item 7',
     value: 7,
+    ident: 'id',
     $original: {
       id: 7,
       level1: 'B',
@@ -227,6 +234,7 @@ export default [
   {
     label: 'Item 8',
     value: 8,
+    ident: 'id',
     $original: {
       id: 8,
       level1: 'B',
@@ -242,6 +250,7 @@ export default [
   {
     label: 'Item 9',
     value: 9,
+    ident: 'id',
     $original: {
       id: 9,
       level1: 'B',
@@ -257,6 +266,7 @@ export default [
   {
     label: 'Item 10',
     value: 10,
+    ident: 'id',
     $original: {
       id: 10,
       level1: 'B',
@@ -272,6 +282,7 @@ export default [
   {
     label: 'Item 11',
     value: 11,
+    ident: 'id',
     $original: {
       id: 11,
       level2: 'Y',
@@ -286,6 +297,7 @@ export default [
   {
     label: 'Item 12',
     value: 12,
+    ident: 'id',
     $original: {
       id: 12,
       level2: 'Y',
@@ -300,6 +312,7 @@ export default [
   {
     label: 'Item 13',
     value: 13,
+    ident: 'id',
     $original: {
       id: 13,
       level2: 'Y',
@@ -358,6 +371,7 @@ export default [
               {
                 label: 'Item 1',
                 value: 1,
+                ident: 'id',
                 $original: {
                   id: 1,
                   level1: 'A',
@@ -373,6 +387,7 @@ export default [
               {
                 label: 'Item 2',
                 value: 2,
+                ident: 'id',
                 $original: {
                   id: 2,
                   level1: 'A',
@@ -404,6 +419,7 @@ export default [
               {
                 label: 'Item 3',
                 value: 3,
+                ident: 'id',
                 $original: {
                   id: 3,
                   level1: 'A',
@@ -451,6 +467,7 @@ export default [
               {
                 label: 'Item 4',
                 value: 4,
+                ident: 'id',
                 $original: {
                   id: 4,
                   level1: 'A',
@@ -482,6 +499,7 @@ export default [
               {
                 label: 'Item 5',
                 value: 5,
+                ident: 'id',
                 $original: {
                   id: 5,
                   level1: 'A',
@@ -545,6 +563,7 @@ export default [
               {
                 label: 'Item 6',
                 value: 6,
+                ident: 'id',
                 $original: {
                   id: 6,
                   level1: 'B',
@@ -576,6 +595,7 @@ export default [
               {
                 label: 'Item 7',
                 value: 7,
+                ident: 'id',
                 $original: {
                   id: 7,
                   level1: 'B',
@@ -623,6 +643,7 @@ export default [
               {
                 label: 'Item 8',
                 value: 8,
+                ident: 'id',
                 $original: {
                   id: 8,
                   level1: 'B',
@@ -654,6 +675,7 @@ export default [
               {
                 label: 'Item 9',
                 value: 9,
+                ident: 'id',
                 $original: {
                   id: 9,
                   level1: 'B',
@@ -669,6 +691,7 @@ export default [
               {
                 label: 'Item 10',
                 value: 10,
+                ident: 'id',
                 $original: {
                   id: 10,
                   level1: 'B',
@@ -719,6 +742,7 @@ export default [
           {
             label: 'Item 11',
             value: 11,
+            ident: 'id',
             $original: {
               id: 11,
               level2: 'Y',
@@ -733,6 +757,7 @@ export default [
           {
             label: 'Item 12',
             value: 12,
+            ident: 'id',
             $original: {
               id: 12,
               level2: 'Y',
@@ -750,6 +775,7 @@ export default [
       {
         label: 'Item 13',
         value: 13,
+        ident: 'id',
         $original: {
           id: 13,
           level2: 'Y',

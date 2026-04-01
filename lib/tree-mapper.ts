@@ -77,6 +77,9 @@ export function treeMapper(data: UnknownObject[], options: Mapper = {}): Tree {
             disabled: doCondition(node, disabled),
           }
         : undefined),
+      ...(typeof options.value === 'string'
+        ? { ident: options.value }
+        : undefined),
       $original: node,
       $mapper: options,
     };

@@ -41,6 +41,7 @@ export default [
 export default [
   {
     value: 'Item 1',
+    ident: 'name',
     $original: {
       id: 1,
       parent: 'A',
@@ -52,6 +53,7 @@ export default [
   },
   {
     value: undefined,
+    ident: 'name',
     $original: {
       id: 2,
       parent: 'A',
@@ -63,6 +65,7 @@ export default [
   },
   {
     value: 'Item 3',
+    ident: 'name',
     $original: {
       id: 3,
       parent: 'B',
@@ -80,6 +83,7 @@ export default [
 export default [
   {
     value: 'Item 1',
+    ident: 'name',
     $original: {
       id: 1,
       parent: 'A',
@@ -91,6 +95,7 @@ export default [
   },
   {
     value: undefined,
+    ident: 'name',
     $original: {
       id: 2,
       parent: 'A',
@@ -102,6 +107,7 @@ export default [
   },
   {
     value: 'Item 3',
+    ident: 'name',
     $original: {
       id: 3,
       parent: 'B',

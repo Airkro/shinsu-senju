@@ -79,6 +79,7 @@ export default [
     value: 1,
     selectable: true,
     disabled: false,
+    ident: 'id',
     $original: {
       id: 1,
       parent: 'A',
@@ -105,6 +106,7 @@ export default [
     value: 2,
     selectable: true,
     disabled: false,
+    ident: 'id',
     $original: {
       id: 2,
       parent: 'A',
@@ -131,6 +133,7 @@ export default [
     value: 3,
     selectable: true,
     disabled: false,
+    ident: 'id',
     $original: {
       id: 3,
       parent: 'B',
@@ -157,6 +160,7 @@ export default [
     value: 4,
     selectable: true,
     disabled: false,
+    ident: 'id',
     $original: {
       id: 4,
       parent: 'B',
@@ -183,6 +187,7 @@ export default [
     value: 5,
     selectable: false,
     disabled: true,
+    ident: 'id',
     $original: {
       id: 5,
       parent: 'C',
@@ -209,6 +214,7 @@ export default [
     value: 6,
     selectable: false,
     disabled: true,
+    ident: 'id',
     $original: {
       id: 6,
       parent: 'C',
@@ -235,6 +241,7 @@ export default [
     value: 7,
     selectable: false,
     disabled: false,
+    ident: 'id',
     $original: {
       id: 7,
       parent: 'D',
@@ -280,6 +287,7 @@ export default [
         value: 1,
         selectable: true,
         disabled: false,
+        ident: 'id',
         $original: {
           id: 1,
           parent: 'A',
@@ -306,6 +314,7 @@ export default [
         value: 2,
         selectable: true,
         disabled: false,
+        ident: 'id',
         $original: {
           id: 2,
           parent: 'A',
@@ -348,6 +357,7 @@ export default [
         value: 3,
         selectable: true,
         disabled: false,
+        ident: 'id',
         $original: {
           id: 3,
           parent: 'B',
@@ -374,6 +384,7 @@ export default [
         value: 4,
         selectable: true,
         disabled: false,
+        ident: 'id',
         $original: {
           id: 4,
           parent: 'B',
@@ -416,6 +427,7 @@ export default [
         value: 5,
         selectable: false,
         disabled: true,
+        ident: 'id',
         $original: {
           id: 5,
           parent: 'C',
@@ -442,6 +454,7 @@ export default [
         value: 6,
         selectable: false,
         disabled: true,
+        ident: 'id',
         $original: {
           id: 6,
           parent: 'C',
@@ -484,6 +497,7 @@ export default [
         value: 7,
         selectable: false,
         disabled: false,
+        ident: 'id',
         $original: {
           id: 7,
           parent: 'D',

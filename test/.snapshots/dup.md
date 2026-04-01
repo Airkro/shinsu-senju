@@ -62,6 +62,7 @@ export default [
   {
     label: '李',
     value: 555,
+    ident: 'user.id',
     $original: {
       group: {
         id: 2,
@@ -80,6 +81,7 @@ export default [
   {
     label: '李',
     value: 555,
+    ident: 'user.id',
     $original: {
       group: {
         id: 2,
@@ -98,6 +100,7 @@ export default [
   {
     label: '李',
     value: 555,
+    ident: 'user.id',
     $original: {
       group: {
         id: 1,
@@ -135,6 +138,7 @@ export default [
       {
         label: '李',
         value: 555,
+        ident: 'user.id',
         $original: {
           group: {
             id: 2,
@@ -153,6 +157,7 @@ export default [
       {
         label: '李',
         value: 555,
+        ident: 'user.id',
         $original: {
           group: {
             id: 2,
@@ -187,6 +192,7 @@ export default [
       {
         label: '李',
         value: 555,
+        ident: 'user.id',
         $original: {
           group: {
             id: 1,
@@ -227,6 +233,7 @@ export default [
       {
         label: '李',
         value: 555,
+        ident: 'user.id',
         $original: {
           group: {
             id: 2,

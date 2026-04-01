@@ -80,6 +80,7 @@ export default [
     label: 'Item 1',
     value: 1,
     extra: '联通',
+    ident: 'id',
     $original: {
       id: 1,
       info: {
@@ -101,6 +102,7 @@ export default [
     label: 'Item 2',
     value: 2,
     extra: '电信',
+    ident: 'id',
     $original: {
       id: 2,
       info: {
@@ -122,6 +124,7 @@ export default [
     label: 'Item 3',
     value: 3,
     extra: '联通',
+    ident: 'id',
     $original: {
       id: 3,
       info: {
@@ -143,6 +146,7 @@ export default [
     label: 'Item 4',
     value: 4,
     extra: '移动',
+    ident: 'id',
     $original: {
       id: 4,
       info: {
@@ -182,6 +186,7 @@ export default [
         label: 'Item 1',
         value: 1,
         extra: '联通',
+        ident: 'id',
         $original: {
           id: 1,
           info: {
@@ -203,6 +208,7 @@ export default [
         label: 'Item 3',
         value: 3,
         extra: '联通',
+        ident: 'id',
         $original: {
           id: 3,
           info: {
@@ -241,6 +247,7 @@ export default [
         label: 'Item 2',
         value: 2,
         extra: '电信',
+        ident: 'id',
         $original: {
           id: 2,
           info: {
@@ -279,6 +286,7 @@ export default [
         label: 'Item 4',
         value: 4,
         extra: '移动',
+        ident: 'id',
         $original: {
           id: 4,
           info: {

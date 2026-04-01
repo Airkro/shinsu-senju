@@ -34,6 +34,7 @@ export default [
   {
     label: 'Single Item',
     value: 1,
+    ident: 'id',
     $original: {
       id: 1,
       group: 'A',
@@ -66,6 +67,7 @@ export default [
       {
         label: 'Single Item',
         value: 1,
+        ident: 'id',
         $original: {
           id: 1,
           group: 'A',

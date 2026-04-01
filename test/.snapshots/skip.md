@@ -46,6 +46,7 @@ export default [
   {
     label: 'Item',
     value: 1,
+    ident: 'id',
     $original: {
       id: 1,
       group: 'A',
@@ -59,6 +60,7 @@ export default [
   {
     label: 'Item',
     value: 2,
+    ident: 'id',
     $original: {
       id: 2,
       group: 'A',
@@ -72,6 +74,7 @@ export default [
   {
     label: 'Item',
     value: 3,
+    ident: 'id',
     $original: {
       id: 3,
       group: 'B',
@@ -104,6 +107,7 @@ export default [
       {
         label: 'Item',
         value: 1,
+        ident: 'id',
         $original: {
           id: 1,
           group: 'A',
@@ -117,6 +121,7 @@ export default [
       {
         label: 'Item',
         value: 2,
+        ident: 'id',
         $original: {
           id: 2,
           group: 'A',
@@ -133,6 +138,7 @@ export default [
   {
     label: 'Item',
     value: 3,
+    ident: 'id',
     $original: {
       id: 3,
       group: 'B',

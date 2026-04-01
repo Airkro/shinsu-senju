@@ -70,6 +70,7 @@ export default [
     label: 'Item 1',
     value: 1,
     disabled: true,
+    ident: 'id',
     $original: {
       id: 1,
       parent: 'A',
@@ -87,6 +88,7 @@ export default [
     label: 'Item 2',
     value: 2,
     disabled: true,
+    ident: 'id',
     $original: {
       id: 2,
       parent: 'A',
@@ -104,6 +106,7 @@ export default [
     label: 'Item 3',
     value: 3,
     disabled: true,
+    ident: 'id',
     $original: {
       id: 3,
       parent: 'B',
@@ -121,6 +124,7 @@ export default [
     label: 'Item 4',
     value: 4,
     disabled: true,
+    ident: 'id',
     $original: {
       id: 4,
       parent: 'B',
@@ -138,6 +142,7 @@ export default [
     label: 'Item 5',
     value: 5,
     disabled: true,
+    ident: 'id',
     $original: {
       id: 5,
       parent: 'C',
@@ -155,6 +160,7 @@ export default [
     label: 'Item 6',
     value: 6,
     disabled: true,
+    ident: 'id',
     $original: {
       id: 6,
       parent: 'C',
@@ -172,6 +178,7 @@ export default [
     label: 'Item 7',
     value: 7,
     disabled: true,
+    ident: 'id',
     $original: {
       id: 7,
       parent: 'D',
@@ -208,6 +215,7 @@ export default [
         label: 'Item 1',
         value: 1,
         disabled: true,
+        ident: 'id',
         $original: {
           id: 1,
           parent: 'A',
@@ -225,6 +233,7 @@ export default [
         label: 'Item 2',
         value: 2,
         disabled: true,
+        ident: 'id',
         $original: {
           id: 2,
           parent: 'A',
@@ -258,6 +267,7 @@ export default [
         label: 'Item 3',
         value: 3,
         disabled: true,
+        ident: 'id',
         $original: {
           id: 3,
           parent: 'B',
@@ -275,6 +285,7 @@ export default [
         label: 'Item 4',
         value: 4,
         disabled: true,
+        ident: 'id',
         $original: {
           id: 4,
           parent: 'B',
@@ -308,6 +319,7 @@ export default [
         label: 'Item 5',
         value: 5,
         disabled: true,
+        ident: 'id',
         $original: {
           id: 5,
           parent: 'C',
@@ -325,6 +337,7 @@ export default [
         label: 'Item 6',
         value: 6,
         disabled: true,
+        ident: 'id',
         $original: {
           id: 6,
           parent: 'C',
@@ -358,6 +371,7 @@ export default [
         label: 'Item 7',
         value: 7,
         disabled: true,
+        ident: 'id',
         $original: {
           id: 7,
           parent: 'D',

@@ -72,6 +72,7 @@ export default [
   {
     label: '01',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '01'
     },
@@ -83,6 +84,7 @@ export default [
   {
     label: '1',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '1'
     },
@@ -94,6 +96,7 @@ export default [
   {
     label: '9',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '9'
     },
@@ -105,6 +108,7 @@ export default [
   {
     label: '11',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '11'
     },
@@ -116,6 +120,7 @@ export default [
   {
     label: '100',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '100'
     },
@@ -127,6 +132,7 @@ export default [
   {
     label: '01号',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '01号'
     },
@@ -138,6 +144,7 @@ export default [
   {
     label: '02号',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '02号'
     },
@@ -149,6 +156,7 @@ export default [
   {
     label: '1号',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '1号'
     },
@@ -160,6 +168,7 @@ export default [
   {
     label: '2号',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '2号'
     },
@@ -171,6 +180,7 @@ export default [
   {
     label: '9号',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '9号'
     },
@@ -182,6 +192,7 @@ export default [
   {
     label: '11号',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '11号'
     },
@@ -193,6 +204,7 @@ export default [
   {
     label: '100号',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '100号'
     },
@@ -204,6 +216,7 @@ export default [
   {
     label: '房间01',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '房间01'
     },
@@ -215,6 +228,7 @@ export default [
   {
     label: '房间1',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '房间1'
     },
@@ -226,6 +240,7 @@ export default [
   {
     label: '房间9',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '房间9'
     },
@@ -237,6 +252,7 @@ export default [
   {
     label: '房间11',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '房间11'
     },
@@ -248,6 +264,7 @@ export default [
   {
     label: '房间100',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '房间100'
     },
@@ -259,6 +276,7 @@ export default [
   {
     label: '房间',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '房间'
     },
@@ -276,6 +294,7 @@ export default [
   {
     label: '01',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '01'
     },
@@ -287,6 +306,7 @@ export default [
   {
     label: '1',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '1'
     },
@@ -298,6 +318,7 @@ export default [
   {
     label: '9',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '9'
     },
@@ -309,6 +330,7 @@ export default [
   {
     label: '11',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '11'
     },
@@ -320,6 +342,7 @@ export default [
   {
     label: '100',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '100'
     },
@@ -331,6 +354,7 @@ export default [
   {
     label: '01号',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '01号'
     },
@@ -342,6 +366,7 @@ export default [
   {
     label: '02号',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '02号'
     },
@@ -353,6 +378,7 @@ export default [
   {
     label: '1号',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '1号'
     },
@@ -364,6 +390,7 @@ export default [
   {
     label: '2号',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '2号'
     },
@@ -375,6 +402,7 @@ export default [
   {
     label: '9号',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '9号'
     },
@@ -386,6 +414,7 @@ export default [
   {
     label: '11号',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '11号'
     },
@@ -397,6 +426,7 @@ export default [
   {
     label: '100号',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '100号'
     },
@@ -408,6 +438,7 @@ export default [
   {
     label: '房间01',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '房间01'
     },
@@ -419,6 +450,7 @@ export default [
   {
     label: '房间1',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '房间1'
     },
@@ -430,6 +462,7 @@ export default [
   {
     label: '房间9',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '房间9'
     },
@@ -441,6 +474,7 @@ export default [
   {
     label: '房间11',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '房间11'
     },
@@ -452,6 +486,7 @@ export default [
   {
     label: '房间100',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '房间100'
     },
@@ -463,6 +498,7 @@ export default [
   {
     label: '房间',
     value: undefined,
+    ident: 'id',
     $original: {
       name: '房间'
     },

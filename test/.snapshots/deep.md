@@ -221,7 +221,8 @@ export default [
         }
       }
     ],
-    extra: 5
+    extra: 5,
+    ident: 'info.type.code'
   },
   {
     $group: {
@@ -258,7 +259,8 @@ export default [
         }
       }
     ],
-    extra: 4
+    extra: 4,
+    ident: 'info.type.code'
   },
   {
     $group: {
@@ -293,7 +295,8 @@ export default [
           extra: 'info.type.name'
         }
       }
-    ]
+    ],
+    ident: 'info.type.code'
   }
 ]
 ```

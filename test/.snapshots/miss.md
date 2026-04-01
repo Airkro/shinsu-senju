@@ -126,7 +126,8 @@ export default [
           value: 'id'
         }
       }
-    ]
+    ],
+    ident: 'group'
   },
   {
     $group: {
@@ -154,7 +155,8 @@ export default [
           value: 'id'
         }
       }
-    ]
+    ],
+    ident: 'group'
   }
 ]
 ```

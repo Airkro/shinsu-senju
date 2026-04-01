@@ -84,6 +84,9 @@ function createGroupNode(
     selectable: false,
     [childrenKey]: children,
     ...(extra !== undefined && { extra }),
+    ...(typeof config.groupBy === 'string'
+      ? { ident: config.groupBy }
+      : undefined),
   };
 
   if (!globalThis.DEBUG) {

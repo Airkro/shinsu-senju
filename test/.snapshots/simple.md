@@ -123,7 +123,8 @@ export default [
           value: 'id'
         }
       }
-    ]
+    ],
+    ident: 'parent'
   },
   {
     $group: {
@@ -151,7 +152,8 @@ export default [
           value: 'id'
         }
       }
-    ]
+    ],
+    ident: 'parent'
   }
 ]
 ```

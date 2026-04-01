@@ -327,7 +327,8 @@ export default [
           }
         }
       }
-    ]
+    ],
+    ident: 'parent'
   },
   {
     $group: {
@@ -394,7 +395,8 @@ export default [
           }
         }
       }
-    ]
+    ],
+    ident: 'parent'
   },
   {
     $group: {
@@ -461,7 +463,8 @@ export default [
           }
         }
       }
-    ]
+    ],
+    ident: 'parent'
   },
   {
     $group: {
@@ -502,7 +505,8 @@ export default [
           }
         }
       }
-    ]
+    ],
+    ident: 'parent'
   }
 ]
 ```

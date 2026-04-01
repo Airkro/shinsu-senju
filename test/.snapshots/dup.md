@@ -168,7 +168,8 @@ export default [
           value: 'user.id'
         }
       }
-    ]
+    ],
+    ident: 'group.id'
   },
   {
     $group: {
@@ -201,7 +202,8 @@ export default [
           value: 'user.id'
         }
       }
-    ]
+    ],
+    ident: 'group.id'
   }
 ]
 ```
@@ -240,7 +242,8 @@ export default [
           value: 'user.id'
         }
       }
-    ]
+    ],
+    ident: 'group.id'
   }
 ]
 ```

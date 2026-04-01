@@ -385,7 +385,8 @@ export default [
                   value: 'id'
                 }
               }
-            ]
+            ],
+            ident: 'level3'
           },
           {
             $group: {
@@ -415,9 +416,11 @@ export default [
                   value: 'id'
                 }
               }
-            ]
+            ],
+            ident: 'level3'
           }
-        ]
+        ],
+        ident: 'level2'
       },
       {
         $group: {
@@ -460,7 +463,8 @@ export default [
                   value: 'id'
                 }
               }
-            ]
+            ],
+            ident: 'level3'
           },
           {
             $group: {
@@ -490,11 +494,14 @@ export default [
                   value: 'id'
                 }
               }
-            ]
+            ],
+            ident: 'level3'
           }
-        ]
+        ],
+        ident: 'level2'
       }
-    ]
+    ],
+    ident: 'level1'
   },
   {
     $group: {
@@ -550,7 +557,8 @@ export default [
                   value: 'id'
                 }
               }
-            ]
+            ],
+            ident: 'level3'
           },
           {
             $group: {
@@ -580,9 +588,11 @@ export default [
                   value: 'id'
                 }
               }
-            ]
+            ],
+            ident: 'level3'
           }
-        ]
+        ],
+        ident: 'level2'
       },
       {
         $group: {
@@ -625,7 +635,8 @@ export default [
                   value: 'id'
                 }
               }
-            ]
+            ],
+            ident: 'level3'
           },
           {
             $group: {
@@ -670,11 +681,14 @@ export default [
                   value: 'id'
                 }
               }
-            ]
+            ],
+            ident: 'level3'
           }
-        ]
+        ],
+        ident: 'level2'
       }
-    ]
+    ],
+    ident: 'level1'
   },
   {
     $group: {
@@ -730,7 +744,8 @@ export default [
               value: 'id'
             }
           }
-        ]
+        ],
+        ident: 'level3'
       },
       {
         label: 'Item 13',
@@ -745,7 +760,8 @@ export default [
           value: 'id'
         }
       }
-    ]
+    ],
+    ident: 'level2'
   }
 ]
 ```

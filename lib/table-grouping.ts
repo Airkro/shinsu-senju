@@ -26,6 +26,7 @@ interface GroupProcessConfig {
   readonly sortBy: Getter;
   readonly skipSingle: boolean;
   readonly childrenKey: string;
+  readonly selectable?: boolean;
 }
 
 export type GroupConfig = Partial<GroupProcessConfig> & Record<string, unknown>;
@@ -75,13 +76,13 @@ function createGroupNode(
   items: Tree,
   children: Groupeds,
 ): GroupNode {
-  const { labelBy, extraBy, childrenKey } = config;
+  const { labelBy, extraBy, childrenKey, selectable = false } = config;
   const extra = extraBy ? findValue(items, extraBy) : undefined;
   const node: GroupNode = {
     $group: config,
     label: findValue(items, labelBy),
     value,
-    selectable: false,
+    selectable,
     [childrenKey]: children,
     ...(extra !== undefined && { extra }),
     ...(typeof config.groupBy === 'string'
@@ -119,7 +120,7 @@ function processGroups(
 }
 
 function normalizeConfig(config: GroupConfig): GroupProcessConfig | undefined {
-  const { groupBy } = config;
+  const { groupBy, selectable } = config;
 
   if (!groupBy) {
     return undefined;
@@ -129,7 +130,15 @@ function normalizeConfig(config: GroupConfig): GroupProcessConfig | undefined {
   const sortBy: Getter = config.sortBy ?? labelBy;
   const { skipSingle = false, extraBy, childrenKey = 'children' } = config;
 
-  return { groupBy, labelBy, sortBy, extraBy, skipSingle, childrenKey };
+  return {
+    groupBy,
+    labelBy,
+    sortBy,
+    extraBy,
+    skipSingle,
+    childrenKey,
+    selectable,
+  };
 }
 
 // Core Logic

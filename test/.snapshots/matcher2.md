@@ -205,7 +205,8 @@ export default [
       sortBy: 'parent',
       extraBy: undefined,
       skipSingle: false,
-      childrenKey: 'children'
+      childrenKey: 'children',
+      selectable: undefined
     },
     label: 'A',
     value: 'A',
@@ -257,7 +258,8 @@ export default [
       sortBy: 'parent',
       extraBy: undefined,
       skipSingle: false,
-      childrenKey: 'children'
+      childrenKey: 'children',
+      selectable: undefined
     },
     label: 'B',
     value: 'B',
@@ -309,7 +311,8 @@ export default [
       sortBy: 'parent',
       extraBy: undefined,
       skipSingle: false,
-      childrenKey: 'children'
+      childrenKey: 'children',
+      selectable: undefined
     },
     label: 'C',
     value: 'C',
@@ -361,7 +364,8 @@ export default [
       sortBy: 'parent',
       extraBy: undefined,
       skipSingle: false,
-      childrenKey: 'children'
+      childrenKey: 'children',
+      selectable: undefined
     },
     label: 'D',
     value: 'D',

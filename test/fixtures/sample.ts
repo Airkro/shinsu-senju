@@ -85,7 +85,7 @@ export const nested: Fixture = {
   ],
   options: {
     groups: [
-      { groupBy: 'level1' },
+      { groupBy: 'level1', selectable: true },
       { groupBy: 'level2' },
       { groupBy: 'level3' },
     ],

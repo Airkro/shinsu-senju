@@ -176,7 +176,8 @@ export default [
       sortBy: 'info.type.name',
       extraBy: (io) => io?.info?.type?.count,
       skipSingle: false,
-      childrenKey: 'children'
+      childrenKey: 'children',
+      selectable: undefined
     },
     label: '联通',
     value: 'X',
@@ -237,7 +238,8 @@ export default [
       sortBy: 'info.type.name',
       extraBy: (io) => io?.info?.type?.count,
       skipSingle: false,
-      childrenKey: 'children'
+      childrenKey: 'children',
+      selectable: undefined
     },
     label: '电信',
     value: 'Y',
@@ -276,7 +278,8 @@ export default [
       sortBy: 'info.type.name',
       extraBy: (io) => io?.info?.type?.count,
       skipSingle: false,
-      childrenKey: 'children'
+      childrenKey: 'children',
+      selectable: undefined
     },
     label: '移动',
     value: 'Z',

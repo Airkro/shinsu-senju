@@ -9,7 +9,8 @@ should handle nested grouping
 export default {
   groups: [
     {
-      groupBy: 'level1'
+      groupBy: 'level1',
+      selectable: true
     },
     {
       groupBy: 'level2'
@@ -336,11 +337,12 @@ export default [
       sortBy: 'level1',
       extraBy: undefined,
       skipSingle: false,
-      childrenKey: 'children'
+      childrenKey: 'children',
+      selectable: true
     },
     label: 'A',
     value: 'A',
-    selectable: false,
+    selectable: true,
     children: [
       {
         $group: {
@@ -349,7 +351,8 @@ export default [
           sortBy: 'level2',
           extraBy: undefined,
           skipSingle: false,
-          childrenKey: 'children'
+          childrenKey: 'children',
+          selectable: undefined
         },
         label: 'X',
         value: 'X',
@@ -362,7 +365,8 @@ export default [
               sortBy: 'level3',
               extraBy: undefined,
               skipSingle: false,
-              childrenKey: 'children'
+              childrenKey: 'children',
+              selectable: undefined
             },
             label: 'I',
             value: 'I',
@@ -410,7 +414,8 @@ export default [
               sortBy: 'level3',
               extraBy: undefined,
               skipSingle: false,
-              childrenKey: 'children'
+              childrenKey: 'children',
+              selectable: undefined
             },
             label: 'II',
             value: 'II',
@@ -445,7 +450,8 @@ export default [
           sortBy: 'level2',
           extraBy: undefined,
           skipSingle: false,
-          childrenKey: 'children'
+          childrenKey: 'children',
+          selectable: undefined
         },
         label: 'Y',
         value: 'Y',
@@ -458,7 +464,8 @@ export default [
               sortBy: 'level3',
               extraBy: undefined,
               skipSingle: false,
-              childrenKey: 'children'
+              childrenKey: 'children',
+              selectable: undefined
             },
             label: 'I',
             value: 'I',
@@ -490,7 +497,8 @@ export default [
               sortBy: 'level3',
               extraBy: undefined,
               skipSingle: false,
-              childrenKey: 'children'
+              childrenKey: 'children',
+              selectable: undefined
             },
             label: 'II',
             value: 'II',
@@ -528,11 +536,12 @@ export default [
       sortBy: 'level1',
       extraBy: undefined,
       skipSingle: false,
-      childrenKey: 'children'
+      childrenKey: 'children',
+      selectable: true
     },
     label: 'B',
     value: 'B',
-    selectable: false,
+    selectable: true,
     children: [
       {
         $group: {
@@ -541,7 +550,8 @@ export default [
           sortBy: 'level2',
           extraBy: undefined,
           skipSingle: false,
-          childrenKey: 'children'
+          childrenKey: 'children',
+          selectable: undefined
         },
         label: 'X',
         value: 'X',
@@ -554,7 +564,8 @@ export default [
               sortBy: 'level3',
               extraBy: undefined,
               skipSingle: false,
-              childrenKey: 'children'
+              childrenKey: 'children',
+              selectable: undefined
             },
             label: 'I',
             value: 'I',
@@ -586,7 +597,8 @@ export default [
               sortBy: 'level3',
               extraBy: undefined,
               skipSingle: false,
-              childrenKey: 'children'
+              childrenKey: 'children',
+              selectable: undefined
             },
             label: 'II',
             value: 'II',
@@ -621,7 +633,8 @@ export default [
           sortBy: 'level2',
           extraBy: undefined,
           skipSingle: false,
-          childrenKey: 'children'
+          childrenKey: 'children',
+          selectable: undefined
         },
         label: 'Y',
         value: 'Y',
@@ -634,7 +647,8 @@ export default [
               sortBy: 'level3',
               extraBy: undefined,
               skipSingle: false,
-              childrenKey: 'children'
+              childrenKey: 'children',
+              selectable: undefined
             },
             label: 'II',
             value: 'II',
@@ -666,7 +680,8 @@ export default [
               sortBy: 'level3',
               extraBy: undefined,
               skipSingle: false,
-              childrenKey: 'children'
+              childrenKey: 'children',
+              selectable: undefined
             },
             label: 'III',
             value: 'III',
@@ -720,7 +735,8 @@ export default [
       sortBy: 'level2',
       extraBy: undefined,
       skipSingle: false,
-      childrenKey: 'children'
+      childrenKey: 'children',
+      selectable: undefined
     },
     label: 'Y',
     value: 'Y',
@@ -733,7 +749,8 @@ export default [
           sortBy: 'level3',
           extraBy: undefined,
           skipSingle: false,
-          childrenKey: 'children'
+          childrenKey: 'children',
+          selectable: undefined
         },
         label: 'III',
         value: 'III',

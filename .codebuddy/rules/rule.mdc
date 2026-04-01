@@ -1,9 +1,9 @@
 ---
-description: 
+description:
 alwaysApply: true
 enabled: true
 updatedAt: 2026-01-12T03:25:45.229Z
-provider: 
+provider:
 ---
 
 # 代码生成规则
@@ -12,6 +12,7 @@ provider:
 for循环不要使用continue语句
 不添加/删除箭头函数的括号
 不将function转化为箭头函数
+编写 typescript 时，尽量少用 as 类型断言，消除 any，提取重复类型
 不要修改.xxx((...args) => callback(...args))的传参方式
 简化代码时，不要只为将中间函数、变量合并，而是针对逻辑简化
 Forbidden typescript non-null assertion

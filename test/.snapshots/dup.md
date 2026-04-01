@@ -125,7 +125,8 @@ export default [
       labelBy: 'group.name',
       sortBy: 'group.name',
       extraBy: undefined,
-      skipSingle: false
+      skipSingle: false,
+      childrenKey: 'children'
     },
     label: 'group2',
     value: 2,
@@ -175,7 +176,8 @@ export default [
       labelBy: 'group.name',
       sortBy: 'group.name',
       extraBy: undefined,
-      skipSingle: false
+      skipSingle: false,
+      childrenKey: 'children'
     },
     label: 'group1',
     value: 1,
@@ -213,7 +215,8 @@ export default [
       labelBy: 'group.name',
       sortBy: 'group.name',
       extraBy: undefined,
-      skipSingle: false
+      skipSingle: false,
+      childrenKey: 'children'
     },
     label: 'group2',
     value: 2,

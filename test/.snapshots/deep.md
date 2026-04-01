@@ -171,10 +171,10 @@ export default [
       labelBy: 'info.type.name',
       sortBy: 'info.type.name',
       extraBy: (io) => io?.info?.type?.count,
-      skipSingle: false
+      skipSingle: false,
+      childrenKey: 'children'
     },
     label: '联通',
-    extra: 5,
     value: 'X',
     selectable: false,
     children: [
@@ -220,7 +220,8 @@ export default [
           extra: 'info.type.name'
         }
       }
-    ]
+    ],
+    extra: 5
   },
   {
     $group: {
@@ -228,10 +229,10 @@ export default [
       labelBy: 'info.type.name',
       sortBy: 'info.type.name',
       extraBy: (io) => io?.info?.type?.count,
-      skipSingle: false
+      skipSingle: false,
+      childrenKey: 'children'
     },
     label: '电信',
-    extra: 4,
     value: 'Y',
     selectable: false,
     children: [
@@ -256,7 +257,8 @@ export default [
           extra: 'info.type.name'
         }
       }
-    ]
+    ],
+    extra: 4
   },
   {
     $group: {
@@ -264,10 +266,10 @@ export default [
       labelBy: 'info.type.name',
       sortBy: 'info.type.name',
       extraBy: (io) => io?.info?.type?.count,
-      skipSingle: false
+      skipSingle: false,
+      childrenKey: 'children'
     },
     label: '移动',
-    extra: undefined,
     value: 'Z',
     selectable: false,
     children: [

@@ -322,7 +322,8 @@ export default [
       labelBy: 'level1',
       sortBy: 'level1',
       extraBy: undefined,
-      skipSingle: false
+      skipSingle: false,
+      childrenKey: 'children'
     },
     label: 'A',
     value: 'A',
@@ -334,7 +335,8 @@ export default [
           labelBy: 'level2',
           sortBy: 'level2',
           extraBy: undefined,
-          skipSingle: false
+          skipSingle: false,
+          childrenKey: 'children'
         },
         label: 'X',
         value: 'X',
@@ -346,7 +348,8 @@ export default [
               labelBy: 'level3',
               sortBy: 'level3',
               extraBy: undefined,
-              skipSingle: false
+              skipSingle: false,
+              childrenKey: 'children'
             },
             label: 'I',
             value: 'I',
@@ -390,7 +393,8 @@ export default [
               labelBy: 'level3',
               sortBy: 'level3',
               extraBy: undefined,
-              skipSingle: false
+              skipSingle: false,
+              childrenKey: 'children'
             },
             label: 'II',
             value: 'II',
@@ -421,7 +425,8 @@ export default [
           labelBy: 'level2',
           sortBy: 'level2',
           extraBy: undefined,
-          skipSingle: false
+          skipSingle: false,
+          childrenKey: 'children'
         },
         label: 'Y',
         value: 'Y',
@@ -433,7 +438,8 @@ export default [
               labelBy: 'level3',
               sortBy: 'level3',
               extraBy: undefined,
-              skipSingle: false
+              skipSingle: false,
+              childrenKey: 'children'
             },
             label: 'I',
             value: 'I',
@@ -462,7 +468,8 @@ export default [
               labelBy: 'level3',
               sortBy: 'level3',
               extraBy: undefined,
-              skipSingle: false
+              skipSingle: false,
+              childrenKey: 'children'
             },
             label: 'II',
             value: 'II',
@@ -495,7 +502,8 @@ export default [
       labelBy: 'level1',
       sortBy: 'level1',
       extraBy: undefined,
-      skipSingle: false
+      skipSingle: false,
+      childrenKey: 'children'
     },
     label: 'B',
     value: 'B',
@@ -507,7 +515,8 @@ export default [
           labelBy: 'level2',
           sortBy: 'level2',
           extraBy: undefined,
-          skipSingle: false
+          skipSingle: false,
+          childrenKey: 'children'
         },
         label: 'X',
         value: 'X',
@@ -519,7 +528,8 @@ export default [
               labelBy: 'level3',
               sortBy: 'level3',
               extraBy: undefined,
-              skipSingle: false
+              skipSingle: false,
+              childrenKey: 'children'
             },
             label: 'I',
             value: 'I',
@@ -548,7 +558,8 @@ export default [
               labelBy: 'level3',
               sortBy: 'level3',
               extraBy: undefined,
-              skipSingle: false
+              skipSingle: false,
+              childrenKey: 'children'
             },
             label: 'II',
             value: 'II',
@@ -579,7 +590,8 @@ export default [
           labelBy: 'level2',
           sortBy: 'level2',
           extraBy: undefined,
-          skipSingle: false
+          skipSingle: false,
+          childrenKey: 'children'
         },
         label: 'Y',
         value: 'Y',
@@ -591,7 +603,8 @@ export default [
               labelBy: 'level3',
               sortBy: 'level3',
               extraBy: undefined,
-              skipSingle: false
+              skipSingle: false,
+              childrenKey: 'children'
             },
             label: 'II',
             value: 'II',
@@ -620,7 +633,8 @@ export default [
               labelBy: 'level3',
               sortBy: 'level3',
               extraBy: undefined,
-              skipSingle: false
+              skipSingle: false,
+              childrenKey: 'children'
             },
             label: 'III',
             value: 'III',
@@ -668,7 +682,8 @@ export default [
       labelBy: 'level2',
       sortBy: 'level2',
       extraBy: undefined,
-      skipSingle: false
+      skipSingle: false,
+      childrenKey: 'children'
     },
     label: 'Y',
     value: 'Y',
@@ -680,7 +695,8 @@ export default [
           labelBy: 'level3',
           sortBy: 'level3',
           extraBy: undefined,
-          skipSingle: false
+          skipSingle: false,
+          childrenKey: 'children'
         },
         label: 'III',
         value: 'III',

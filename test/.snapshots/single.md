@@ -56,7 +56,8 @@ export default [
       labelBy: 'group',
       sortBy: 'group',
       extraBy: undefined,
-      skipSingle: false
+      skipSingle: false,
+      childrenKey: 'children'
     },
     label: 'A',
     value: 'A',

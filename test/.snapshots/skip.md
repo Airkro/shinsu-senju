@@ -94,7 +94,8 @@ export default [
       labelBy: 'group',
       sortBy: 'group',
       extraBy: undefined,
-      skipSingle: true
+      skipSingle: true,
+      childrenKey: 'children'
     },
     label: 'A',
     value: 'A',

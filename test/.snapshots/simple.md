@@ -90,7 +90,8 @@ export default [
       labelBy: 'parent',
       sortBy: 'parent',
       extraBy: undefined,
-      skipSingle: false
+      skipSingle: false,
+      childrenKey: 'children'
     },
     label: 'A',
     value: 'A',
@@ -130,7 +131,8 @@ export default [
       labelBy: 'parent',
       sortBy: 'parent',
       extraBy: undefined,
-      skipSingle: false
+      skipSingle: false,
+      childrenKey: 'children'
     },
     label: 'B',
     value: 'B',

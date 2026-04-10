@@ -130,7 +130,8 @@ export default [
       extraBy: undefined,
       skipSingle: false,
       childrenKey: 'children',
-      selectable: undefined
+      selectable: undefined,
+      ident: 'group.id'
     },
     label: 'group2',
     value: 2,
@@ -185,7 +186,8 @@ export default [
       extraBy: undefined,
       skipSingle: false,
       childrenKey: 'children',
-      selectable: undefined
+      selectable: undefined,
+      ident: 'group.id'
     },
     label: 'group1',
     value: 1,
@@ -227,7 +229,8 @@ export default [
       extraBy: undefined,
       skipSingle: false,
       childrenKey: 'children',
-      selectable: undefined
+      selectable: undefined,
+      ident: 'group.id'
     },
     label: 'group2',
     value: 2,

@@ -338,7 +338,8 @@ export default [
       extraBy: undefined,
       skipSingle: false,
       childrenKey: 'children',
-      selectable: true
+      selectable: true,
+      ident: 'level1'
     },
     label: 'A',
     value: 'A',
@@ -352,7 +353,8 @@ export default [
           extraBy: undefined,
           skipSingle: false,
           childrenKey: 'children',
-          selectable: undefined
+          selectable: undefined,
+          ident: 'level2'
         },
         label: 'X',
         value: 'X',
@@ -366,7 +368,8 @@ export default [
               extraBy: undefined,
               skipSingle: false,
               childrenKey: 'children',
-              selectable: undefined
+              selectable: undefined,
+              ident: 'level3'
             },
             label: 'I',
             value: 'I',
@@ -415,7 +418,8 @@ export default [
               extraBy: undefined,
               skipSingle: false,
               childrenKey: 'children',
-              selectable: undefined
+              selectable: undefined,
+              ident: 'level3'
             },
             label: 'II',
             value: 'II',
@@ -451,7 +455,8 @@ export default [
           extraBy: undefined,
           skipSingle: false,
           childrenKey: 'children',
-          selectable: undefined
+          selectable: undefined,
+          ident: 'level2'
         },
         label: 'Y',
         value: 'Y',
@@ -465,7 +470,8 @@ export default [
               extraBy: undefined,
               skipSingle: false,
               childrenKey: 'children',
-              selectable: undefined
+              selectable: undefined,
+              ident: 'level3'
             },
             label: 'I',
             value: 'I',
@@ -498,7 +504,8 @@ export default [
               extraBy: undefined,
               skipSingle: false,
               childrenKey: 'children',
-              selectable: undefined
+              selectable: undefined,
+              ident: 'level3'
             },
             label: 'II',
             value: 'II',
@@ -537,7 +544,8 @@ export default [
       extraBy: undefined,
       skipSingle: false,
       childrenKey: 'children',
-      selectable: true
+      selectable: true,
+      ident: 'level1'
     },
     label: 'B',
     value: 'B',
@@ -551,7 +559,8 @@ export default [
           extraBy: undefined,
           skipSingle: false,
           childrenKey: 'children',
-          selectable: undefined
+          selectable: undefined,
+          ident: 'level2'
         },
         label: 'X',
         value: 'X',
@@ -565,7 +574,8 @@ export default [
               extraBy: undefined,
               skipSingle: false,
               childrenKey: 'children',
-              selectable: undefined
+              selectable: undefined,
+              ident: 'level3'
             },
             label: 'I',
             value: 'I',
@@ -598,7 +608,8 @@ export default [
               extraBy: undefined,
               skipSingle: false,
               childrenKey: 'children',
-              selectable: undefined
+              selectable: undefined,
+              ident: 'level3'
             },
             label: 'II',
             value: 'II',
@@ -634,7 +645,8 @@ export default [
           extraBy: undefined,
           skipSingle: false,
           childrenKey: 'children',
-          selectable: undefined
+          selectable: undefined,
+          ident: 'level2'
         },
         label: 'Y',
         value: 'Y',
@@ -648,7 +660,8 @@ export default [
               extraBy: undefined,
               skipSingle: false,
               childrenKey: 'children',
-              selectable: undefined
+              selectable: undefined,
+              ident: 'level3'
             },
             label: 'II',
             value: 'II',
@@ -681,7 +694,8 @@ export default [
               extraBy: undefined,
               skipSingle: false,
               childrenKey: 'children',
-              selectable: undefined
+              selectable: undefined,
+              ident: 'level3'
             },
             label: 'III',
             value: 'III',
@@ -736,7 +750,8 @@ export default [
       extraBy: undefined,
       skipSingle: false,
       childrenKey: 'children',
-      selectable: undefined
+      selectable: undefined,
+      ident: 'level2'
     },
     label: 'Y',
     value: 'Y',
@@ -750,7 +765,8 @@ export default [
           extraBy: undefined,
           skipSingle: false,
           childrenKey: 'children',
-          selectable: undefined
+          selectable: undefined,
+          ident: 'level3'
         },
         label: 'III',
         value: 'III',

@@ -99,7 +99,8 @@ export default [
       extraBy: undefined,
       skipSingle: true,
       childrenKey: 'children',
-      selectable: undefined
+      selectable: undefined,
+      ident: 'group'
     },
     label: 'A',
     value: 'A',

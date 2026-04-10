@@ -237,6 +237,22 @@ export const matcher2: Fixture = {
   },
 };
 
+export const identName: Fixture = {
+  description: 'identName',
+  data: matcher.data,
+  options: {
+    groups: {
+      groupBy: 'parent',
+      ident: 'folder',
+    },
+    mappers: {
+      label: 'name',
+      value: 'id',
+      ident: 'val',
+    },
+  },
+};
+
 export const dup: Fixture = {
   description: '',
   data: [

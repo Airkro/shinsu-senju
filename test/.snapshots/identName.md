@@ -1,6 +1,6 @@
-# Snapshot reverse
+# Snapshot identName
 
-reverse
+identName
 
 ## Input
 
@@ -8,16 +8,13 @@ reverse
 ```js
 export default {
   groups: {
-    groupBy: 'parent'
+    groupBy: 'parent',
+    ident: 'folder'
   },
   mappers: {
     label: 'name',
     value: 'id',
-    disabled: {
-      when: 'parent',
-      'const': 'C',
-      reverse: true
-    }
+    ident: 'val'
   }
 }
 ```
@@ -25,16 +22,6 @@ export default {
 ### Data
 ```js
 export default [
-  {
-    id: 5,
-    parent: 'C',
-    name: 'Item 5'
-  },
-  {
-    id: 6,
-    parent: 'C',
-    name: 'Item 6'
-  },
   {
     id: 1,
     parent: 'A',
@@ -56,9 +43,19 @@ export default [
     name: 'Item 4'
   },
   {
+    id: 5,
+    parent: 'C',
+    name: 'Item 5'
+  },
+  {
+    id: 6,
+    parent: 'C',
+    name: 'Item 6'
+  },
+  {
     id: 7,
     parent: 'D',
-    name: 'Item'
+    name: 'Item 7'
   }
 ]
 ```
@@ -71,8 +68,7 @@ export default [
   {
     label: 'Item 1',
     value: 1,
-    disabled: true,
-    ident: 'id',
+    ident: 'val',
     $original: {
       id: 1,
       parent: 'A',
@@ -81,18 +77,13 @@ export default [
     $mapper: {
       label: 'name',
       value: 'id',
-      disabled: {
-        when: 'parent',
-        'const': 'C',
-        reverse: true
-      }
+      ident: 'val'
     }
   },
   {
     label: 'Item 2',
     value: 2,
-    disabled: true,
-    ident: 'id',
+    ident: 'val',
     $original: {
       id: 2,
       parent: 'A',
@@ -101,18 +92,13 @@ export default [
     $mapper: {
       label: 'name',
       value: 'id',
-      disabled: {
-        when: 'parent',
-        'const': 'C',
-        reverse: true
-      }
+      ident: 'val'
     }
   },
   {
     label: 'Item 3',
     value: 3,
-    disabled: true,
-    ident: 'id',
+    ident: 'val',
     $original: {
       id: 3,
       parent: 'B',
@@ -121,18 +107,13 @@ export default [
     $mapper: {
       label: 'name',
       value: 'id',
-      disabled: {
-        when: 'parent',
-        'const': 'C',
-        reverse: true
-      }
+      ident: 'val'
     }
   },
   {
     label: 'Item 4',
     value: 4,
-    disabled: true,
-    ident: 'id',
+    ident: 'val',
     $original: {
       id: 4,
       parent: 'B',
@@ -141,18 +122,13 @@ export default [
     $mapper: {
       label: 'name',
       value: 'id',
-      disabled: {
-        when: 'parent',
-        'const': 'C',
-        reverse: true
-      }
+      ident: 'val'
     }
   },
   {
     label: 'Item 5',
     value: 5,
-    disabled: false,
-    ident: 'id',
+    ident: 'val',
     $original: {
       id: 5,
       parent: 'C',
@@ -161,18 +137,13 @@ export default [
     $mapper: {
       label: 'name',
       value: 'id',
-      disabled: {
-        when: 'parent',
-        'const': 'C',
-        reverse: true
-      }
+      ident: 'val'
     }
   },
   {
     label: 'Item 6',
     value: 6,
-    disabled: false,
-    ident: 'id',
+    ident: 'val',
     $original: {
       id: 6,
       parent: 'C',
@@ -181,31 +152,22 @@ export default [
     $mapper: {
       label: 'name',
       value: 'id',
-      disabled: {
-        when: 'parent',
-        'const': 'C',
-        reverse: true
-      }
+      ident: 'val'
     }
   },
   {
-    label: 'Item',
+    label: 'Item 7',
     value: 7,
-    disabled: true,
-    ident: 'id',
+    ident: 'val',
     $original: {
       id: 7,
       parent: 'D',
-      name: 'Item'
+      name: 'Item 7'
     },
     $mapper: {
       label: 'name',
       value: 'id',
-      disabled: {
-        when: 'parent',
-        'const': 'C',
-        reverse: true
-      }
+      ident: 'val'
     }
   }
 ]
@@ -223,7 +185,7 @@ export default [
       skipSingle: false,
       childrenKey: 'children',
       selectable: undefined,
-      ident: 'parent'
+      ident: 'folder'
     },
     label: 'A',
     value: 'A',
@@ -232,8 +194,7 @@ export default [
       {
         label: 'Item 1',
         value: 1,
-        disabled: true,
-        ident: 'id',
+        ident: 'val',
         $original: {
           id: 1,
           parent: 'A',
@@ -242,18 +203,13 @@ export default [
         $mapper: {
           label: 'name',
           value: 'id',
-          disabled: {
-            when: 'parent',
-            'const': 'C',
-            reverse: true
-          }
+          ident: 'val'
         }
       },
       {
         label: 'Item 2',
         value: 2,
-        disabled: true,
-        ident: 'id',
+        ident: 'val',
         $original: {
           id: 2,
           parent: 'A',
@@ -262,15 +218,11 @@ export default [
         $mapper: {
           label: 'name',
           value: 'id',
-          disabled: {
-            when: 'parent',
-            'const': 'C',
-            reverse: true
-          }
+          ident: 'val'
         }
       }
     ],
-    ident: 'parent'
+    ident: 'folder'
   },
   {
     $group: {
@@ -281,7 +233,7 @@ export default [
       skipSingle: false,
       childrenKey: 'children',
       selectable: undefined,
-      ident: 'parent'
+      ident: 'folder'
     },
     label: 'B',
     value: 'B',
@@ -290,8 +242,7 @@ export default [
       {
         label: 'Item 3',
         value: 3,
-        disabled: true,
-        ident: 'id',
+        ident: 'val',
         $original: {
           id: 3,
           parent: 'B',
@@ -300,18 +251,13 @@ export default [
         $mapper: {
           label: 'name',
           value: 'id',
-          disabled: {
-            when: 'parent',
-            'const': 'C',
-            reverse: true
-          }
+          ident: 'val'
         }
       },
       {
         label: 'Item 4',
         value: 4,
-        disabled: true,
-        ident: 'id',
+        ident: 'val',
         $original: {
           id: 4,
           parent: 'B',
@@ -320,15 +266,11 @@ export default [
         $mapper: {
           label: 'name',
           value: 'id',
-          disabled: {
-            when: 'parent',
-            'const': 'C',
-            reverse: true
-          }
+          ident: 'val'
         }
       }
     ],
-    ident: 'parent'
+    ident: 'folder'
   },
   {
     $group: {
@@ -339,7 +281,7 @@ export default [
       skipSingle: false,
       childrenKey: 'children',
       selectable: undefined,
-      ident: 'parent'
+      ident: 'folder'
     },
     label: 'C',
     value: 'C',
@@ -348,8 +290,7 @@ export default [
       {
         label: 'Item 5',
         value: 5,
-        disabled: false,
-        ident: 'id',
+        ident: 'val',
         $original: {
           id: 5,
           parent: 'C',
@@ -358,18 +299,13 @@ export default [
         $mapper: {
           label: 'name',
           value: 'id',
-          disabled: {
-            when: 'parent',
-            'const': 'C',
-            reverse: true
-          }
+          ident: 'val'
         }
       },
       {
         label: 'Item 6',
         value: 6,
-        disabled: false,
-        ident: 'id',
+        ident: 'val',
         $original: {
           id: 6,
           parent: 'C',
@@ -378,15 +314,11 @@ export default [
         $mapper: {
           label: 'name',
           value: 'id',
-          disabled: {
-            when: 'parent',
-            'const': 'C',
-            reverse: true
-          }
+          ident: 'val'
         }
       }
     ],
-    ident: 'parent'
+    ident: 'folder'
   },
   {
     $group: {
@@ -397,34 +329,29 @@ export default [
       skipSingle: false,
       childrenKey: 'children',
       selectable: undefined,
-      ident: 'parent'
+      ident: 'folder'
     },
     label: 'D',
     value: 'D',
     selectable: false,
     children: [
       {
-        label: 'Item',
+        label: 'Item 7',
         value: 7,
-        disabled: true,
-        ident: 'id',
+        ident: 'val',
         $original: {
           id: 7,
           parent: 'D',
-          name: 'Item'
+          name: 'Item 7'
         },
         $mapper: {
           label: 'name',
           value: 'id',
-          disabled: {
-            when: 'parent',
-            'const': 'C',
-            reverse: true
-          }
+          ident: 'val'
         }
       }
     ],
-    ident: 'parent'
+    ident: 'folder'
   }
 ]
 ```

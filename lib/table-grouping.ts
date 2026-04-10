@@ -20,6 +20,7 @@ export type Grouped = TreeNode | GroupNode;
 export type Groupeds = Grouped[];
 
 interface GroupProcessConfig {
+  readonly ident?: string;
   readonly groupBy: Getter;
   readonly labelBy: Getter;
   readonly extraBy?: Getter;
@@ -85,9 +86,7 @@ function createGroupNode(
     selectable,
     [childrenKey]: children,
     ...(extra !== undefined && { extra }),
-    ...(typeof config.groupBy === 'string'
-      ? { ident: config.groupBy }
-      : undefined),
+    ...(config.ident ? { ident: config.ident } : undefined),
   };
 
   if (!globalThis.DEBUG) {
@@ -128,7 +127,12 @@ function normalizeConfig(config: GroupConfig): GroupProcessConfig | undefined {
 
   const labelBy: Getter = config.labelBy ?? groupBy;
   const sortBy: Getter = config.sortBy ?? labelBy;
-  const { skipSingle = false, extraBy, childrenKey = 'children' } = config;
+  const {
+    skipSingle = false,
+    extraBy,
+    childrenKey = 'children',
+    ident = typeof groupBy === 'string' ? groupBy : undefined,
+  } = config;
 
   return {
     groupBy,
@@ -138,6 +142,7 @@ function normalizeConfig(config: GroupConfig): GroupProcessConfig | undefined {
     skipSingle,
     childrenKey,
     selectable,
+    ident,
   };
 }
 

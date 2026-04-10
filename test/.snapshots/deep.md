@@ -177,7 +177,8 @@ export default [
       extraBy: (io) => io?.info?.type?.count,
       skipSingle: false,
       childrenKey: 'children',
-      selectable: undefined
+      selectable: undefined,
+      ident: 'info.type.code'
     },
     label: '联通',
     value: 'X',
@@ -239,7 +240,8 @@ export default [
       extraBy: (io) => io?.info?.type?.count,
       skipSingle: false,
       childrenKey: 'children',
-      selectable: undefined
+      selectable: undefined,
+      ident: 'info.type.code'
     },
     label: '电信',
     value: 'Y',
@@ -279,7 +281,8 @@ export default [
       extraBy: (io) => io?.info?.type?.count,
       skipSingle: false,
       childrenKey: 'children',
-      selectable: undefined
+      selectable: undefined,
+      ident: 'info.type.code'
     },
     label: '移动',
     value: 'Z',

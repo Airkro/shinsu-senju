@@ -28,6 +28,7 @@ export type Mapper = {
   children?: Getter;
   childrenKey?: string;
   label?: Getter;
+  ident?: string;
 };
 
 export function treeMapper(data: UnknownObject[], options: Mapper = {}): Tree {
@@ -41,6 +42,7 @@ export function treeMapper(data: UnknownObject[], options: Mapper = {}): Tree {
 
   const {
     sortBy = options.label,
+    ident = options.value,
     selectable,
     disabled,
     childrenKey = 'children',
@@ -77,9 +79,7 @@ export function treeMapper(data: UnknownObject[], options: Mapper = {}): Tree {
             disabled: doCondition(node, disabled),
           }
         : undefined),
-      ...(typeof options.value === 'string'
-        ? { ident: options.value }
-        : undefined),
+      ...(ident ? { ident } : undefined),
       $original: node,
       $mapper: options,
     };

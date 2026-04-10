@@ -59,7 +59,8 @@ export default [
       extraBy: undefined,
       skipSingle: false,
       childrenKey: 'children',
-      selectable: undefined
+      selectable: undefined,
+      ident: 'group'
     },
     label: 'A',
     value: 'A',

@@ -12,6 +12,7 @@ export { tableGrouping, treeFilter, treeInfinity, treeMapper };
 
 export type Options = {
   groups?: Groups;
+  /** 取出指定的值 */
   mapper?: Mapper;
   parentKey?: Getter;
   filterBy?: Condition;
